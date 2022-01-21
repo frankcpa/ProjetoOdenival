@@ -33,6 +33,7 @@ public class frameCargo extends javax.swing.JInternalFrame {
         initComponents();
         //((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         botaoCancelarEdicao.setVisible(false);
+        txtIdCargo.setVisible(false);
     }
 
     /**

@@ -6,6 +6,7 @@
 package view;
 
 import util.GerenciadorDeJanela;
+import view.empresa.frameCadastrarEmpresa;
 import view.pessoa.frameCadastrarFuncionario;
 import view.pessoa.frameCargo;
 
@@ -92,7 +93,12 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("Cadastrar Outros");
+        jMenuItem3.setText("Cadastrar Empresa");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Buscar");
@@ -141,6 +147,10 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         gerenciadorDeJanelas.abrirJanelas(frameCargo.getInstancia());
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameCadastrarEmpresa.getInstancia());
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

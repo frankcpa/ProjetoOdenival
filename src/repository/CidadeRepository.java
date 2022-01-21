@@ -5,6 +5,7 @@
  */
 package repository;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import util.Conexao;
 import java.util.List;
@@ -13,21 +14,22 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
-public class CidadeRepository extends Conexao{
+public class CidadeRepository extends Conexao {
+
     private Session session;
     private Transaction transaction;
 
-    public List<CidadeModel> buscar(long IdEstado){
+    public List<CidadeModel> buscar(long IdEstado) {
         this.session = HibernateUtil.getSessionFactory().openSession();
         this.transaction = session.beginTransaction();
-        
-        List<CidadeModel> listaDeCidades = this.session.createQuery("from CidadeModel where IdEstado = "+IdEstado).list();
-        
+
+        List<CidadeModel> listaDeCidades = this.session.createQuery("from CidadeModel where IdEstado = " + IdEstado).list();
+
         this.transaction.commit();
         this.session.close();
         return listaDeCidades;
     }
-    
+
     public CidadeModel buscarPorId(Long id) {
         CidadeModel cidadeModel;
         super.inicializa();
@@ -35,12 +37,19 @@ public class CidadeRepository extends Conexao{
         super.executar();
         return cidadeModel;
     }
-    
+
     public List<CidadeModel> buscarPorNome(String nome) {
         List<CidadeModel> listaDeCidades = new ArrayList<>();
         super.inicializa();
-        listaDeCidades = super.getSess().createQuery("from CidadeModel where cidadeNome = '"+nome+"'").list();
+        listaDeCidades = super.getSess().createQuery("from CidadeModel where cidadeNome = '" + nome + "'").list();
+        if (listaDeCidades.isEmpty()) {
+            listaDeCidades = super.getSess().createQuery("from CidadeModel where cidadeNome = '" + removerAcentos(nome) + "'").list();
+        }
         super.executar();
         return listaDeCidades;
+    }
+
+    public static String removerAcentos(String str) {
+        return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.pessoa;
+package view.empresa;
 
 import br.com.correios.bsb.sigep.master.bean.cliente.AtendeCliente;
 import br.com.correios.bsb.sigep.master.bean.cliente.AtendeClienteService;
@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
-import model.CargoModel;
 import model.FuncionarioModel;
 import model.localidade.CidadeModel;
 import model.localidade.EstadoModel;
@@ -26,9 +25,9 @@ import repository.CidadeRepository;
 import repository.EstadoRepository;
 import repository.FuncionarioRepository;
 
-public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
+public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
 
-    private static frameCadastrarFuncionario frameCadFunc;
+    private static frameCadastrarEmpresa frameCadFunc;
     private CargoRepository cargoRepository = null;
     private EstadoRepository estadoRepository = null;
     private CidadeRepository cidadeRepository = null;
@@ -37,20 +36,19 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
     //public GerenciadorDeJanela gerenciadorDeJanelas;
 
     //public static frameCadastrarFuncionario getInstancia(JDesktopPane jDesktopPane1) {
-    public static frameCadastrarFuncionario getInstancia() {
+    public static frameCadastrarEmpresa getInstancia() {
         if (frameCadFunc == null) {
-            frameCadFunc = new frameCadastrarFuncionario();
+            frameCadFunc = new frameCadastrarEmpresa();
         }
         return frameCadFunc;
     }
 
     //public frameCadastrarFuncionario(JDesktopPane jDesktopPane1) {
-    public frameCadastrarFuncionario() {
+    public frameCadastrarEmpresa() {
 
         initComponents();
         //this.gerenciadorDeJanelas = new GerenciadorDeJanela();
         //((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
-        populaBoxCargos();
         AtendeClienteService service = new AtendeClienteService();
         this.portaAcesso = service.getAtendeClientePort();
     }
@@ -68,7 +66,7 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
+        txtNomeFantasia = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -83,11 +81,9 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         catch (Exception e){
         }
         jLabel10 = new javax.swing.JLabel();
-        comboBoxCargos = new javax.swing.JComboBox<>();
-        txtLogin = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JPasswordField();
+        txtCI = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtCarteiraDeMotorista = new javax.swing.JTextField();
+        txtCEI = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtCEP = new javax.swing.JTextField();
         try{
@@ -111,13 +107,21 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLabel18 = new javax.swing.JLabel();
         comboBoxCidades = new javax.swing.JComboBox<>();
         botaoCadastrarFuncionario = new javax.swing.JButton();
-        txtCPF = new javax.swing.JTextField();
+        txtCNPJ = new javax.swing.JTextField();
         try{
-            javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("###.###.###-##");
-            txtCPF = new javax.swing.JFormattedTextField(data);
+            javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");
+            txtCNPJ = new javax.swing.JFormattedTextField(data);
         }
         catch (Exception e){
         }
+        txtRazaoSocial = new javax.swing.JTextField();
+        try{
+            javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)####-####");
+            txtTelefone = new javax.swing.JFormattedTextField(data);
+        }
+        catch (Exception e){
+        }
+        txtNIT = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -125,8 +129,8 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Cadastro de Funcionário");
-        setToolTipText("Cadastro de Funcionário");
+        setTitle("Cadastro de Empresas");
+        setToolTipText("Cadastro de Empresas");
         setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -140,7 +144,7 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft Himalaya", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Cadastro de Funcionário");
+        jLabel1.setText("Cadastro de Empresa");
         jLabel1.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -159,40 +163,38 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel2.setText("E-mail");
+        jLabel2.setText("E-Mail");
 
-        txtNome.setText("teste Nome");
+        txtNomeFantasia.setText("teste Nome");
 
         jLabel3.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel3.setText("Nome");
+        jLabel3.setText("Nome Fantasia");
 
         jLabel4.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel4.setText("Telefone");
 
         jLabel6.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel6.setText("Login");
+        jLabel6.setText("CI");
 
         jLabel7.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel7.setText("Senha");
+        jLabel7.setText("NIT");
 
         jLabel8.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel8.setText("CPF");
+        jLabel8.setText("CNPJ");
 
         txtEmail.setText("mail@mail");
 
         txtTelefone.setText("6789561212");
 
         jLabel10.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel10.setText("Cargo");
+        jLabel10.setText("Razão Social");
 
-        txtLogin.setText("LoginTeste");
-
-        txtSenha.setText("123123");
+        txtCI.setText("LoginTeste");
 
         jLabel11.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
-        jLabel11.setText("Carteira de Motorista");
+        jLabel11.setText("CEI");
 
-        txtCarteiraDeMotorista.setText("1351365465");
+        txtCEI.setText("1351365465");
 
         jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel5.setText("CEP");
@@ -267,31 +269,38 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
-        txtCPF.setText("12345678912");
+        txtCNPJ.setText("33014556000196");
+
+        txtRazaoSocial.setText("6789561212");
+
+        txtNIT.setText("LoginTeste");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtNome)
+            .addComponent(txtNomeFantasia)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
-                    .addComponent(txtCarteiraDeMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCEI, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txtLogin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtCI))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(txtNIT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,7 +314,7 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addContainerGap())
-                    .addComponent(comboBoxCargos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(txtRazaoSocial)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -313,12 +322,12 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(115, 115, 115)
-                                .addComponent(jLabel13)))
+                                .addComponent(jLabel13))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +365,7 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -366,7 +375,7 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 21, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -375,10 +384,10 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(jLabel11))
                 .addGap(0, 0, 0)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCarteiraDeMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCEI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNIT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -436,6 +445,9 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleName("Cadastro de Empresas");
+        getAccessibleContext().setAccessibleDescription("Cadastro de Empresas");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     public class ComboItem {
@@ -460,24 +472,6 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         public String toString() {
             return label;
         }
-    }
-
-    private void populaBoxCargos() {
-        if (this.cargoRepository == null) {
-            this.cargoRepository = new CargoRepository();
-        }
-
-        List<CargoModel> listaDeCargos = this.cargoRepository.buscarTodos();
-
-        Object objs[] = new Object[listaDeCargos.size()];
-        ComboItem item;
-        for (int i = 0; i < listaDeCargos.size(); i++) {
-            item = new ComboItem("" + listaDeCargos.get(i).getIdCargo(), listaDeCargos.get(i).getNome());
-            objs[i] = item;
-        }
-        DefaultComboBoxModel model2 = new DefaultComboBoxModel(objs);
-        comboBoxCargos.setModel(model2);
-
     }
 
     private void populaBoxEstados(String pais, EstadoModel estadoSelecionado) {
@@ -547,18 +541,18 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
     public boolean verificaCamposObrigatorios() {
         boolean retorno = true;
 
-        if (txtNome.getText().trim().isEmpty()) {
-            txtNome.setBorder(new LineBorder(Color.red));
+        if (txtNomeFantasia.getText().trim().isEmpty()) {
+            txtNomeFantasia.setBorder(new LineBorder(Color.red));
             retorno = false;
         } else {
-            txtNome.setBorder(new LineBorder(Color.GRAY));
+            txtNomeFantasia.setBorder(new LineBorder(Color.GRAY));
         }
 
-        if (txtCarteiraDeMotorista.getText().trim().isEmpty()) {
-            txtCarteiraDeMotorista.setBorder(new LineBorder(Color.red));
+        if (txtCEI.getText().trim().isEmpty()) {
+            txtCEI.setBorder(new LineBorder(Color.red));
             retorno = false;
         } else {
-            txtCarteiraDeMotorista.setBorder(new LineBorder(Color.GRAY));
+            txtCEI.setBorder(new LineBorder(Color.GRAY));
         }
 
         return retorno;
@@ -568,22 +562,17 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
         if (verificaCamposObrigatorios()) {
             FuncionarioModel funcionarioModel = new FuncionarioModel();
 
-            ComboItem item = (ComboItem) comboBoxCargos.getSelectedItem();
-            long cargoID = Long.parseLong(item.getValue());
-            CargoModel cargo = cargoRepository.buscarPorId(cargoID);
-
-            item = (ComboItem) comboBoxCidades.getSelectedItem();
+            ComboItem item = (ComboItem) comboBoxCidades.getSelectedItem();
             long cidadeID = Long.parseLong(item.getValue());
             CidadeModel cidade = cidadeRepository.buscarPorId(cidadeID);
 
-            funcionarioModel.setNome(txtNome.getText());
+            funcionarioModel.setNome(txtNomeFantasia.getText());
             funcionarioModel.setEmail(txtEmail.getText());
             funcionarioModel.setTelefone(txtTelefone.getText().replace("(", "").replace(")", "").replace("(-", ""));
-            funcionarioModel.setCargo(cargo);
-            funcionarioModel.setCpf(txtCPF.getText().replace(".", "").replace("-", ""));
-            funcionarioModel.setCarteiraDeMotorista(txtCarteiraDeMotorista.getText());
-            funcionarioModel.setLogin(txtLogin.getText());
-            funcionarioModel.setSenha(txtSenha.getText());
+            funcionarioModel.setCpf(txtCNPJ.getText().replace(".", "").replace("-", ""));
+            funcionarioModel.setCarteiraDeMotorista(txtCEI.getText());
+            funcionarioModel.setLogin(txtCI.getText());
+            funcionarioModel.setSenha(txtNIT.getText());
             funcionarioModel.setCep(Long.parseLong(txtCEP.getText().replace("-", "")));
             funcionarioModel.setRuaAvenida(txtEndereco.getText());
             funcionarioModel.setNumero(txtNumero.getText());
@@ -635,10 +624,10 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "Cidade não encontrada!", "Sistema", JOptionPane.WARNING_MESSAGE);
                 }
             } catch (SQLException_Exception ex) {
-                Logger.getLogger(frameCadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(frameCadastrarEmpresa.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Correios - WebService", JOptionPane.WARNING_MESSAGE);
             } catch (SigepClienteException ex) {
-                Logger.getLogger(frameCadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(frameCadastrarEmpresa.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Correios - WebService", JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -646,7 +635,6 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrarFuncionario;
-    private javax.swing.JComboBox<String> comboBoxCargos;
     private javax.swing.JComboBox<String> comboBoxCidades;
     private javax.swing.JComboBox<String> comboBoxEstado;
     private javax.swing.JComboBox<String> comboBoxPais;
@@ -670,16 +658,17 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txtBairro;
+    private javax.swing.JTextField txtCEI;
     private javax.swing.JTextField txtCEP;
-    private javax.swing.JTextField txtCPF;
-    private javax.swing.JTextField txtCarteiraDeMotorista;
+    private javax.swing.JTextField txtCI;
+    private javax.swing.JTextField txtCNPJ;
     private javax.swing.JTextField txtComplemento;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
-    private javax.swing.JTextField txtLogin;
-    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNIT;
+    private javax.swing.JTextField txtNomeFantasia;
     private javax.swing.JTextField txtNumero;
-    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField txtRazaoSocial;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
