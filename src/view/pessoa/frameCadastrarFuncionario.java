@@ -618,27 +618,27 @@ public class frameCadastrarFuncionario extends javax.swing.JInternalFrame {
     private void txtCEPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCEPFocusLost
         if (!txtCEP.getText().trim().isEmpty()) {
             try {
-                EnderecoERP enderecoRetorno = this.portaAcesso.consultaCEP(txtCEP.getText().trim().replace("-", ""));
-                txtEndereco.setText(enderecoRetorno.getEnd());
-                txtBairro.setText(enderecoRetorno.getBairro());
+                EnderecoERP enderecoRetorno = null;
+                enderecoRetorno = this.portaAcesso.consultaCEP(txtCEP.getText().trim().replace("-", ""));
+                if (enderecoRetorno != null) {
+                    txtEndereco.setText(enderecoRetorno.getEnd());
+                    txtBairro.setText(enderecoRetorno.getBairro());
 
-                if (this.cidadeRepository == null) {
-                    this.cidadeRepository = new CidadeRepository();
+                    if (this.cidadeRepository == null) {
+                        this.cidadeRepository = new CidadeRepository();
+                    }
+                    List<CidadeModel> cidades = cidadeRepository.buscarPorNome(enderecoRetorno.getCidade());
+                    if (cidades != null && !cidades.isEmpty()) {
+                        CidadeModel cidade = cidades.get(0);
+                        comboBoxPais.setSelectedIndex(Integer.parseInt("" + cidade.getEstado().getPais().getIdPais()));
+                        populaBoxEstados(cidade.getEstado().getPais().getPaisNome(), cidade.getEstado());
+                        populaBoxCidades(cidade.getEstado().getIdEstado(), cidade);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Cidade não encontrada!", "Sistema", JOptionPane.WARNING_MESSAGE);
+                    }
                 }
-                List<CidadeModel> cidades = cidadeRepository.buscarPorNome(enderecoRetorno.getCidade());
-                if (cidades != null && !cidades.isEmpty()) {
-                    CidadeModel cidade = cidades.get(0);
-                    comboBoxPais.setSelectedIndex(Integer.parseInt("" + cidade.getEstado().getPais().getIdPais()));
-                    populaBoxEstados(cidade.getEstado().getPais().getPaisNome(), cidade.getEstado());
-                    populaBoxCidades(cidade.getEstado().getIdEstado(), cidade);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Cidade não encontrada!", "Sistema", JOptionPane.WARNING_MESSAGE);
-                }
-            } catch (SQLException_Exception ex) {
-                Logger.getLogger(frameCadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Correios - WebService", JOptionPane.WARNING_MESSAGE);
-            } catch (SigepClienteException ex) {
-                Logger.getLogger(frameCadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException_Exception | SigepClienteException ex) {
+                //Logger.getLogger(frameCadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Correios - WebService", JOptionPane.WARNING_MESSAGE);
             }
         }

@@ -53,5 +53,8 @@ Contributor(s):
     <mapping class="model.CargoModel"/>
     <mapping class="model.FuncionarioModel"/>
     <mapping class="model.EmpresaModel"/>
+    <mapping class="model.AduanaModel"/>
+    <mapping class="model.VolumeModel"/>
+    <mapping class="model.VeiculoModel"/>
   </session-factory>
 </hibernate-configuration>

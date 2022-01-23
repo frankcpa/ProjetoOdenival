@@ -8,7 +8,8 @@ package view;
 import util.GerenciadorDeJanela;
 import view.empresa.frameCadastrarEmpresa;
 import view.pessoa.frameCadastrarFuncionario;
-import view.pessoa.frameCargo;
+import view.pessoa.frameManterCargo;
+import view.pessoa.frameManterFuncionario;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -43,12 +44,19 @@ public class Principal extends javax.swing.JFrame {
         menuBarra = new javax.swing.JMenuBar();
         sistema = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -83,29 +91,6 @@ public class Principal extends javax.swing.JFrame {
 
         menuBarra.add(sistema);
 
-        jMenu2.setText("Pessoas");
-
-        jMenuItem2.setText("Cadastrar Funcionário");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
-
-        jMenuItem3.setText("Cadastrar Empresa");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("Buscar");
-        jMenu2.add(jMenuItem4);
-
-        menuBarra.add(jMenu2);
-
         jMenu1.setText("Cargo");
 
         jMenuItem5.setText("Manter");
@@ -117,6 +102,74 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem5);
 
         menuBarra.add(jMenu1);
+
+        jMenu2.setText("Funcionário");
+
+        jMenuItem2.setText("Cadastrar Funcionário");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem4.setText("Manter");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        menuBarra.add(jMenu2);
+
+        jMenu3.setText("Empresa");
+
+        jMenuItem3.setText("Cadastrar Empresa");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        menuBarra.add(jMenu3);
+
+        jMenu4.setText("Aduana");
+
+        jMenuItem6.setText("Manter");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem6);
+
+        menuBarra.add(jMenu4);
+
+        jMenu5.setText("Volume");
+
+        jMenuItem7.setText("Manter");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem7);
+
+        menuBarra.add(jMenu5);
+
+        jMenu6.setText("Caminhão");
+
+        jMenuItem8.setText("Manter");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem8);
+
+        menuBarra.add(jMenu6);
 
         setJMenuBar(menuBarra);
 
@@ -145,12 +198,28 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        gerenciadorDeJanelas.abrirJanelas(frameCargo.getInstancia());
+        gerenciadorDeJanelas.abrirJanelas(frameManterCargo.getInstancia());
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         gerenciadorDeJanelas.abrirJanelas(frameCadastrarEmpresa.getInstancia());
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameManterFuncionario.getInstancia());
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameManterAduana.getInstancia());
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameManterVolume.getInstancia());
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameManterVeiculo.getInstancia());
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,11 +260,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuBar menuBarra;
     private javax.swing.JMenu sistema;
     // End of variables declaration//GEN-END:variables

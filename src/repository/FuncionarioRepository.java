@@ -38,7 +38,7 @@ public class FuncionarioRepository extends Conexao {
     public List<FuncionarioModel> buscarPorNome(String nome) {
         List<FuncionarioModel> listaDefuncionarioModel = new ArrayList<>();
         super.inicializa();
-        listaDefuncionarioModel = super.getSess().createQuery("from FuncionarioModel where nome like '%"+nome+"%'").list();
+        listaDefuncionarioModel = super.getSess().createQuery("from FuncionarioModel where LOWER(nome) like '%"+nome.toLowerCase()+"%'").list();
         super.executar();
         return listaDefuncionarioModel;
     }

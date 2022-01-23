@@ -17,19 +17,19 @@ import repository.CargoRepository;
  *
  * @author Frank
  */
-public class frameCargo extends javax.swing.JInternalFrame {
+public class frameManterCargo extends javax.swing.JInternalFrame {
 
-    private static frameCargo frameCargo;
+    private static frameManterCargo frameCargo;
     private CargoRepository cargoRepository = null;
 
-    public static frameCargo getInstancia() {
+    public static frameManterCargo getInstancia() {
         if (frameCargo == null) {
-            frameCargo = new frameCargo();
+            frameCargo = new frameManterCargo();
         }
         return frameCargo;
     }
 
-    public frameCargo() {
+    public frameManterCargo() {
         initComponents();
         //((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         botaoCancelarEdicao.setVisible(false);
