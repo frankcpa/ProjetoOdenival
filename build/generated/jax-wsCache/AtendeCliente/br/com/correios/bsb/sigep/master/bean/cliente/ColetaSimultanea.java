@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de coletaSimultanea complex type.
+ * <p>Java class for coletaSimultanea complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="coletaSimultanea">
@@ -39,7 +39,7 @@ public class ColetaSimultanea
     protected String obs;
 
     /**
-     * Obtém o valor da propriedade obj.
+     * Gets the value of the obj property.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class ColetaSimultanea
     }
 
     /**
-     * Define o valor da propriedade obj.
+     * Sets the value of the obj property.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class ColetaSimultanea
     }
 
     /**
-     * Obtém o valor da propriedade obs.
+     * Gets the value of the obs property.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class ColetaSimultanea
     }
 
     /**
-     * Define o valor da propriedade obs.
+     * Sets the value of the obs property.
      * 
      * @param value
      *     allowed object is

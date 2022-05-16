@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de verificaDisponibilidadeServico complex type.
+ * <p>Java class for verificaDisponibilidadeServico complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="verificaDisponibilidadeServico">
@@ -49,7 +49,7 @@ public class VerificaDisponibilidadeServico {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade codAdministrativo.
+     * Gets the value of the codAdministrativo property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade codAdministrativo.
+     * Sets the value of the codAdministrativo property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Obtém o valor da propriedade numeroServico.
+     * Gets the value of the numeroServico property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade numeroServico.
+     * Sets the value of the numeroServico property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Obtém o valor da propriedade cepOrigem.
+     * Gets the value of the cepOrigem property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade cepOrigem.
+     * Sets the value of the cepOrigem property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Obtém o valor da propriedade cepDestino.
+     * Gets the value of the cepDestino property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade cepDestino.
+     * Sets the value of the cepDestino property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class VerificaDisponibilidadeServico {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

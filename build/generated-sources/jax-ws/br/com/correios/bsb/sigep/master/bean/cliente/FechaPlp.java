@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de fechaPlp complex type.
+ * <p>Java class for fechaPlp complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="fechaPlp">
@@ -49,7 +49,7 @@ public class FechaPlp {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade xml.
+     * Gets the value of the xml property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade xml.
+     * Sets the value of the xml property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class FechaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade idPlpCliente.
+     * Gets the value of the idPlpCliente property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade idPlpCliente.
+     * Sets the value of the idPlpCliente property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class FechaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade cartaoPostagem.
+     * Gets the value of the cartaoPostagem property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade cartaoPostagem.
+     * Sets the value of the cartaoPostagem property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class FechaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade faixaEtiquetas.
+     * Gets the value of the faixaEtiquetas property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade faixaEtiquetas.
+     * Sets the value of the faixaEtiquetas property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class FechaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class FechaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class FechaPlp {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

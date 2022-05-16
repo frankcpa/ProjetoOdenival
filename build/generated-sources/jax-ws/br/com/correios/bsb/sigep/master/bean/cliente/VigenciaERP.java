@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de vigenciaERP complex type.
+ * <p>Java class for vigenciaERP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="vigenciaERP">
@@ -50,7 +50,7 @@ public class VigenciaERP {
     protected Long id;
 
     /**
-     * Obtém o valor da propriedade dataFinal.
+     * Gets the value of the dataFinal property.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Define o valor da propriedade dataFinal.
+     * Sets the value of the dataFinal property.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Obtém o valor da propriedade dataInicial.
+     * Gets the value of the dataInicial property.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Define o valor da propriedade dataInicial.
+     * Sets the value of the dataInicial property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Obtém o valor da propriedade datajFim.
+     * Gets the value of the datajFim property.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Define o valor da propriedade datajFim.
+     * Sets the value of the datajFim property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Obtém o valor da propriedade datajIni.
+     * Gets the value of the datajIni property.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Define o valor da propriedade datajIni.
+     * Sets the value of the datajIni property.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -158,7 +158,7 @@ public class VigenciaERP {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de obterMensagemParametrizada complex type.
+ * <p>Java class for obterMensagemParametrizada complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="obterMensagemParametrizada">
@@ -34,7 +34,7 @@ public class ObterMensagemParametrizada {
     protected Short id;
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class ObterMensagemParametrizada {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is

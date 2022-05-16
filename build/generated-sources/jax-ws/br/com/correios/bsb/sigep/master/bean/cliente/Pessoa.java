@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de pessoa complex type.
+ * <p>Java class for pessoa complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="pessoa">
@@ -71,7 +71,7 @@ public class Pessoa {
     protected String uf;
 
     /**
-     * Obtém o valor da propriedade bairro.
+     * Gets the value of the bairro property.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade bairro.
+     * Sets the value of the bairro property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade cep.
+     * Gets the value of the cep property.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade cep.
+     * Sets the value of the cep property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade cidade.
+     * Gets the value of the cidade property.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade cidade.
+     * Sets the value of the cidade property.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade complemento.
+     * Gets the value of the complemento property.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade complemento.
+     * Sets the value of the complemento property.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade ddd.
+     * Gets the value of the ddd property.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade ddd.
+     * Sets the value of the ddd property.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +191,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade email.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
@@ -203,7 +203,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade email.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
@@ -215,7 +215,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade logradouro.
+     * Gets the value of the logradouro property.
      * 
      * @return
      *     possible object is
@@ -227,7 +227,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade logradouro.
+     * Sets the value of the logradouro property.
      * 
      * @param value
      *     allowed object is
@@ -239,7 +239,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade nome.
+     * Gets the value of the nome property.
      * 
      * @return
      *     possible object is
@@ -251,7 +251,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade nome.
+     * Sets the value of the nome property.
      * 
      * @param value
      *     allowed object is
@@ -263,7 +263,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade numero.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
@@ -275,7 +275,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade numero.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is
@@ -287,7 +287,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade referencia.
+     * Gets the value of the referencia property.
      * 
      * @return
      *     possible object is
@@ -299,7 +299,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade referencia.
+     * Sets the value of the referencia property.
      * 
      * @param value
      *     allowed object is
@@ -311,7 +311,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade telefone.
+     * Gets the value of the telefone property.
      * 
      * @return
      *     possible object is
@@ -323,7 +323,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade telefone.
+     * Sets the value of the telefone property.
      * 
      * @param value
      *     allowed object is
@@ -335,7 +335,7 @@ public class Pessoa {
     }
 
     /**
-     * Obtém o valor da propriedade uf.
+     * Gets the value of the uf property.
      * 
      * @return
      *     possible object is
@@ -347,7 +347,7 @@ public class Pessoa {
     }
 
     /**
-     * Define o valor da propriedade uf.
+     * Sets the value of the uf property.
      * 
      * @param value
      *     allowed object is

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de dimensaoTO complex type.
+ * <p>Java class for dimensaoTO complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="dimensaoTO">
@@ -49,7 +49,7 @@ public class DimensaoTO {
     protected MedidaTO soma;
 
     /**
-     * Obtém o valor da propriedade altura.
+     * Gets the value of the altura property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade altura.
+     * Sets the value of the altura property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Obtém o valor da propriedade comprimento.
+     * Gets the value of the comprimento property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade comprimento.
+     * Sets the value of the comprimento property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Obtém o valor da propriedade diametro.
+     * Gets the value of the diametro property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade diametro.
+     * Sets the value of the diametro property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Obtém o valor da propriedade largura.
+     * Gets the value of the largura property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade largura.
+     * Sets the value of the largura property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Obtém o valor da propriedade peso.
+     * Gets the value of the peso property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade peso.
+     * Sets the value of the peso property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Obtém o valor da propriedade soma.
+     * Gets the value of the soma property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class DimensaoTO {
     }
 
     /**
-     * Define o valor da propriedade soma.
+     * Sets the value of the soma property.
      * 
      * @param value
      *     allowed object is

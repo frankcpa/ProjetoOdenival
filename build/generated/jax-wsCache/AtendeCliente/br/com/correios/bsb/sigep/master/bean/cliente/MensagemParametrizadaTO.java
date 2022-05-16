@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de mensagemParametrizadaTO complex type.
+ * <p>Java class for mensagemParametrizadaTO complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="mensagemParametrizadaTO">
@@ -40,7 +40,7 @@ public class MensagemParametrizadaTO {
     protected String titulo;
 
     /**
-     * Obtém o valor da propriedade mensagem.
+     * Gets the value of the mensagem property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class MensagemParametrizadaTO {
     }
 
     /**
-     * Define o valor da propriedade mensagem.
+     * Sets the value of the mensagem property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class MensagemParametrizadaTO {
     }
 
     /**
-     * Obtém o valor da propriedade tipo.
+     * Gets the value of the tipo property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class MensagemParametrizadaTO {
     }
 
     /**
-     * Define o valor da propriedade tipo.
+     * Sets the value of the tipo property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class MensagemParametrizadaTO {
     }
 
     /**
-     * Obtém o valor da propriedade titulo.
+     * Gets the value of the titulo property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class MensagemParametrizadaTO {
     }
 
     /**
-     * Define o valor da propriedade titulo.
+     * Sets the value of the titulo property.
      * 
      * @param value
      *     allowed object is

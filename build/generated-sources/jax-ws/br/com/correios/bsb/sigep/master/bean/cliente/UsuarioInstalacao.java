@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de usuarioInstalacao complex type.
+ * <p>Java class for usuarioInstalacao complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="usuarioInstalacao">
@@ -76,7 +76,7 @@ public class UsuarioInstalacao {
     protected String validade;
 
     /**
-     * Obtém o valor da propriedade dataAtualizacao.
+     * Gets the value of the dataAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacao.
+     * Sets the value of the dataAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade dataInclusao.
+     * Gets the value of the dataInclusao property.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade dataInclusao.
+     * Sets the value of the dataInclusao property.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade dataSenha.
+     * Gets the value of the dataSenha property.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade dataSenha.
+     * Sets the value of the dataSenha property.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +148,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade gerenteMaster.
+     * Gets the value of the gerenteMaster property.
      * 
      * @return
      *     possible object is
@@ -160,7 +160,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade gerenteMaster.
+     * Sets the value of the gerenteMaster property.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +172,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade hashSenha.
+     * Gets the value of the hashSenha property.
      * 
      * @return
      *     possible object is
@@ -184,7 +184,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade hashSenha.
+     * Sets the value of the hashSenha property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +196,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -208,7 +208,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +220,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade login.
+     * Gets the value of the login property.
      * 
      * @return
      *     possible object is
@@ -232,7 +232,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade login.
+     * Sets the value of the login property.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +244,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade nome.
+     * Gets the value of the nome property.
      * 
      * @return
      *     possible object is
@@ -256,7 +256,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade nome.
+     * Sets the value of the nome property.
      * 
      * @param value
      *     allowed object is
@@ -297,7 +297,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -309,7 +309,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is
@@ -321,7 +321,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade status.
+     * Gets the value of the status property.
      * 
      * @return
      *     possible object is
@@ -333,7 +333,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade status.
+     * Sets the value of the status property.
      * 
      * @param value
      *     allowed object is
@@ -345,7 +345,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Obtém o valor da propriedade validade.
+     * Gets the value of the validade property.
      * 
      * @return
      *     possible object is
@@ -357,7 +357,7 @@ public class UsuarioInstalacao {
     }
 
     /**
-     * Define o valor da propriedade validade.
+     * Sets the value of the validade property.
      * 
      * @param value
      *     allowed object is

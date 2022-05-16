@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de solicitaXmlPlp complex type.
+ * <p>Java class for solicitaXmlPlp complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="solicitaXmlPlp">
@@ -40,7 +40,7 @@ public class SolicitaXmlPlp {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade idPlpMaster.
+     * Gets the value of the idPlpMaster property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class SolicitaXmlPlp {
     }
 
     /**
-     * Define o valor da propriedade idPlpMaster.
+     * Sets the value of the idPlpMaster property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class SolicitaXmlPlp {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class SolicitaXmlPlp {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class SolicitaXmlPlp {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class SolicitaXmlPlp {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

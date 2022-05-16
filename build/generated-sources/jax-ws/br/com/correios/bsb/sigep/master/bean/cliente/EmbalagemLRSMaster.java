@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de embalagemLRSMaster complex type.
+ * <p>Java class for embalagemLRSMaster complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="embalagemLRSMaster">
@@ -40,7 +40,7 @@ public class EmbalagemLRSMaster {
     protected String tipo;
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class EmbalagemLRSMaster {
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class EmbalagemLRSMaster {
     }
 
     /**
-     * Obtém o valor da propriedade nome.
+     * Gets the value of the nome property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class EmbalagemLRSMaster {
     }
 
     /**
-     * Define o valor da propriedade nome.
+     * Sets the value of the nome property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class EmbalagemLRSMaster {
     }
 
     /**
-     * Obtém o valor da propriedade tipo.
+     * Gets the value of the tipo property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class EmbalagemLRSMaster {
     }
 
     /**
-     * Define o valor da propriedade tipo.
+     * Sets the value of the tipo property.
      * 
      * @param value
      *     allowed object is

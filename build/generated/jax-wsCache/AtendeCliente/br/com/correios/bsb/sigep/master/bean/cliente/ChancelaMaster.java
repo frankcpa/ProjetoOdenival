@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de chancelaMaster complex type.
+ * <p>Java class for chancelaMaster complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="chancelaMaster">
@@ -56,7 +56,7 @@ public class ChancelaMaster {
     protected List<ServicoSigep> servicosSigep;
 
     /**
-     * Obtém o valor da propriedade ativo.
+     * Gets the value of the ativo property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Define o valor da propriedade ativo.
+     * Sets the value of the ativo property.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Obtém o valor da propriedade chancela.
+     * Gets the value of the chancela property.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Define o valor da propriedade chancela.
+     * Sets the value of the chancela property.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacao.
+     * Gets the value of the dataAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -114,7 +114,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacao.
+     * Sets the value of the dataAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +126,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Obtém o valor da propriedade descricao.
+     * Gets the value of the descricao property.
      * 
      * @return
      *     possible object is
@@ -138,7 +138,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Sets the value of the descricao property.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class ChancelaMaster {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is

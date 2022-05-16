@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de objetoPostal complex type.
+ * <p>Java class for objetoPostal complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="objetoPostal">
@@ -70,7 +70,7 @@ public class ObjetoPostal {
     protected StatusObjetoPostal statusEtiqueta;
 
     /**
-     * Obtém o valor da propriedade codigoEtiqueta.
+     * Gets the value of the codigoEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade codigoEtiqueta.
+     * Sets the value of the codigoEtiqueta property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacaoCliente.
+     * Gets the value of the dataAtualizacaoCliente property.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacaoCliente.
+     * Sets the value of the dataAtualizacaoCliente property.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade dataBloqueioObjeto.
+     * Gets the value of the dataBloqueioObjeto property.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade dataBloqueioObjeto.
+     * Sets the value of the dataBloqueioObjeto property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade dataCancelamentoEtiqueta.
+     * Gets the value of the dataCancelamentoEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade dataCancelamentoEtiqueta.
+     * Sets the value of the dataCancelamentoEtiqueta property.
      * 
      * @param value
      *     allowed object is
@@ -166,7 +166,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade dataInclusao.
+     * Gets the value of the dataInclusao property.
      * 
      * @return
      *     possible object is
@@ -178,7 +178,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade dataInclusao.
+     * Sets the value of the dataInclusao property.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +190,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade objetoPostalPK.
+     * Gets the value of the objetoPostalPK property.
      * 
      * @return
      *     possible object is
@@ -202,7 +202,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade objetoPostalPK.
+     * Sets the value of the objetoPostalPK property.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +214,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade plpNu.
+     * Gets the value of the plpNu property.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade plpNu.
+     * Sets the value of the plpNu property.
      * 
      * @param value
      *     allowed object is
@@ -238,7 +238,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade preListaPostagem.
+     * Gets the value of the preListaPostagem property.
      * 
      * @return
      *     possible object is
@@ -250,7 +250,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade preListaPostagem.
+     * Sets the value of the preListaPostagem property.
      * 
      * @param value
      *     allowed object is
@@ -262,7 +262,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade restricaoAerea.
+     * Gets the value of the restricaoAerea property.
      * 
      * @return
      *     possible object is
@@ -274,7 +274,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade restricaoAerea.
+     * Sets the value of the restricaoAerea property.
      * 
      * @param value
      *     allowed object is
@@ -286,7 +286,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade statusBloqueio.
+     * Gets the value of the statusBloqueio property.
      * 
      * @return
      *     possible object is
@@ -298,7 +298,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade statusBloqueio.
+     * Sets the value of the statusBloqueio property.
      * 
      * @param value
      *     allowed object is
@@ -310,7 +310,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Obtém o valor da propriedade statusEtiqueta.
+     * Gets the value of the statusEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -322,7 +322,7 @@ public class ObjetoPostal {
     }
 
     /**
-     * Define o valor da propriedade statusEtiqueta.
+     * Sets the value of the statusEtiqueta property.
      * 
      * @param value
      *     allowed object is

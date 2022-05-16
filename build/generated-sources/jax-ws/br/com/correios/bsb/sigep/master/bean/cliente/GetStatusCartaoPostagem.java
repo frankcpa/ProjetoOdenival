@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de getStatusCartaoPostagem complex type.
+ * <p>Java class for getStatusCartaoPostagem complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="getStatusCartaoPostagem">
@@ -40,7 +40,7 @@ public class GetStatusCartaoPostagem {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade numeroCartaoPostagem.
+     * Gets the value of the numeroCartaoPostagem property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class GetStatusCartaoPostagem {
     }
 
     /**
-     * Define o valor da propriedade numeroCartaoPostagem.
+     * Sets the value of the numeroCartaoPostagem property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class GetStatusCartaoPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class GetStatusCartaoPostagem {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class GetStatusCartaoPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class GetStatusCartaoPostagem {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

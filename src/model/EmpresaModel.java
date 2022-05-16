@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 import model.localidade.CidadeModel;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -171,7 +173,15 @@ public class EmpresaModel implements Serializable {
     }
 
     public String getCNPJ() {
-        return CNPJ;
+        String cnpjFormatado = null;
+        try{
+            MaskFormatter maskFormatter= new MaskFormatter("##.###.###/####-##");
+            maskFormatter.setValueContainsLiteralCharacters(false);
+            cnpjFormatado = maskFormatter.valueToString(CNPJ);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e, null, JOptionPane.WARNING_MESSAGE);
+        }
+        return cnpjFormatado;
     }
 
     public void setCNPJ(String CNPJ) {

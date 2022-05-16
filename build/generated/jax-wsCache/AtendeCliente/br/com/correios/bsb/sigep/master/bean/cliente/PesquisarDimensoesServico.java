@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de pesquisarDimensoesServico complex type.
+ * <p>Java class for pesquisarDimensoesServico complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="pesquisarDimensoesServico">
@@ -37,7 +37,7 @@ public class PesquisarDimensoesServico {
     protected String embalagem;
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class PesquisarDimensoesServico {
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class PesquisarDimensoesServico {
     }
 
     /**
-     * Obtém o valor da propriedade embalagem.
+     * Gets the value of the embalagem property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class PesquisarDimensoesServico {
     }
 
     /**
-     * Define o valor da propriedade embalagem.
+     * Sets the value of the embalagem property.
      * 
      * @param value
      *     allowed object is

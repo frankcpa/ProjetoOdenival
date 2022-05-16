@@ -6,12 +6,37 @@
 package view.pessoa;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import model.CargoModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
 import repository.CargoRepository;
+import util.Conexao;
+import util.HibernateUtil;
 
 /**
  *
@@ -66,6 +91,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoEditarRegistro = new javax.swing.JButton();
         botaoRemoverRegistro = new javax.swing.JButton();
         botaoCancelarEdicao = new javax.swing.JButton();
+        botaoGerarRelatorio = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -198,7 +224,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoBuscarCargos.setText("Buscar");
         botaoBuscarCargos.setBorder(null);
         botaoBuscarCargos.setBorderPainted(false);
-        botaoBuscarCargos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoBuscarCargos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoBuscarCargos.setPreferredSize(new java.awt.Dimension(43, 20));
         botaoBuscarCargos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,7 +304,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoCadastrarCargo.setText("Salvar");
         botaoCadastrarCargo.setBorder(null);
         botaoCadastrarCargo.setBorderPainted(false);
-        botaoCadastrarCargo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoCadastrarCargo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoCadastrarCargo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoCadastrarCargoMouseEntered(evt);
@@ -298,7 +324,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoEditarRegistro.setForeground(new java.awt.Color(255, 255, 255));
         botaoEditarRegistro.setText("Editar Registro");
         botaoEditarRegistro.setBorderPainted(false);
-        botaoEditarRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoEditarRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoEditarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoEditarRegistroMouseEntered(evt);
@@ -318,7 +344,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoRemoverRegistro.setForeground(new java.awt.Color(255, 255, 255));
         botaoRemoverRegistro.setText("Remover Registro");
         botaoRemoverRegistro.setBorderPainted(false);
-        botaoRemoverRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoRemoverRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoRemoverRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoRemoverRegistroMouseEntered(evt);
@@ -339,7 +365,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoCancelarEdicao.setText("Cancelar Alteração");
         botaoCancelarEdicao.setBorder(null);
         botaoCancelarEdicao.setBorderPainted(false);
-        botaoCancelarEdicao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoCancelarEdicao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoCancelarEdicao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoCancelarEdicaoMouseEntered(evt);
@@ -351,6 +377,26 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         botaoCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCancelarEdicaoActionPerformed(evt);
+            }
+        });
+
+        botaoGerarRelatorio.setBackground(new java.awt.Color(0, 51, 51));
+        botaoGerarRelatorio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoGerarRelatorio.setForeground(new java.awt.Color(255, 255, 255));
+        botaoGerarRelatorio.setText("Gerar Relatório");
+        botaoGerarRelatorio.setBorderPainted(false);
+        botaoGerarRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoGerarRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoGerarRelatorioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoGerarRelatorioMouseExited(evt);
+            }
+        });
+        botaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoGerarRelatorioActionPerformed(evt);
             }
         });
 
@@ -367,7 +413,8 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
                     .addComponent(botaoCadastrarCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                     .addComponent(botaoRemoverRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                    .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoGerarRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,9 +431,11 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
                         .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoEditarRegistro)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoRemoverRegistro)
-                        .addGap(143, 143, 143))))
+                        .addGap(27, 27, 27)
+                        .addComponent(botaoGerarRelatorio)
+                        .addGap(131, 131, 131))))
         );
 
         pack();
@@ -426,7 +475,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
             try {
                 if (!txtIdCargo.getText().equals("")) {
                     this.cargoRepository.atualizar(cargo);
-                }else{
+                } else {
                     this.cargoRepository.salvar(cargo);
                 }
             } catch (Exception e) {
@@ -541,9 +590,51 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         DefaultTableModel model = (DefaultTableModel) jtableCargos.getModel();
         model.setRowCount(0);
         jtableCargos.setModel(model);
-        
+
         this.dispose();
     }//GEN-LAST:event_formInternalFrameClosing
+
+    private void botaoGerarRelatorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoGerarRelatorioMouseEntered
+
+    private void botaoGerarRelatorioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoGerarRelatorioMouseExited
+
+    private void botaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioActionPerformed
+        if (this.cargoRepository == null) {
+            this.cargoRepository = new CargoRepository();
+        }
+        Collection<CargoModel> listaDeCargos = this.cargoRepository.buscarTodos();
+        JasperPrint jasperPrint = null;
+        String path = "cargos2.jrxml";
+        
+        System.out.println(new File(path).getAbsolutePath());
+        
+        InputStream employeeReportStream;
+        try {
+            employeeReportStream = new FileInputStream(new File(path).getPath());
+            
+            JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
+            JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(listaDeCargos);
+            
+            Map params = new HashMap();
+            
+            params.put("ds", ds);
+            jasperPrint = JasperFillManager.fillReport(jasperReport, params, ds);
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JRException ex) {
+            Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception er) {
+            System.out.println(er.getMessage());
+        }
+        System.out.println("Aqui: " + new JRBeanCollectionDataSource(listaDeCargos));
+        JasperViewer view = new JasperViewer(jasperPrint, false);
+        view.setVisible(true);
+    }//GEN-LAST:event_botaoGerarRelatorioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -551,6 +642,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
     private javax.swing.JButton botaoCadastrarCargo;
     private javax.swing.JButton botaoCancelarEdicao;
     private javax.swing.JButton botaoEditarRegistro;
+    private javax.swing.JButton botaoGerarRelatorio;
     private javax.swing.JButton botaoRemoverRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de servicoAdicionalXML complex type.
+ * <p>Java class for servicoAdicionalXML complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="servicoAdicionalXML">
@@ -49,7 +49,7 @@ public class ServicoAdicionalXML {
     protected String sigla;
 
     /**
-     * Obtém o valor da propriedade categoria.
+     * Gets the value of the categoria property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade categoria.
+     * Sets the value of the categoria property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Obtém o valor da propriedade descricao.
+     * Gets the value of the descricao property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Sets the value of the descricao property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Obtém o valor da propriedade maximoValorDeclarado.
+     * Gets the value of the maximoValorDeclarado property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade maximoValorDeclarado.
+     * Sets the value of the maximoValorDeclarado property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Obtém o valor da propriedade minimoValorDeclarado.
+     * Gets the value of the minimoValorDeclarado property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade minimoValorDeclarado.
+     * Sets the value of the minimoValorDeclarado property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Obtém o valor da propriedade sigla.
+     * Gets the value of the sigla property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class ServicoAdicionalXML {
     }
 
     /**
-     * Define o valor da propriedade sigla.
+     * Sets the value of the sigla property.
      * 
      * @param value
      *     allowed object is

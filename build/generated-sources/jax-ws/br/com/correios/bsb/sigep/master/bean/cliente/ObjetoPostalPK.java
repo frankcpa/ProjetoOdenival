@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de objetoPostalPK complex type.
+ * <p>Java class for objetoPostalPK complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="objetoPostalPK">
@@ -37,7 +37,7 @@ public class ObjetoPostalPK {
     protected long plpNu;
 
     /**
-     * Obtém o valor da propriedade codigoEtiqueta.
+     * Gets the value of the codigoEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class ObjetoPostalPK {
     }
 
     /**
-     * Define o valor da propriedade codigoEtiqueta.
+     * Sets the value of the codigoEtiqueta property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class ObjetoPostalPK {
     }
 
     /**
-     * Obtém o valor da propriedade plpNu.
+     * Gets the value of the plpNu property.
      * 
      */
     public long getPlpNu() {
@@ -69,7 +69,7 @@ public class ObjetoPostalPK {
     }
 
     /**
-     * Define o valor da propriedade plpNu.
+     * Sets the value of the plpNu property.
      * 
      */
     public void setPlpNu(long value) {

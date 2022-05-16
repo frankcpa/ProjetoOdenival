@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de gerenteConta complex type.
+ * <p>Java class for gerenteConta complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="gerenteConta">
@@ -103,7 +103,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacao.
+     * Gets the value of the dataAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -115,7 +115,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacao.
+     * Sets the value of the dataAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -127,7 +127,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade dataInclusao.
+     * Gets the value of the dataInclusao property.
      * 
      * @return
      *     possible object is
@@ -139,7 +139,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade dataInclusao.
+     * Sets the value of the dataInclusao property.
      * 
      * @param value
      *     allowed object is
@@ -151,7 +151,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade dataSenha.
+     * Gets the value of the dataSenha property.
      * 
      * @return
      *     possible object is
@@ -163,7 +163,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade dataSenha.
+     * Sets the value of the dataSenha property.
      * 
      * @param value
      *     allowed object is
@@ -175,7 +175,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade login.
+     * Gets the value of the login property.
      * 
      * @return
      *     possible object is
@@ -187,7 +187,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade login.
+     * Sets the value of the login property.
      * 
      * @param value
      *     allowed object is
@@ -199,7 +199,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade matricula.
+     * Gets the value of the matricula property.
      * 
      * @return
      *     possible object is
@@ -211,7 +211,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade matricula.
+     * Sets the value of the matricula property.
      * 
      * @param value
      *     allowed object is
@@ -223,7 +223,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -235,7 +235,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is
@@ -247,7 +247,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade status.
+     * Gets the value of the status property.
      * 
      * @return
      *     possible object is
@@ -259,7 +259,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade status.
+     * Sets the value of the status property.
      * 
      * @param value
      *     allowed object is
@@ -271,7 +271,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade tipoGerente.
+     * Gets the value of the tipoGerente property.
      * 
      * @return
      *     possible object is
@@ -283,7 +283,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade tipoGerente.
+     * Sets the value of the tipoGerente property.
      * 
      * @param value
      *     allowed object is
@@ -324,7 +324,7 @@ public class GerenteConta {
     }
 
     /**
-     * Obtém o valor da propriedade validade.
+     * Gets the value of the validade property.
      * 
      * @return
      *     possible object is
@@ -336,7 +336,7 @@ public class GerenteConta {
     }
 
     /**
-     * Define o valor da propriedade validade.
+     * Sets the value of the validade property.
      * 
      * @param value
      *     allowed object is

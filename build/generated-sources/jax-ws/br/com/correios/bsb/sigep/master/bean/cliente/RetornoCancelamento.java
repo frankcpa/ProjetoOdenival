@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de retornoCancelamento complex type.
+ * <p>Java class for retornoCancelamento complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="retornoCancelamento">
@@ -54,7 +54,7 @@ public class RetornoCancelamento {
     protected ObjetoSimplificado objetoPostal;
 
     /**
-     * Obtém o valor da propriedade codErro.
+     * Gets the value of the codErro property.
      * 
      * @return
      *     possible object is
@@ -66,7 +66,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade codErro.
+     * Sets the value of the codErro property.
      * 
      * @param value
      *     allowed object is
@@ -78,7 +78,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Obtém o valor da propriedade codigoAdministrativo.
+     * Gets the value of the codigoAdministrativo property.
      * 
      * @return
      *     possible object is
@@ -90,7 +90,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade codigoAdministrativo.
+     * Sets the value of the codigoAdministrativo property.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Obtém o valor da propriedade data.
+     * Gets the value of the data property.
      * 
      * @return
      *     possible object is
@@ -114,7 +114,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade data.
+     * Sets the value of the data property.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +126,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Obtém o valor da propriedade hora.
+     * Gets the value of the hora property.
      * 
      * @return
      *     possible object is
@@ -138,7 +138,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade hora.
+     * Sets the value of the hora property.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Obtém o valor da propriedade msgErro.
+     * Gets the value of the msgErro property.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade msgErro.
+     * Sets the value of the msgErro property.
      * 
      * @param value
      *     allowed object is
@@ -174,7 +174,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Obtém o valor da propriedade objetoPostal.
+     * Gets the value of the objetoPostal property.
      * 
      * @return
      *     possible object is
@@ -186,7 +186,7 @@ public class RetornoCancelamento {
     }
 
     /**
-     * Define o valor da propriedade objetoPostal.
+     * Sets the value of the objetoPostal property.
      * 
      * @param value
      *     allowed object is

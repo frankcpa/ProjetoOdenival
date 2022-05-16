@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de objetoSimplificado complex type.
+ * <p>Java class for objetoSimplificado complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="objetoSimplificado">
@@ -44,7 +44,7 @@ public class ObjetoSimplificado {
     protected String statusPedido;
 
     /**
-     * Obtém o valor da propriedade datahoraCancelamento.
+     * Gets the value of the datahoraCancelamento property.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class ObjetoSimplificado {
     }
 
     /**
-     * Define o valor da propriedade datahoraCancelamento.
+     * Sets the value of the datahoraCancelamento property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class ObjetoSimplificado {
     }
 
     /**
-     * Obtém o valor da propriedade numeroPedido.
+     * Gets the value of the numeroPedido property.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class ObjetoSimplificado {
     }
 
     /**
-     * Define o valor da propriedade numeroPedido.
+     * Sets the value of the numeroPedido property.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class ObjetoSimplificado {
     }
 
     /**
-     * Obtém o valor da propriedade statusPedido.
+     * Gets the value of the statusPedido property.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class ObjetoSimplificado {
     }
 
     /**
-     * Define o valor da propriedade statusPedido.
+     * Sets the value of the statusPedido property.
      * 
      * @param value
      *     allowed object is

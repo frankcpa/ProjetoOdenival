@@ -17,13 +17,14 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
+import model.EmpresaModel;
 import model.FuncionarioModel;
 import model.localidade.CidadeModel;
 import model.localidade.EstadoModel;
 import repository.CargoRepository;
 import repository.CidadeRepository;
 import repository.EstadoRepository;
-import repository.FuncionarioRepository;
+import repository.EmpresaRepository;
 
 public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
 
@@ -31,7 +32,7 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
     private CargoRepository cargoRepository = null;
     private EstadoRepository estadoRepository = null;
     private CidadeRepository cidadeRepository = null;
-    private FuncionarioRepository funcionarioRepository = null;
+    private EmpresaRepository empresaRepository = null;
     private final AtendeCliente portaAcesso;
     //public GerenciadorDeJanela gerenciadorDeJanelas;
 
@@ -106,7 +107,7 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         comboBoxEstado = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         comboBoxCidades = new javax.swing.JComboBox<>();
-        botaoCadastrarFuncionario = new javax.swing.JButton();
+        botaoCadastrarEmpresa = new javax.swing.JButton();
         txtCNPJ = new javax.swing.JTextField();
         try{
             javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");
@@ -248,24 +249,24 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         jLabel18.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel18.setText("Cidade");
 
-        botaoCadastrarFuncionario.setBackground(new java.awt.Color(0, 51, 51));
-        botaoCadastrarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botaoCadastrarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
-        botaoCadastrarFuncionario.setText("Salvar");
-        botaoCadastrarFuncionario.setBorder(null);
-        botaoCadastrarFuncionario.setBorderPainted(false);
-        botaoCadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoCadastrarFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarEmpresa.setBackground(new java.awt.Color(0, 51, 51));
+        botaoCadastrarEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoCadastrarEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        botaoCadastrarEmpresa.setText("Salvar");
+        botaoCadastrarEmpresa.setBorder(null);
+        botaoCadastrarEmpresa.setBorderPainted(false);
+        botaoCadastrarEmpresa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoCadastrarEmpresa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botaoCadastrarFuncionarioMouseEntered(evt);
+                botaoCadastrarEmpresaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botaoCadastrarFuncionarioMouseExited(evt);
+                botaoCadastrarEmpresaMouseExited(evt);
             }
         });
-        botaoCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarFuncionarioActionPerformed(evt);
+                botaoCadastrarEmpresaActionPerformed(evt);
             }
         });
 
@@ -356,7 +357,7 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(comboBoxCidades, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botaoCadastrarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(3, 3, 3))
         );
         jPanel3Layout.setVerticalGroup(
@@ -422,7 +423,7 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
                             .addComponent(comboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboBoxCidades, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(54, 54, 54)
-                .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -444,9 +445,6 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(81, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("Cadastro de Empresas");
-        getAccessibleContext().setAccessibleDescription("Cadastro de Empresas");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -528,15 +526,15 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         }
     }
 
-    private void botaoCadastrarFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioMouseEntered
-        botaoCadastrarFuncionario.setBackground(new Color(0, 153, 0));
-        botaoCadastrarFuncionario.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_botaoCadastrarFuncionarioMouseEntered
+    private void botaoCadastrarEmpresaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarEmpresaMouseEntered
+        botaoCadastrarEmpresa.setBackground(new Color(0, 153, 0));
+        botaoCadastrarEmpresa.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_botaoCadastrarEmpresaMouseEntered
 
-    private void botaoCadastrarFuncionarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioMouseExited
-        botaoCadastrarFuncionario.setBackground(new Color(0, 51, 51));
-        botaoCadastrarFuncionario.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_botaoCadastrarFuncionarioMouseExited
+    private void botaoCadastrarEmpresaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarEmpresaMouseExited
+        botaoCadastrarEmpresa.setBackground(new Color(0, 51, 51));
+        botaoCadastrarEmpresa.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_botaoCadastrarEmpresaMouseExited
 
     public boolean verificaCamposObrigatorios() {
         boolean retorno = true;
@@ -558,40 +556,41 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         return retorno;
     }
 
-    private void botaoCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioActionPerformed
+    private void botaoCadastrarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarEmpresaActionPerformed
         if (verificaCamposObrigatorios()) {
-            FuncionarioModel funcionarioModel = new FuncionarioModel();
+            EmpresaModel empresaModel = new EmpresaModel();
 
             ComboItem item = (ComboItem) comboBoxCidades.getSelectedItem();
             long cidadeID = Long.parseLong(item.getValue());
             CidadeModel cidade = cidadeRepository.buscarPorId(cidadeID);
 
-            funcionarioModel.setNome(txtNomeFantasia.getText());
-            funcionarioModel.setEmail(txtEmail.getText());
-            funcionarioModel.setTelefone(txtTelefone.getText().replace("(", "").replace(")", "").replace("(-", ""));
-            funcionarioModel.setCpf(txtCNPJ.getText().replace(".", "").replace("-", ""));
-            funcionarioModel.setCarteiraDeMotorista(txtCEI.getText());
-            funcionarioModel.setLogin(txtCI.getText());
-            funcionarioModel.setSenha(txtNIT.getText());
-            funcionarioModel.setCep(Long.parseLong(txtCEP.getText().replace("-", "")));
-            funcionarioModel.setRuaAvenida(txtEndereco.getText());
-            funcionarioModel.setNumero(txtNumero.getText());
-            funcionarioModel.setBairro(txtBairro.getText());
-            funcionarioModel.setComplemento(txtComplemento.getText());
-            funcionarioModel.setCidade(cidade);
+            empresaModel.setNomeFantasia(txtNomeFantasia.getText());
+            empresaModel.setCNPJ(txtCNPJ.getText().replace(".", "").replace("/", "").replace("-", ""));
+            empresaModel.setRazaoSocial(txtRazaoSocial.getText());
+            empresaModel.setEmail(txtEmail.getText());
+            empresaModel.setTelefone(txtTelefone.getText().replace("(", "").replace(")", "").replace("(-", ""));
+            empresaModel.setCEI(txtCEI.getText());
+            empresaModel.setCI(txtCI.getText());
+            empresaModel.setNIT(txtNIT.getText());
+            empresaModel.setCep(Long.parseLong(txtCEP.getText().replace("-", "")));
+            empresaModel.setRuaAvenida(txtEndereco.getText());
+            empresaModel.setNumero(txtNumero.getText());
+            empresaModel.setBairro(txtBairro.getText());
+            empresaModel.setComplemento(txtComplemento.getText());
+            empresaModel.setCidade(cidade);
 
-            if (this.funcionarioRepository == null) {
-                this.funcionarioRepository = new FuncionarioRepository();
+            if (this.empresaRepository == null) {
+                this.empresaRepository = new EmpresaRepository();
             }
 
-            funcionarioRepository.salvar(funcionarioModel);
+            empresaRepository.salvar(empresaModel);
 
             JOptionPane.showMessageDialog(null, "Salvo com Sucesso!", null, JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Campos Obrigatórios não foram preenchidos!", null, JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_botaoCadastrarFuncionarioActionPerformed
+    }//GEN-LAST:event_botaoCadastrarEmpresaActionPerformed
 
     private void comboBoxPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPaisActionPerformed
         populaBoxEstados(comboBoxPais.getSelectedItem().toString(), null);
@@ -634,7 +633,7 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtCEPFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoCadastrarFuncionario;
+    private javax.swing.JButton botaoCadastrarEmpresa;
     private javax.swing.JComboBox<String> comboBoxCidades;
     private javax.swing.JComboBox<String> comboBoxEstado;
     private javax.swing.JComboBox<String> comboBoxPais;

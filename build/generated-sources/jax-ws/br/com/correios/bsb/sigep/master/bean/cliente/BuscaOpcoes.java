@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscaOpcoes complex type.
+ * <p>Java class for buscaOpcoes complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscaOpcoes">
@@ -74,7 +74,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Obtém o valor da propriedade tipoResultado.
+     * Gets the value of the tipoResultado property.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Define o valor da propriedade tipoResultado.
+     * Sets the value of the tipoResultado property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class BuscaOpcoes {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

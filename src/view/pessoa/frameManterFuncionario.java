@@ -71,6 +71,7 @@ public class frameManterFuncionario extends javax.swing.JInternalFrame {
         populaBoxCargos(null);
         AtendeClienteService service = new AtendeClienteService();
         this.portaAcessoCorreios = service.getAtendeClientePort();
+        txtIdPessoa.setVisible(false);
     }
 
     /**

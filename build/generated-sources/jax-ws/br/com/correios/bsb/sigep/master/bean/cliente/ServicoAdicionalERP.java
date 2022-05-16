@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de servicoAdicionalERP complex type.
+ * <p>Java class for servicoAdicionalERP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="servicoAdicionalERP">
@@ -61,7 +61,7 @@ public class ServicoAdicionalERP {
     protected ValorDeclarado valorDeclarado;
 
     /**
-     * Obtém o valor da propriedade categoria.
+     * Gets the value of the categoria property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade categoria.
+     * Sets the value of the categoria property.
      * 
      * @param value
      *     allowed object is
@@ -85,7 +85,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -97,7 +97,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +109,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacao.
+     * Gets the value of the dataAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacao.
+     * Sets the value of the dataAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +133,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade datajAtualizacao.
+     * Gets the value of the datajAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -145,7 +145,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade datajAtualizacao.
+     * Sets the value of the datajAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +157,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade descricao.
+     * Gets the value of the descricao property.
      * 
      * @return
      *     possible object is
@@ -169,7 +169,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Sets the value of the descricao property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade horajAtualizacao.
+     * Gets the value of the horajAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -193,7 +193,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade horajAtualizacao.
+     * Sets the value of the horajAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +205,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -217,7 +217,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +229,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade sigla.
+     * Gets the value of the sigla property.
      * 
      * @return
      *     possible object is
@@ -241,7 +241,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade sigla.
+     * Sets the value of the sigla property.
      * 
      * @param value
      *     allowed object is
@@ -253,7 +253,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Obtém o valor da propriedade valorDeclarado.
+     * Gets the value of the valorDeclarado property.
      * 
      * @return
      *     possible object is
@@ -265,7 +265,7 @@ public class ServicoAdicionalERP {
     }
 
     /**
-     * Define o valor da propriedade valorDeclarado.
+     * Sets the value of the valorDeclarado property.
      * 
      * @param value
      *     allowed object is

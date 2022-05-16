@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de servicoERP complex type.
+ * <p>Java class for servicoERP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="servicoERP">
@@ -77,7 +77,7 @@ public class ServicoERP {
     protected VigenciaERP vigencia;
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -89,7 +89,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -101,7 +101,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacao.
+     * Gets the value of the dataAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -113,7 +113,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacao.
+     * Sets the value of the dataAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -125,7 +125,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade datajAtualizacao.
+     * Gets the value of the datajAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -137,7 +137,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade datajAtualizacao.
+     * Sets the value of the datajAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +149,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade descricao.
+     * Gets the value of the descricao property.
      * 
      * @return
      *     possible object is
@@ -161,7 +161,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Sets the value of the descricao property.
      * 
      * @param value
      *     allowed object is
@@ -173,7 +173,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade horajAtualizacao.
+     * Gets the value of the horajAtualizacao property.
      * 
      * @return
      *     possible object is
@@ -185,7 +185,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade horajAtualizacao.
+     * Sets the value of the horajAtualizacao property.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +197,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade id.
+     * Gets the value of the id property.
      * 
      */
     public long getId() {
@@ -205,7 +205,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(long value) {
@@ -213,7 +213,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade servicoSigep.
+     * Gets the value of the servicoSigep property.
      * 
      * @return
      *     possible object is
@@ -225,7 +225,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade servicoSigep.
+     * Sets the value of the servicoSigep property.
      * 
      * @param value
      *     allowed object is
@@ -266,7 +266,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade tipo1Codigo.
+     * Gets the value of the tipo1Codigo property.
      * 
      * @return
      *     possible object is
@@ -278,7 +278,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade tipo1Codigo.
+     * Sets the value of the tipo1Codigo property.
      * 
      * @param value
      *     allowed object is
@@ -290,7 +290,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade tipo1Descricao.
+     * Gets the value of the tipo1Descricao property.
      * 
      * @return
      *     possible object is
@@ -302,7 +302,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade tipo1Descricao.
+     * Sets the value of the tipo1Descricao property.
      * 
      * @param value
      *     allowed object is
@@ -314,7 +314,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade tipo2Codigo.
+     * Gets the value of the tipo2Codigo property.
      * 
      * @return
      *     possible object is
@@ -326,7 +326,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade tipo2Codigo.
+     * Sets the value of the tipo2Codigo property.
      * 
      * @param value
      *     allowed object is
@@ -338,7 +338,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade tipo2Descricao.
+     * Gets the value of the tipo2Descricao property.
      * 
      * @return
      *     possible object is
@@ -350,7 +350,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade tipo2Descricao.
+     * Sets the value of the tipo2Descricao property.
      * 
      * @param value
      *     allowed object is
@@ -362,7 +362,7 @@ public class ServicoERP {
     }
 
     /**
-     * Obtém o valor da propriedade vigencia.
+     * Gets the value of the vigencia property.
      * 
      * @return
      *     possible object is
@@ -374,7 +374,7 @@ public class ServicoERP {
     }
 
     /**
-     * Define o valor da propriedade vigencia.
+     * Sets the value of the vigencia property.
      * 
      * @param value
      *     allowed object is

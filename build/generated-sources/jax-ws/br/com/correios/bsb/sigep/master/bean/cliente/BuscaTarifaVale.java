@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscaTarifaVale complex type.
+ * <p>Java class for buscaTarifaVale complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscaTarifaVale">
@@ -70,7 +70,7 @@ public class BuscaTarifaVale {
     protected String servicoAdicional;
 
     /**
-     * Obtém o valor da propriedade codAdministrativo.
+     * Gets the value of the codAdministrativo property.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade codAdministrativo.
+     * Sets the value of the codAdministrativo property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade codServico.
+     * Gets the value of the codServico property.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade codServico.
+     * Sets the value of the codServico property.
      * 
      * @param value
      *     allowed object is
@@ -166,7 +166,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade cepOrigem.
+     * Gets the value of the cepOrigem property.
      * 
      * @return
      *     possible object is
@@ -178,7 +178,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade cepOrigem.
+     * Sets the value of the cepOrigem property.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +190,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade cepDestino.
+     * Gets the value of the cepDestino property.
      * 
      * @return
      *     possible object is
@@ -202,7 +202,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade cepDestino.
+     * Sets the value of the cepDestino property.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +214,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade peso.
+     * Gets the value of the peso property.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade peso.
+     * Sets the value of the peso property.
      * 
      * @param value
      *     allowed object is
@@ -238,7 +238,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade codFormato.
+     * Gets the value of the codFormato property.
      * 
      * @return
      *     possible object is
@@ -250,7 +250,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade codFormato.
+     * Sets the value of the codFormato property.
      * 
      * @param value
      *     allowed object is
@@ -262,7 +262,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade comprimento.
+     * Gets the value of the comprimento property.
      * 
      * @return
      *     possible object is
@@ -274,7 +274,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade comprimento.
+     * Sets the value of the comprimento property.
      * 
      * @param value
      *     allowed object is
@@ -286,7 +286,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade altura.
+     * Gets the value of the altura property.
      * 
      * @return
      *     possible object is
@@ -298,7 +298,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade altura.
+     * Sets the value of the altura property.
      * 
      * @param value
      *     allowed object is
@@ -310,7 +310,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade largura.
+     * Gets the value of the largura property.
      * 
      * @return
      *     possible object is
@@ -322,7 +322,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade largura.
+     * Sets the value of the largura property.
      * 
      * @param value
      *     allowed object is
@@ -334,7 +334,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade valorDeclarado.
+     * Gets the value of the valorDeclarado property.
      * 
      * @return
      *     possible object is
@@ -346,7 +346,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade valorDeclarado.
+     * Sets the value of the valorDeclarado property.
      * 
      * @param value
      *     allowed object is
@@ -358,7 +358,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Obtém o valor da propriedade servicoAdicional.
+     * Gets the value of the servicoAdicional property.
      * 
      * @return
      *     possible object is
@@ -370,7 +370,7 @@ public class BuscaTarifaVale {
     }
 
     /**
-     * Define o valor da propriedade servicoAdicional.
+     * Sets the value of the servicoAdicional property.
      * 
      * @param value
      *     allowed object is

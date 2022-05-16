@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de remetente complex type.
+ * <p>Java class for remetente complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="remetente">
@@ -47,7 +47,7 @@ public class Remetente
     protected String sms;
 
     /**
-     * Obtém o valor da propriedade celular.
+     * Gets the value of the celular property.
      * 
      * @return
      *     possible object is
@@ -59,7 +59,7 @@ public class Remetente
     }
 
     /**
-     * Define o valor da propriedade celular.
+     * Sets the value of the celular property.
      * 
      * @param value
      *     allowed object is
@@ -71,7 +71,7 @@ public class Remetente
     }
 
     /**
-     * Obtém o valor da propriedade dddCelular.
+     * Gets the value of the dddCelular property.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class Remetente
     }
 
     /**
-     * Define o valor da propriedade dddCelular.
+     * Sets the value of the dddCelular property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class Remetente
     }
 
     /**
-     * Obtém o valor da propriedade identificacao.
+     * Gets the value of the identificacao property.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class Remetente
     }
 
     /**
-     * Define o valor da propriedade identificacao.
+     * Sets the value of the identificacao property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class Remetente
     }
 
     /**
-     * Obtém o valor da propriedade sms.
+     * Gets the value of the sms property.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class Remetente
     }
 
     /**
-     * Define o valor da propriedade sms.
+     * Sets the value of the sms property.
      * 
      * @param value
      *     allowed object is

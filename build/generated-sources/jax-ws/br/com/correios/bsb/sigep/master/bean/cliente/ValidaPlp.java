@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de validaPlp complex type.
+ * <p>Java class for validaPlp complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="validaPlp">
@@ -60,7 +60,7 @@ public class ValidaPlp {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade cliente.
+     * Gets the value of the cliente property.
      * 
      */
     public long getCliente() {
@@ -68,7 +68,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade cliente.
+     * Sets the value of the cliente property.
      * 
      */
     public void setCliente(long value) {
@@ -76,7 +76,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade numero.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade numero.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade diretoria.
+     * Gets the value of the diretoria property.
      * 
      */
     public long getDiretoria() {
@@ -108,7 +108,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade diretoria.
+     * Sets the value of the diretoria property.
      * 
      */
     public void setDiretoria(long value) {
@@ -116,7 +116,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade cartao.
+     * Gets the value of the cartao property.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade cartao.
+     * Sets the value of the cartao property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade unidadePostagem.
+     * Gets the value of the unidadePostagem property.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade unidadePostagem.
+     * Sets the value of the unidadePostagem property.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +164,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade servico.
+     * Gets the value of the servico property.
      * 
      * @return
      *     possible object is
@@ -176,7 +176,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade servico.
+     * Sets the value of the servico property.
      * 
      * @param value
      *     allowed object is
@@ -217,7 +217,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -229,7 +229,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -241,7 +241,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -253,7 +253,7 @@ public class ValidaPlp {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

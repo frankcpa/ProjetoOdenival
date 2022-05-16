@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de preListaPostagem complex type.
+ * <p>Java class for preListaPostagem complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="preListaPostagem">
@@ -85,7 +85,7 @@ public class PreListaPostagem {
     protected StatusPlp status;
 
     /**
-     * Obtém o valor da propriedade cartaoPostagem.
+     * Gets the value of the cartaoPostagem property.
      * 
      * @return
      *     possible object is
@@ -97,7 +97,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade cartaoPostagem.
+     * Sets the value of the cartaoPostagem property.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +109,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade conteudoProibido.
+     * Gets the value of the conteudoProibido property.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade conteudoProibido.
+     * Sets the value of the conteudoProibido property.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +133,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacaoCliente.
+     * Gets the value of the dataAtualizacaoCliente property.
      * 
      * @return
      *     possible object is
@@ -145,7 +145,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacaoCliente.
+     * Sets the value of the dataAtualizacaoCliente property.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +157,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade dataAtualizacaoSara.
+     * Gets the value of the dataAtualizacaoSara property.
      * 
      * @return
      *     possible object is
@@ -169,7 +169,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade dataAtualizacaoSara.
+     * Sets the value of the dataAtualizacaoSara property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade dataFechamento.
+     * Gets the value of the dataFechamento property.
      * 
      * @return
      *     possible object is
@@ -193,7 +193,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade dataFechamento.
+     * Sets the value of the dataFechamento property.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +205,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade dataPostagem.
+     * Gets the value of the dataPostagem property.
      * 
      * @return
      *     possible object is
@@ -217,7 +217,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade dataPostagem.
+     * Sets the value of the dataPostagem property.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +229,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade dataPostagemSara.
+     * Gets the value of the dataPostagemSara property.
      * 
      * @return
      *     possible object is
@@ -241,7 +241,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade dataPostagemSara.
+     * Sets the value of the dataPostagemSara property.
      * 
      * @param value
      *     allowed object is
@@ -282,7 +282,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade plpCliente.
+     * Gets the value of the plpCliente property.
      * 
      */
     public long getPlpCliente() {
@@ -290,7 +290,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade plpCliente.
+     * Sets the value of the plpCliente property.
      * 
      */
     public void setPlpCliente(long value) {
@@ -298,7 +298,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade plpNu.
+     * Gets the value of the plpNu property.
      * 
      */
     public long getPlpNu() {
@@ -306,7 +306,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade plpNu.
+     * Sets the value of the plpNu property.
      * 
      */
     public void setPlpNu(long value) {
@@ -372,7 +372,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Obtém o valor da propriedade status.
+     * Gets the value of the status property.
      * 
      * @return
      *     possible object is
@@ -384,7 +384,7 @@ public class PreListaPostagem {
     }
 
     /**
-     * Define o valor da propriedade status.
+     * Sets the value of the status property.
      * 
      * @param value
      *     allowed object is

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de validaEtiquetaPLP complex type.
+ * <p>Java class for validaEtiquetaPLP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="validaEtiquetaPLP">
@@ -43,7 +43,7 @@ public class ValidaEtiquetaPLP {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade numeroEtiqueta.
+     * Gets the value of the numeroEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Define o valor da propriedade numeroEtiqueta.
+     * Sets the value of the numeroEtiqueta property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade idPlp.
+     * Gets the value of the idPlp property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Define o valor da propriedade idPlp.
+     * Sets the value of the idPlp property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class ValidaEtiquetaPLP {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

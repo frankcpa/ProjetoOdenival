@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscaContrato complex type.
+ * <p>Java class for buscaContrato complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscaContrato">
@@ -43,7 +43,7 @@ public class BuscaContrato {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade numero.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Define o valor da propriedade numero.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Obtém o valor da propriedade diretoria.
+     * Gets the value of the diretoria property.
      * 
      */
     public long getDiretoria() {
@@ -75,7 +75,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Define o valor da propriedade diretoria.
+     * Sets the value of the diretoria property.
      * 
      */
     public void setDiretoria(long value) {
@@ -83,7 +83,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +107,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -119,7 +119,7 @@ public class BuscaContrato {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

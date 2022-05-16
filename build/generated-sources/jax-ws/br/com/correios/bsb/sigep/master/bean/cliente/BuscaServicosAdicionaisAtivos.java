@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscaServicosAdicionaisAtivos complex type.
+ * <p>Java class for buscaServicosAdicionaisAtivos complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscaServicosAdicionaisAtivos">
@@ -37,7 +37,7 @@ public class BuscaServicosAdicionaisAtivos {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class BuscaServicosAdicionaisAtivos {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class BuscaServicosAdicionaisAtivos {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class BuscaServicosAdicionaisAtivos {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

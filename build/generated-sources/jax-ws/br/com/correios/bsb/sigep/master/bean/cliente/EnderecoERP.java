@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de enderecoERP complex type.
+ * <p>Java class for enderecoERP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="enderecoERP">
@@ -56,7 +56,7 @@ public class EnderecoERP {
     protected List<UnidadePostagemERP> unidadesPostagem;
 
     /**
-     * Obtém o valor da propriedade bairro.
+     * Gets the value of the bairro property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade bairro.
+     * Sets the value of the bairro property.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Obtém o valor da propriedade cep.
+     * Gets the value of the cep property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade cep.
+     * Sets the value of the cep property.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Obtém o valor da propriedade cidade.
+     * Gets the value of the cidade property.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade cidade.
+     * Sets the value of the cidade property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Obtém o valor da propriedade complemento2.
+     * Gets the value of the complemento2 property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade complemento2.
+     * Sets the value of the complemento2 property.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Obtém o valor da propriedade end.
+     * Gets the value of the end property.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade end.
+     * Sets the value of the end property.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Obtém o valor da propriedade uf.
+     * Gets the value of the uf property.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class EnderecoERP {
     }
 
     /**
-     * Define o valor da propriedade uf.
+     * Sets the value of the uf property.
      * 
      * @param value
      *     allowed object is

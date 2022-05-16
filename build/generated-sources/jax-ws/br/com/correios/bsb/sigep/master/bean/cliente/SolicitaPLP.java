@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de solicitaPLP complex type.
+ * <p>Java class for solicitaPLP complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="solicitaPLP">
@@ -43,7 +43,7 @@ public class SolicitaPLP {
     protected String senha;
 
     /**
-     * Obtém o valor da propriedade idPlpMaster.
+     * Gets the value of the idPlpMaster property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Define o valor da propriedade idPlpMaster.
+     * Sets the value of the idPlpMaster property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade numEtiqueta.
+     * Gets the value of the numEtiqueta property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Define o valor da propriedade numEtiqueta.
+     * Sets the value of the numEtiqueta property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class SolicitaPLP {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is

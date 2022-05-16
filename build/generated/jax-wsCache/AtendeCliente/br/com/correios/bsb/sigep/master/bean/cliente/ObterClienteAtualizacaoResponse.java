@@ -10,9 +10,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java de obterClienteAtualizacaoResponse complex type.
+ * <p>Java class for obterClienteAtualizacaoResponse complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="obterClienteAtualizacaoResponse">
@@ -39,7 +39,7 @@ public class ObterClienteAtualizacaoResponse {
     protected XMLGregorianCalendar _return;
 
     /**
-     * Obtém o valor da propriedade return.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class ObterClienteAtualizacaoResponse {
     }
 
     /**
-     * Define o valor da propriedade return.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is

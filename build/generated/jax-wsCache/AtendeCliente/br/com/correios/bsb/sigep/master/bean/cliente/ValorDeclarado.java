@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de valorDeclarado complex type.
+ * <p>Java class for valorDeclarado complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="valorDeclarado">
@@ -37,7 +37,7 @@ public class ValorDeclarado {
     protected Double minimo;
 
     /**
-     * Obtém o valor da propriedade maximo.
+     * Gets the value of the maximo property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class ValorDeclarado {
     }
 
     /**
-     * Define o valor da propriedade maximo.
+     * Sets the value of the maximo property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class ValorDeclarado {
     }
 
     /**
-     * Obtém o valor da propriedade minimo.
+     * Gets the value of the minimo property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class ValorDeclarado {
     }
 
     /**
-     * Define o valor da propriedade minimo.
+     * Sets the value of the minimo property.
      * 
      * @param value
      *     allowed object is

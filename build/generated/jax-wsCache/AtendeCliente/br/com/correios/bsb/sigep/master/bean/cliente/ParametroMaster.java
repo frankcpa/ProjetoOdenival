@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de parametroMaster complex type.
+ * <p>Java class for parametroMaster complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="parametroMaster">
@@ -40,7 +40,7 @@ public class ParametroMaster {
     protected String prmTxValor;
 
     /**
-     * Obtém o valor da propriedade prmCoParametro.
+     * Gets the value of the prmCoParametro property.
      * 
      */
     public long getPrmCoParametro() {
@@ -48,7 +48,7 @@ public class ParametroMaster {
     }
 
     /**
-     * Define o valor da propriedade prmCoParametro.
+     * Sets the value of the prmCoParametro property.
      * 
      */
     public void setPrmCoParametro(long value) {
@@ -56,7 +56,7 @@ public class ParametroMaster {
     }
 
     /**
-     * Obtém o valor da propriedade prmTxParametro.
+     * Gets the value of the prmTxParametro property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class ParametroMaster {
     }
 
     /**
-     * Define o valor da propriedade prmTxParametro.
+     * Sets the value of the prmTxParametro property.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class ParametroMaster {
     }
 
     /**
-     * Obtém o valor da propriedade prmTxValor.
+     * Gets the value of the prmTxValor property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class ParametroMaster {
     }
 
     /**
-     * Define o valor da propriedade prmTxValor.
+     * Sets the value of the prmTxValor property.
      * 
      * @param value
      *     allowed object is

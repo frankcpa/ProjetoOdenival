@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscaPagamentoEntrega complex type.
+ * <p>Java class for buscaPagamentoEntrega complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscaPagamentoEntrega">
@@ -49,7 +49,7 @@ public class BuscaPagamentoEntrega {
     protected String etiqueta;
 
     /**
-     * Obtém o valor da propriedade usuario.
+     * Gets the value of the usuario property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade usuario.
+     * Sets the value of the usuario property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Obtém o valor da propriedade senha.
+     * Gets the value of the senha property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade senha.
+     * Sets the value of the senha property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Obtém o valor da propriedade contrato.
+     * Gets the value of the contrato property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade contrato.
+     * Sets the value of the contrato property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Obtém o valor da propriedade dataInicio.
+     * Gets the value of the dataInicio property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade dataInicio.
+     * Sets the value of the dataInicio property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Obtém o valor da propriedade dataFim.
+     * Gets the value of the dataFim property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade dataFim.
+     * Sets the value of the dataFim property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Obtém o valor da propriedade etiqueta.
+     * Gets the value of the etiqueta property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class BuscaPagamentoEntrega {
     }
 
     /**
-     * Define o valor da propriedade etiqueta.
+     * Sets the value of the etiqueta property.
      * 
      * @param value
      *     allowed object is

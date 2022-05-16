@@ -7,6 +7,7 @@ package view;
 
 import util.GerenciadorDeJanela;
 import view.empresa.frameCadastrarEmpresa;
+import view.empresa.frameManterEmpresa;
 import view.pessoa.frameCadastrarFuncionario;
 import view.pessoa.frameManterCargo;
 import view.pessoa.frameManterFuncionario;
@@ -51,6 +52,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -132,6 +134,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem3);
+
+        jMenuItem9.setText("Manter Empresa");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem9);
 
         menuBarra.add(jMenu3);
 
@@ -221,6 +231,10 @@ public class Principal extends javax.swing.JFrame {
         gerenciadorDeJanelas.abrirJanelas(frameManterVeiculo.getInstancia());
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameManterEmpresa.getInstancia());
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +286,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBarra;
     private javax.swing.JMenu sistema;
     // End of variables declaration//GEN-END:variables
