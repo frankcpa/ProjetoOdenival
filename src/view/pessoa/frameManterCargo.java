@@ -603,35 +603,23 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoGerarRelatorioMouseExited
 
     private void botaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioActionPerformed
-        if (this.cargoRepository == null) {
-            this.cargoRepository = new CargoRepository();
-        }
-        Collection<CargoModel> listaDeCargos = this.cargoRepository.buscarTodos();
         JasperPrint jasperPrint = null;
-        String path = "cargos2.jrxml";
+        String path = "resources/jasperreports/cargos.jrxml";
+        String connection = "jdbc:mysql://localhost:3306/projetoodenival";
         
-        System.out.println(new File(path).getAbsolutePath());
-        
-        InputStream employeeReportStream;
         try {
+            InputStream employeeReportStream;
             employeeReportStream = new FileInputStream(new File(path).getPath());
-            
+            Connection conn = DriverManager.getConnection(connection, "root", "");
             JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
-            JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(listaDeCargos);
-            
-            Map params = new HashMap();
-            
-            params.put("ds", ds);
-            jasperPrint = JasperFillManager.fillReport(jasperReport, params, ds);
-
+            jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
             Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception er) {
-            System.out.println(er.getMessage());
         }
-        System.out.println("Aqui: " + new JRBeanCollectionDataSource(listaDeCargos));
         JasperViewer view = new JasperViewer(jasperPrint, false);
         view.setVisible(true);
     }//GEN-LAST:event_botaoGerarRelatorioActionPerformed
