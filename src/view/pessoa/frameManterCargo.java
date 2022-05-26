@@ -10,33 +10,20 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import model.CargoModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 import repository.CargoRepository;
-import util.Conexao;
-import util.HibernateUtil;
 
 /**
  *
@@ -603,23 +590,20 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoGerarRelatorioMouseExited
 
     private void botaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioActionPerformed
+        List<CargoModel> listaCargos = cargoRepository.buscarPorNome("chefão");
         JasperPrint jasperPrint = null;
-        String path = "resources/jasperreports/cargos.jrxml";
-        String connection = "jdbc:mysql://localhost:3306/projetoodenival";
+        String path = "resources/jasperreports/cargos2.jrxml";
         
         try {
             InputStream employeeReportStream;
             employeeReportStream = new FileInputStream(new File(path).getPath());
-            Connection conn = DriverManager.getConnection(connection, "root", "");
             JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
-            jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-        } catch (SQLException ex) {
-            Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (JRException ex) {
+            JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(listaCargos);
+            jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds);
+        } catch (FileNotFoundException | JRException ex) {
             Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         JasperViewer view = new JasperViewer(jasperPrint, false);
         view.setVisible(true);
     }//GEN-LAST:event_botaoGerarRelatorioActionPerformed

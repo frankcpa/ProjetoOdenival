@@ -43,9 +43,10 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/projetoodenival</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/projetoodenival?useSSL=false</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.connection.password">root123</property>
     <mapping class="model.localidade.PaisModel"/>
     <mapping class="model.localidade.EstadoModel"/>
     <mapping class="model.localidade.CidadeModel"/>
@@ -55,5 +56,7 @@ Contributor(s):
     <mapping class="model.AduanaModel"/>
     <mapping class="model.VolumeModel"/>
     <mapping class="model.VeiculoModel"/>
+    <mapping class="model.crt.EncomendaModel"/>
+    <mapping class="model.crt.EncomendaxVolumeModel"/>
   </session-factory>
 </hibernate-configuration>

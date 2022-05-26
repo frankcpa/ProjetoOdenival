@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for pesquisarParametrosPorDescricao complex type.
+ * <p>Classe Java de pesquisarParametrosPorDescricao complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="pesquisarParametrosPorDescricao">
@@ -34,7 +34,7 @@ public class PesquisarParametrosPorDescricao {
     protected String prefix;
 
     /**
-     * Gets the value of the prefix property.
+     * Obtém o valor da propriedade prefix.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class PesquisarParametrosPorDescricao {
     }
 
     /**
-     * Sets the value of the prefix property.
+     * Define o valor da propriedade prefix.
      * 
      * @param value
      *     allowed object is

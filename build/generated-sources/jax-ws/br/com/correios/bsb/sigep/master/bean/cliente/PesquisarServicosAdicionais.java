@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for pesquisarServicosAdicionais complex type.
+ * <p>Classe Java de pesquisarServicosAdicionais complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="pesquisarServicosAdicionais">
@@ -34,7 +34,7 @@ public class PesquisarServicosAdicionais {
     protected String codigo;
 
     /**
-     * Gets the value of the codigo property.
+     * Obtém o valor da propriedade codigo.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class PesquisarServicosAdicionais {
     }
 
     /**
-     * Sets the value of the codigo property.
+     * Define o valor da propriedade codigo.
      * 
      * @param value
      *     allowed object is

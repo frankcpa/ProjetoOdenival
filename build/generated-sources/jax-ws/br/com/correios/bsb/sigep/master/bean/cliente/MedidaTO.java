@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for medidaTO complex type.
+ * <p>Classe Java de medidaTO complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="medidaTO">
@@ -38,7 +38,7 @@ public class MedidaTO {
     protected BigDecimal minimo;
 
     /**
-     * Gets the value of the maximo property.
+     * Obtém o valor da propriedade maximo.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class MedidaTO {
     }
 
     /**
-     * Sets the value of the maximo property.
+     * Define o valor da propriedade maximo.
      * 
      * @param value
      *     allowed object is
@@ -62,7 +62,7 @@ public class MedidaTO {
     }
 
     /**
-     * Gets the value of the minimo property.
+     * Obtém o valor da propriedade minimo.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class MedidaTO {
     }
 
     /**
-     * Sets the value of the minimo property.
+     * Define o valor da propriedade minimo.
      * 
      * @param value
      *     allowed object is

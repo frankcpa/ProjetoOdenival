@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for verificaModalTransporte complex type.
+ * <p>Classe Java de verificaModalTransporte complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="verificaModalTransporte">
@@ -46,7 +46,7 @@ public class VerificaModalTransporte {
     protected String senha;
 
     /**
-     * Gets the value of the codigoServico property.
+     * Obtém o valor da propriedade codigoServico.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Sets the value of the codigoServico property.
+     * Define o valor da propriedade codigoServico.
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Gets the value of the cepOrigem property.
+     * Obtém o valor da propriedade cepOrigem.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Sets the value of the cepOrigem property.
+     * Define o valor da propriedade cepOrigem.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Gets the value of the cepDestino property.
+     * Obtém o valor da propriedade cepDestino.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Sets the value of the cepDestino property.
+     * Define o valor da propriedade cepDestino.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Gets the value of the usuario property.
+     * Obtém o valor da propriedade usuario.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Sets the value of the usuario property.
+     * Define o valor da propriedade usuario.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Gets the value of the senha property.
+     * Obtém o valor da propriedade senha.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class VerificaModalTransporte {
     }
 
     /**
-     * Sets the value of the senha property.
+     * Define o valor da propriedade senha.
      * 
      * @param value
      *     allowed object is

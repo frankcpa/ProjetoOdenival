@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for servicoAdicionalTO complex type.
+ * <p>Classe Java de servicoAdicionalTO complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="servicoAdicionalTO">
@@ -43,7 +43,7 @@ public class ServicoAdicionalTO {
     protected String tipo;
 
     /**
-     * Gets the value of the categoria property.
+     * Obtém o valor da propriedade categoria.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Sets the value of the categoria property.
+     * Define o valor da propriedade categoria.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Gets the value of the codigo property.
+     * Obtém o valor da propriedade codigo.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Sets the value of the codigo property.
+     * Define o valor da propriedade codigo.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Gets the value of the sigla property.
+     * Obtém o valor da propriedade sigla.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Sets the value of the sigla property.
+     * Define o valor da propriedade sigla.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Gets the value of the tipo property.
+     * Obtém o valor da propriedade tipo.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class ServicoAdicionalTO {
     }
 
     /**
-     * Sets the value of the tipo property.
+     * Define o valor da propriedade tipo.
      * 
      * @param value
      *     allowed object is
