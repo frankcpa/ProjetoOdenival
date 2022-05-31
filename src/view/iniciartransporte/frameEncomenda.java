@@ -5,31 +5,15 @@
  */
 package view.iniciartransporte;
 
-import view.pessoa.*;
 import java.awt.Color;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.CargoModel;
 import model.EmpresaModel;
 import model.VolumeModel;
 import model.crt.EncomendaModel;
 import model.crt.EncomendaxVolumeModel;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.view.JasperViewer;
-import repository.CargoRepository;
 import repository.EmpresaRepository;
 import repository.EncomendaRepository;
 import repository.EncomendaxVolumeRepository;
@@ -62,6 +46,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         populaComboBoxRemetente(null);
         populaComboBoxDestinatario(null);
         populaComboBoxVolumes();
+        btnFinalizarEncomenda.setVisible(false);
     }
 
     /**
@@ -122,11 +107,10 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         txtDescricao = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
         btnRelacionar = new javax.swing.JButton();
-        botaoCadastrarCargo = new javax.swing.JButton();
+        btnFinalizarEncomenda = new javax.swing.JButton();
         botaoEditarRegistro = new javax.swing.JButton();
         botaoRemoverRegistro = new javax.swing.JButton();
         botaoCancelarEdicao = new javax.swing.JButton();
-        botaoGerarRelatorio = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -431,24 +415,24 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        botaoCadastrarCargo.setBackground(new java.awt.Color(0, 51, 51));
-        botaoCadastrarCargo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botaoCadastrarCargo.setForeground(new java.awt.Color(255, 255, 255));
-        botaoCadastrarCargo.setText("Salvar");
-        botaoCadastrarCargo.setBorder(null);
-        botaoCadastrarCargo.setBorderPainted(false);
-        botaoCadastrarCargo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        botaoCadastrarCargo.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnFinalizarEncomenda.setBackground(new java.awt.Color(0, 51, 51));
+        btnFinalizarEncomenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFinalizarEncomenda.setForeground(new java.awt.Color(255, 255, 255));
+        btnFinalizarEncomenda.setText("Finalizar Encomenda");
+        btnFinalizarEncomenda.setBorder(null);
+        btnFinalizarEncomenda.setBorderPainted(false);
+        btnFinalizarEncomenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnFinalizarEncomenda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botaoCadastrarCargoMouseEntered(evt);
+                btnFinalizarEncomendaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botaoCadastrarCargoMouseExited(evt);
+                btnFinalizarEncomendaMouseExited(evt);
             }
         });
-        botaoCadastrarCargo.addActionListener(new java.awt.event.ActionListener() {
+        btnFinalizarEncomenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarCargoActionPerformed(evt);
+                btnFinalizarEncomendaActionPerformed(evt);
             }
         });
 
@@ -513,26 +497,6 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
             }
         });
 
-        botaoGerarRelatorio.setBackground(new java.awt.Color(0, 51, 51));
-        botaoGerarRelatorio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botaoGerarRelatorio.setForeground(new java.awt.Color(255, 255, 255));
-        botaoGerarRelatorio.setText("Gerar Relatório");
-        botaoGerarRelatorio.setBorderPainted(false);
-        botaoGerarRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        botaoGerarRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botaoGerarRelatorioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botaoGerarRelatorioMouseExited(evt);
-            }
-        });
-        botaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoGerarRelatorioActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -543,11 +507,10 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoCadastrarCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
                     .addComponent(botaoRemoverRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                    .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoGerarRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
+                    .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,16 +522,14 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
                         .addGap(35, 35, 35))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(botaoCadastrarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoEditarRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoRemoverRegistro)
-                        .addGap(27, 27, 27)
-                        .addComponent(botaoGerarRelatorio)
-                        .addGap(131, 131, 131))))
+                        .addGap(116, 116, 116))))
         );
 
         pack();
@@ -672,50 +633,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         }
         jtableVolumesRelacionados.setModel(model);
     }
-
-    private void botaoCadastrarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCargoActionPerformed
-       /* if (!txtNomeCargo.getText().equals("") && !txtDescricaoCargo.getText().equals("")) {
-            CargoModel cargo = new CargoModel();
-            cargo.setNome(txtNomeCargo.getText());
-            cargo.setDescricao(txtDescricaoCargo.getText());
-            if (!txtIdEncomenda.getText().equals("")) {
-                long idCargo;
-                idCargo = Long.parseLong(txtIdEncomenda.getText());
-                cargo.setIdCargo(idCargo);
-            }
-            if (this.empresaRepository == null) {
-                this.empresaRepository = new CargoRepository();
-            }
-
-            try {
-                if (!txtIdEncomenda.getText().equals("")) {
-                    this.empresaRepository.atualizar(cargo);
-                } else {
-                    this.empresaRepository.salvar(cargo);
-                }
-            } catch (Exception e) {
-            }
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
-            txtNomeCargo.setText("");
-            txtDescricaoCargo.setText("");
-            txtIdEncomenda.setText("");
-            botaoCancelarEdicao.setVisible(false);
-            botaoCadastrarCargo.setLabel("Salvar");
-        } else {
-            JOptionPane.showMessageDialog(null, "Informe o nome e a descrição do cargo");
-        }*/
-    }//GEN-LAST:event_botaoCadastrarCargoActionPerformed
-
-    private void botaoCadastrarCargoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarCargoMouseEntered
-        botaoCadastrarCargo.setBackground(new Color(0, 153, 0));
-        botaoCadastrarCargo.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_botaoCadastrarCargoMouseEntered
     
-    private void botaoCadastrarCargoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarCargoMouseExited
-        botaoCadastrarCargo.setBackground(new Color(0, 51, 51));
-        botaoCadastrarCargo.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_botaoCadastrarCargoMouseExited
-
     private void botaoBuscarCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarCargosActionPerformed
         populaTabelaEncomendas();
     }//GEN-LAST:event_botaoBuscarCargosActionPerformed
@@ -740,7 +658,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
             comboBoxRemetente.setEnabled(false);
             
             botaoCancelarEdicao.setVisible(true);
-            botaoCadastrarCargo.setLabel("Salvar Alteração");
+            btnFinalizarEncomenda.setVisible(true);
         }
     }//GEN-LAST:event_botaoEditarRegistroActionPerformed
 
@@ -788,7 +706,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         
         DefaultTableModel model = (DefaultTableModel) jtableVolumesRelacionados.getModel();
         model.setRowCount(0);
-        jtableVolumesRelacionados.setModel(model);
+        jtableVolumesRelacionados.setModel(model);     
         
         comboBoxDestinatario.setEnabled(true);
         comboBoxRemetente.setEnabled(true);
@@ -796,7 +714,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         comboBoxRemetente.setSelectedIndex(0);
         comboBoxVolume.setSelectedIndex(0);
         botaoCancelarEdicao.setVisible(false);
-        botaoCadastrarCargo.setLabel("Salvar");
+        btnFinalizarEncomenda.setVisible(false);
     }//GEN-LAST:event_botaoCancelarEdicaoActionPerformed
 
     private void botaoCancelarEdicaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCancelarEdicaoMouseEntered
@@ -824,7 +742,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         }
         txtIdEncomenda.setText("");
         botaoCancelarEdicao.setVisible(false);
-        botaoCadastrarCargo.setLabel("Salvar");
+        //btnFinalizarEncomenda.setLabel("Salvar");
 
         DefaultTableModel model = (DefaultTableModel) jtableVolumesRelacionados.getModel();
         model.setRowCount(0);
@@ -832,33 +750,6 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
 
         this.dispose();
     }//GEN-LAST:event_formInternalFrameClosing
-
-    private void botaoGerarRelatorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerarRelatorioMouseEntered
-
-    private void botaoGerarRelatorioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerarRelatorioMouseExited
-
-    private void botaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioActionPerformed
-        /*List<CargoModel> listaCargos = cargoRepository.buscarPorNome("chefão");
-        JasperPrint jasperPrint = null;
-        String path = "resources/jasperreports/cargos2.jrxml";
-        
-        try {
-            InputStream employeeReportStream;
-            employeeReportStream = new FileInputStream(new File(path).getPath());
-            JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
-            JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(listaCargos);
-            jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds);
-        } catch (FileNotFoundException | JRException ex) {
-            Logger.getLogger(frameEncomenda.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        JasperViewer view = new JasperViewer(jasperPrint, false);
-        view.setVisible(true);*/
-    }//GEN-LAST:event_botaoGerarRelatorioActionPerformed
 
     private void btnRelacionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelacionarActionPerformed
         if (!txtDescricao.getText().equals("") && !txtPeso.getText().equals("")) {
@@ -920,7 +811,7 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
             encomendaModel = null;
             encomendaxVolumeModel = null;
             botaoCancelarEdicao.setVisible(false);
-            botaoCadastrarCargo.setLabel("Salvar");
+            //btnFinalizarEncomenda.setLabel("Salvar");
             comboBoxDestinatario.setEnabled(false);
             comboBoxRemetente.setEnabled(false);
             comboBoxVolume.setSelectedIndex(0);
@@ -931,14 +822,53 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnRelacionarActionPerformed
 
+    private void btnFinalizarEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarEncomendaActionPerformed
+        if (this.encomendaRepository == null) {
+            this.encomendaRepository = new EncomendaRepository();
+        }
+        if (this.encomendaxVolumeRepository == null) {
+            this.encomendaxVolumeRepository = new EncomendaxVolumeRepository();
+        }
+        EncomendaModel encomendaModel = new EncomendaModel();
+        encomendaModel = encomendaRepository.buscarPorId(Long.parseLong(txtIdEncomenda.getText()));
+        List<EncomendaxVolumeModel> listaDeEncomendasxVlolumes = encomendaxVolumeRepository.buscarPorEncomenda(encomendaModel.getIdEncomenda());
+        EncomendaxVolumeModel encomendaxVolume = new EncomendaxVolumeModel();
+        
+        for(int i = 0; i < listaDeEncomendasxVlolumes.size(); i++){
+            encomendaxVolume = listaDeEncomendasxVlolumes.get(i);
+            encomendaxVolume.setFinalizada(true);
+            encomendaxVolumeRepository.atualizar(encomendaxVolume);
+        }
+        
+        encomendaModel.setFinalizada(true);
+        encomendaRepository.atualizar(encomendaModel);
+        
+        DefaultTableModel model = (DefaultTableModel) jtableEncomendas.getModel();
+        model.setRowCount(0);
+        jtableEncomendas.setModel(model);
+        
+        btnFinalizarEncomenda.setVisible(false);
+        botaoCancelarEdicaoActionPerformed(evt);
+        encomendaModel = null;
+    }//GEN-LAST:event_btnFinalizarEncomendaActionPerformed
+
+    private void btnFinalizarEncomendaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinalizarEncomendaMouseExited
+        btnFinalizarEncomenda.setBackground(new Color(0, 51, 51));
+        btnFinalizarEncomenda.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnFinalizarEncomendaMouseExited
+
+    private void btnFinalizarEncomendaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinalizarEncomendaMouseEntered
+        btnFinalizarEncomenda.setBackground(new Color(0, 153, 0));
+        btnFinalizarEncomenda.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_btnFinalizarEncomendaMouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoBuscarCargos;
-    private javax.swing.JButton botaoCadastrarCargo;
     private javax.swing.JButton botaoCancelarEdicao;
     private javax.swing.JButton botaoEditarRegistro;
-    private javax.swing.JButton botaoGerarRelatorio;
     private javax.swing.JButton botaoRemoverRegistro;
+    private javax.swing.JButton btnFinalizarEncomenda;
     private javax.swing.JButton btnRelacionar;
     private javax.swing.JComboBox<String> comboBoxDestinatario;
     private javax.swing.JComboBox<String> comboBoxRemetente;

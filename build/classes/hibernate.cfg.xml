@@ -58,5 +58,7 @@ Contributor(s):
     <mapping class="model.VeiculoModel"/>
     <mapping class="model.crt.EncomendaModel"/>
     <mapping class="model.crt.EncomendaxVolumeModel"/>
+    <mapping class="model.crt.FreteModel"/>
+    <mapping class="model.crt.FretexEncomendaModel"/>
   </session-factory>
 </hibernate-configuration>

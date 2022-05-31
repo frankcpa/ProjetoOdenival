@@ -30,7 +30,7 @@ public class EncomendaxVolumeRepository extends Conexao {
     public List<EncomendaxVolumeModel> buscarTodos() {
         List<EncomendaxVolumeModel> listaDeEncomendaxVolume = new ArrayList<>();
         super.inicializa();
-        listaDeEncomendaxVolume = super.getSess().createQuery("from EncomendaxVolumeModel").list();
+        listaDeEncomendaxVolume = super.getSess().createQuery("from EncomendaxVolumeModel where finalizada = false").list();
         super.executar();
         return listaDeEncomendaxVolume;
     }
@@ -46,7 +46,7 @@ public class EncomendaxVolumeRepository extends Conexao {
      public List<EncomendaxVolumeModel> buscarPorEncomenda(Long idEncomenda) {
         List<EncomendaxVolumeModel> listaDeEncomendaxVolume = new ArrayList<>();
         super.inicializa();
-        listaDeEncomendaxVolume = super.getSess().createQuery("from EncomendaxVolumeModel where idEncomenda = "+idEncomenda+"").list();
+        listaDeEncomendaxVolume = super.getSess().createQuery("from EncomendaxVolumeModel where idEncomenda = "+idEncomenda+" and finalizada = false").list();
         super.executar();
         return listaDeEncomendaxVolume;
     }

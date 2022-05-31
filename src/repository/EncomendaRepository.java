@@ -31,7 +31,7 @@ public class EncomendaRepository extends Conexao {
     public List<EncomendaModel> buscarTodos() {
         List<EncomendaModel> listaDeEncomendas = new ArrayList<>();
         super.inicializa();
-        listaDeEncomendas = super.getSess().createQuery("from EncomendaModel").list();
+        listaDeEncomendas = super.getSess().createQuery("from EncomendaModel where finalizada = false").list();
         super.executar();
         return listaDeEncomendas;
     }
