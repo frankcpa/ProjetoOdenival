@@ -8,6 +8,7 @@ package view.iniciartransporte;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.EmpresaModel;
@@ -34,7 +35,8 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
     public static frameEncomenda getInstancia() {
         if (frameEncomenda == null) {
             frameEncomenda = new frameEncomenda();
-        }
+        };
+        frameEncomenda = new frameEncomenda();
         return frameEncomenda;
     }
 
@@ -240,11 +242,29 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
             }
         });
 
+        comboBoxDestinatario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxDestinatarioFocusGained(evt);
+            }
+        });
+
         jLabel10.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel10.setText("Destinatário");
 
         jLabel12.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel12.setText("Descrição");
+
+        comboBoxVolume.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxVolumeFocusGained(evt);
+            }
+        });
+
+        comboBoxRemetente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxRemetenteFocusGained(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel13.setText("Remetente");
@@ -861,6 +881,18 @@ public class frameEncomenda extends javax.swing.JInternalFrame {
         btnFinalizarEncomenda.setBackground(new Color(0, 153, 0));
         btnFinalizarEncomenda.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnFinalizarEncomendaMouseEntered
+
+    private void comboBoxRemetenteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxRemetenteFocusGained
+        populaComboBoxRemetente(null);
+    }//GEN-LAST:event_comboBoxRemetenteFocusGained
+
+    private void comboBoxDestinatarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxDestinatarioFocusGained
+        populaComboBoxDestinatario(null);
+    }//GEN-LAST:event_comboBoxDestinatarioFocusGained
+
+    private void comboBoxVolumeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxVolumeFocusGained
+        populaComboBoxVolumes();
+    }//GEN-LAST:event_comboBoxVolumeFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

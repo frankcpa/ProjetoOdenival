@@ -46,6 +46,8 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         //((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         botaoCancelarEdicao.setVisible(false);
         txtIdCargo.setVisible(false);
+        botaoGerarRelatorio.setVisible(false);
+        populaTabelaCargos(null);
     }
 
     /**
@@ -590,7 +592,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoGerarRelatorioMouseExited
 
     private void botaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelatorioActionPerformed
-        List<CargoModel> listaCargos = cargoRepository.buscarPorNome("chefão");
+        List<CargoModel> listaCargos = cargoRepository.buscarTodos();
         JasperPrint jasperPrint = null;
         String path = "resources/jasperreports/cargos2.jrxml";
         

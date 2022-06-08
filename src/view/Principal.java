@@ -188,7 +188,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu7.setText("Iniciar Transporte");
 
-        jMenuItem10.setText("Passo 1 - Criar Encomenas - Relacionar remetente, destinatário e produtos");
+        jMenuItem10.setText("Passo 1 - Criar Encomendas - Relacionar remetente, destinatário e produtos");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);

@@ -140,8 +140,8 @@ public interface AtendeCliente {
      * @param codMaoPropria
      * @return
      *     returns java.lang.String
-     * @throws AutenticacaoException
      * @throws Exception_Exception
+     * @throws AutenticacaoException
      * @throws SigepClienteException
      */
     @WebMethod
@@ -207,9 +207,9 @@ public interface AtendeCliente {
      * @param idPlp
      * @return
      *     returns java.lang.Boolean
+     * @throws Exception_Exception
      * @throws AutenticacaoException
      * @throws SigepClienteException
-     * @throws Exception_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -642,8 +642,8 @@ public interface AtendeCliente {
      * @return
      *     returns br.com.correios.bsb.sigep.master.bean.cliente.ValePostal
      * @throws AutenticacaoException
-     * @throws SigepClienteException
      * @throws Exception_Exception
+     * @throws SigepClienteException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -990,9 +990,9 @@ public interface AtendeCliente {
      * @param dataInicio
      * @return
      *     returns java.lang.String
+     * @throws ErroMontagemRelatorio_Exception
      * @throws AutenticacaoException
      * @throws SigepClienteException
-     * @throws ErroMontagemRelatorio_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")

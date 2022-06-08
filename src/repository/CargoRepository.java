@@ -9,6 +9,8 @@ import util.Conexao;
 import java.util.ArrayList;
 import java.util.List;
 import model.CargoModel;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 
 
 public class CargoRepository extends Conexao {
@@ -41,6 +43,15 @@ public class CargoRepository extends Conexao {
         listaDeCargos = super.getSess().createQuery("from CargoModel where nome like '%"+nome+"%'").list();
         super.executar();
         return listaDeCargos;
+    }
+    
+    public long BuscaCargoId(String nome) {
+        CargoModel cargo = new CargoModel();
+        super.inicializa();
+        Criteria criteria = super.getSess().createCriteria(CargoModel.class);
+        cargo = (CargoModel) criteria.add(Restrictions.eq("nome", nome)).uniqueResult();
+        super.executar();
+        return cargo.getIdCargo();
     }
 
     public void excluir(CargoModel cargo) {

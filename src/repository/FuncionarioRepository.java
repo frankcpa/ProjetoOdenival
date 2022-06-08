@@ -12,6 +12,7 @@ import model.FuncionarioModel;
 
 
 public class FuncionarioRepository extends Conexao {
+    private CargoRepository cargoRepository = null;
 
     public void salvar(FuncionarioModel funcionarioModel) {
         super.inicializa();
@@ -31,6 +32,21 @@ public class FuncionarioRepository extends Conexao {
         List<FuncionarioModel> listaDeFuncionarioModel = new ArrayList<>();
         super.inicializa();
         listaDeFuncionarioModel = super.getSess().createQuery("from FuncionarioModel").list();
+        super.executar();
+        return listaDeFuncionarioModel;
+    }
+    
+    // TODO: Criar uma maneira de buscar o cargo de motorista
+    public List<FuncionarioModel> buscarTodosMotorista() {
+        if (this.cargoRepository == null) {
+            this.cargoRepository = new CargoRepository();
+        }
+        
+        List<FuncionarioModel> listaDeFuncionarioModel = new ArrayList<>();
+        long idMotorista = this.cargoRepository.BuscaCargoId("Motorista");
+        
+        super.inicializa();
+        listaDeFuncionarioModel = super.getSess().createQuery("from FuncionarioModel where idCargo = " + idMotorista).list();
         super.executar();
         return listaDeFuncionarioModel;
     }

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.FuncionarioModel;
@@ -258,11 +259,29 @@ public class frameFrete extends javax.swing.JInternalFrame {
             }
         });
 
+        comboBoxVeiculo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxVeiculoFocusGained(evt);
+            }
+        });
+
         jLabel10.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel10.setText("Veículo");
 
         jLabel12.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel12.setText("Observação");
+
+        comboBoxEncomenda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxEncomendaFocusGained(evt);
+            }
+        });
+
+        comboBoxMotorista.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboBoxMotoristaFocusGained(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel13.setText("Motorista");
@@ -574,7 +593,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
         if (this.funcionarioRepository == null) {
             this.funcionarioRepository = new FuncionarioRepository();
         }
-        List<FuncionarioModel> listaDeFuncionarios = this.funcionarioRepository.buscarTodos();
+        List<FuncionarioModel> listaDeFuncionarios = this.funcionarioRepository.buscarTodosMotorista();
         Object objs[] = new Object[listaDeFuncionarios.size()];
         frameFrete.ComboItem item;
         int itemSelecionado = 0;
@@ -708,20 +727,20 @@ public class frameFrete extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoEditarRegistroActionPerformed
 
     private void botaoRemoverRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverRegistroActionPerformed
-       /* int linhaSelecionada = jtableFrete.getSelectedRow();
+        int linhaSelecionada = jtableFrete.getSelectedRow();;;
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(null, "Selecione um registro");
         } else {
-            long idEncomenda = (long) jtableFrete.getValueAt(linhaSelecionada, 0);
+            long idFrete = (long) jtableFrete.getValueAt(linhaSelecionada, 0);
             int retorno = JOptionPane.showConfirmDialog(null, "Gostaria realmente de excluir o registro selecionado?", "Alerta", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (retorno == 0) {
                 DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
-                EncomendaModel encomenda = this.encomendaRepository.buscarPorId(idEncomenda);
-                this.encomendaRepository.excluir(encomenda);
+                FreteModel frete = this.freteRepository.buscarPorId(idFrete);
+                this.freteRepository.excluir(frete);
                 dtm.removeRow(jtableFrete.getSelectedRow());
                 jtableFrete.setModel(dtm);
             }
-        }*/
+        }
     }//GEN-LAST:event_botaoRemoverRegistroActionPerformed
 
     private void botaoEditarRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoEditarRegistroMouseEntered
@@ -801,7 +820,6 @@ public class frameFrete extends javax.swing.JInternalFrame {
         DefaultTableModel model = (DefaultTableModel) jtableEncomendasRelacionadas.getModel();
         model.setRowCount(0);
         jtableEncomendasRelacionadas.setModel(model);
-
         this.dispose();
     }//GEN-LAST:event_formInternalFrameClosing
 
@@ -934,6 +952,18 @@ public class frameFrete extends javax.swing.JInternalFrame {
         botaoCancelarEdicaoActionPerformed(evt);
         freteModel = null;
     }//GEN-LAST:event_btnFinalizarEncomendaActionPerformed
+
+    private void comboBoxMotoristaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxMotoristaFocusGained
+        populaComboBoxMotorista(null);
+    }//GEN-LAST:event_comboBoxMotoristaFocusGained
+
+    private void comboBoxVeiculoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxVeiculoFocusGained
+        populaComboBoxVeiculo(null);
+    }//GEN-LAST:event_comboBoxVeiculoFocusGained
+
+    private void comboBoxEncomendaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboBoxEncomendaFocusGained
+        populaComboBoxEncomendas();
+    }//GEN-LAST:event_comboBoxEncomendaFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
