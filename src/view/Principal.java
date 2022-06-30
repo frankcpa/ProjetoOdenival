@@ -5,10 +5,26 @@
  */
 package view;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.CargoModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
 import util.GerenciadorDeJanela;
 import view.empresa.frameCadastrarEmpresa;
 import view.empresa.frameManterEmpresa;
 import view.iniciartransporte.frameEncomenda;
+import view.iniciartransporte.frameFinalizar;
 import view.iniciartransporte.frameFrete;
 import view.pessoa.frameCadastrarFuncionario;
 import view.pessoa.frameManterCargo;
@@ -64,6 +80,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -204,6 +221,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem11);
 
+        jMenuItem12.setText("Passo 3 - Gerar MIC/CRT");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem12);
+
         menuBarra.add(jMenu7);
 
         setJMenuBar(menuBarra);
@@ -268,6 +293,10 @@ public class Principal extends javax.swing.JFrame {
         gerenciadorDeJanelas.abrirJanelas(frameFrete.getInstancia());
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        gerenciadorDeJanelas.abrirJanelas(frameFinalizar.getInstancia());
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,6 +344,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

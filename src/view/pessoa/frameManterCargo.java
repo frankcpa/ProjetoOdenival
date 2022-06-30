@@ -88,8 +88,8 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Cadastro de Funcionário");
-        setToolTipText("Cadastro de Funcionário");
+        setTitle("Manter Cargo");
+        setToolTipText("Manter Cargo");
         setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setPreferredSize(new java.awt.Dimension(1024, 768));

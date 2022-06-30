@@ -36,7 +36,6 @@ public class FuncionarioRepository extends Conexao {
         return listaDeFuncionarioModel;
     }
     
-    // TODO: Criar uma maneira de buscar o cargo de motorista
     public List<FuncionarioModel> buscarTodosMotorista() {
         if (this.cargoRepository == null) {
             this.cargoRepository = new CargoRepository();
@@ -44,6 +43,7 @@ public class FuncionarioRepository extends Conexao {
         
         List<FuncionarioModel> listaDeFuncionarioModel = new ArrayList<>();
         long idMotorista = this.cargoRepository.BuscaCargoId("Motorista");
+        cargoRepository.fecharConexao();
         
         super.inicializa();
         listaDeFuncionarioModel = super.getSess().createQuery("from FuncionarioModel where idCargo = " + idMotorista).list();

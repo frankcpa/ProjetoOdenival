@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee3e25ed-ed08-4a99-9774-940f05bc7fd9">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</background>
+	<title>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<rectangle>
+				<reportElement x="0" y="-8" width="551" height="810" uuid="8538c193-6e7c-4bf2-83ad-a4bbc3c2e043"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="106" y="100" width="101" height="8" uuid="2198bc08-e661-4f6a-b31f-de7621b25661">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Nombre y domicilio del destinatario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="100" width="104" height="8" uuid="91a5e9b1-d346-4cd0-9031-42ec8a62d96b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4 - Nome e endereço do destinatário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="-6" width="352" height="44" uuid="18c44db4-cf6e-4c53-89a6-b90640252c02"/>
+				<textElement>
+					<font size="5.5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[O transporte realizado ao amparo deste Conhecimento Internacional de Transporte Rodoviário está sujeito ás disposições do
+Convênio sobre o contrato de Transportes e a Responsabilidade Civil do Transportador no transporte Terrestre Internacional
+de Mercadorias, ás quais anulam toda estipulação contrária às mesmas em prejuízo do remetente ou consignatário.
+El transporte realizado bajo esta Carta de Porte Internacional está sujeto a las disposiciones del convenio sobre el contrato
+del Transporte y las Responsabilidad Civil del Portador en el Transporte Terrestre Internacional de Mercancías, las cuales
+anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e del consignatario.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="550" height="1" uuid="4bf69ee1-cf38-420e-bade-9a6c97ce41d9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="161" width="274" height="1" uuid="51797976-6de2-4259-ac4f-849953ae7c9d"/>
+			</line>
+			<line>
+				<reportElement x="274" y="41" width="1" height="240" uuid="d37733e9-617f-4a72-bce3-4f61759c6a1d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="277" y="41" width="35" height="12" uuid="eff3e2c6-de7b-442c-9776-a5ef5db37434"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 - Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="41" width="27" height="11" uuid="106ad85b-34a1-4052-ba35-54f3bc92ffa8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Numero]]></text>
+			</staticText>
+			<line>
+				<reportElement x="275" y="77" width="275" height="1" uuid="79674fa5-7522-4daf-9512-68af9ea4d7fa"/>
+			</line>
+			<line>
+				<reportElement x="0" y="100" width="274" height="1" uuid="f28238fd-304f-4e39-8889-f4b70c15fa26">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="372" y="153" width="77" height="8" uuid="e14100f2-53f1-4d8d-93d2-f3718142b5a5"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Lugar y Pais de emission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="153" width="99" height="8" uuid="2eaa7828-1efc-464e-bde1-cfbaf96eec7f"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[5 - Localidade e Pais de Emissão]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="221" width="551" height="1" uuid="33633995-5ec7-46fc-8460-4c8ec81d0c3f"/>
+			</line>
+			<staticText>
+				<reportElement x="277" y="185" width="254" height="10" uuid="f27ad236-e78f-44a5-9f26-257b1a66b9cf">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[7 - Localidade, País e data em que o transportador se responsabiliza pela mercadoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="190" width="220" height="8" uuid="0803cab4-ed50-4b59-884e-b7a6177c4a9b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Lugar, Pais y Fecha en el porteador se hace cargo de las mercancias]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="281" width="551" height="1" uuid="944608d4-1bf8-4864-b542-f7795fce2294"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="221" width="42" height="8" uuid="882bdfd9-e652-4454-ac73-c7ea1f02b7b9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[9 - Notificar a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="221" width="33" height="8" uuid="a4422c13-5190-4c53-8fde-6e59cdfeeac4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Notificar a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="221" width="93" height="8" uuid="9cdb1f90-4bff-4861-95b4-1f826463c13d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Lugar, Pais y prazo de entrega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="221" width="112" height="8" uuid="e243784a-bc78-48f4-8c6d-c214d6c84a13">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[8 - Localidade, País e prazo de entrega]]></text>
+			</staticText>
+			<line>
+				<reportElement x="274" y="250" width="277" height="1" uuid="a565d707-3cac-4a10-b11f-d111d2fbf923"/>
+			</line>
+			<staticText>
+				<reportElement x="277" y="250" width="98" height="8" uuid="b471ba39-b6e0-4686-9069-f7bc69a75cd9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[10 - Transportadores Sucessivos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="250" width="70" height="8" uuid="faa54c3a-9a80-45cf-a4cd-04b8b724913f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Porteadores sucessivos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="43" width="102" height="10" uuid="4db930f6-7e50-4c1b-88b1-55231954fafa">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 - Nome e endereço do remetente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="293" width="52" height="8" uuid="95b6ebb1-d542-4c76-9c04-8a9b6e3ba18a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Peso bruto em kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="285" width="69" height="8" uuid="1fa0c7dd-820b-4ff1-bdcb-daa21645e2bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12 - Peso bruto em kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="715" width="269" height="16" uuid="e552193a-05ef-4512-afb1-100ec29dd897"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[As mercadorias consignadas neste Conhecimento de Transporte foram recebidas pelo
+transportador aparentemente em bom estado, sob as condições gerais que figuram no verso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="731" width="269" height="16" uuid="589b4891-6d3d-4e87-95c1-f73775ea1f71"/>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Las mercancias consignadas en esta Carta de Porte fueron recibidas por el porteador
+aparentemente en buen estado, bajo das condiciones generales que figuran al dorso]]></text>
+			</staticText>
+			<line>
+				<reportElement x="275" y="450" width="1" height="352" uuid="60444b2d-1bd5-4872-95f8-b3660f7ad59c"/>
+			</line>
+			<staticText>
+				<reportElement x="279" y="451" width="121" height="8" uuid="15c7fc9c-bed6-4463-bb20-7685d1133330">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[16 - Declaração do valor das mercadorias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="451" width="110" height="8" uuid="caf64f66-8870-4067-b3bf-9647f778b76c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Declaracion del valor de las mercancias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="747" width="210" height="8" uuid="068e56ee-8e30-4cb6-b2fc-b4754ab93199">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[23 - Nome, assinatura e carimbo do transportador ou seu representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="755" width="146" height="8" uuid="d86e953e-45b4-4345-affe-e5e743859b1d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Nombre, firma y sello del porteador o su representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="747" width="182" height="8" uuid="1b755dee-ffca-4711-9c00-6e255ff3249d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[24 - Nome e assinatura do destinatario ou seu representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="755" width="139" height="8" uuid="27c18ccb-89fc-477b-82bf-86e8c5ac8878">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Nombre y firma del destinatario o su representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="790" width="23" height="11" uuid="31284348-eaa5-4d81-af82-1a53e19fc19e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="790" width="28" height="10" uuid="7116ca01-cbd4-49c1-8fef-4eb6d3e6bafa">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="790" width="28" height="10" uuid="8088c794-a43e-4585-841d-604d6630bcfd">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="790" width="23" height="11" uuid="4e1f016d-1c4c-4f7d-aca7-8c7847e78c94">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="2" y="-6" width="45" height="45" uuid="839d10e9-cb08-47f4-9cc9-69ecf7ab041d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="8" y="5" width="33" height="22" uuid="eb3474cc-e7c1-49a9-ada7-c3da08159cbc"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[CRT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="-7" width="127" height="25" uuid="2db89037-175a-4edf-a1af-f47470e9c1ec"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Carta de Porte Internacional por Carreta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="18" width="127" height="25" uuid="28a59a23-092e-4fd8-9224-abb5502dc336"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Conhecimento de Transporte
+Internacional por Rodovia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="43" width="102" height="10" uuid="3957adcf-2a3f-4f9b-83a0-83838287d439">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[/ Nombre y domicilio del remitente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="161" width="102" height="8" uuid="991812c8-304b-4ac8-9e1e-ccabcf500419">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Nombre y domicilio del consignatario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="161" width="112" height="8" uuid="bc64bb94-27ae-48df-ae39-3928addc7426">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[6 - Nome e endereço do consignatário]]></text>
+			</staticText>
+			<line>
+				<reportElement x="274" y="150" width="277" height="1" uuid="a3aa15ce-5e13-4249-b865-2a92c155681d"/>
+			</line>
+			<line>
+				<reportElement x="274" y="184" width="277" height="1" uuid="50062dc4-6181-4756-87a4-bed788b2315b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="460" y="282" width="1" height="168" uuid="62b9faf0-3786-4f80-8066-3e0ece158d59"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="293" width="262" height="8" uuid="e387ffa3-e1c4-4d30-a413-a620c4dad28f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Cantidad y classe de bultos, marcas y números, tipo de mercadorias, contenedores y accessorios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="285" width="297" height="8" uuid="beff97c7-da27-4d16-95cb-786c74b1fa4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[11 - Quantidade e categoria de bolumes, marcas e números, tipo de mercadorias, contênieres e peças]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="360" width="52" height="8" uuid="ca5bd46b-c8d6-476c-9113-ea4c3229b2bc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Volumen en m. cu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="352" width="69" height="8" uuid="907b541e-affd-44ac-b382-6f509c8fbdab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[13 - Volume em m. cu]]></text>
+			</staticText>
+			<line>
+				<reportElement x="460" y="351" width="91" height="1" uuid="c0ccb68b-bd94-4512-8af0-8841c19f0626"/>
+			</line>
+			<staticText>
+				<reportElement x="462" y="385" width="28" height="8" uuid="c4a326ef-1405-4e1b-b8af-55391ac4a2e9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[14 - Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="393" width="20" height="8" uuid="e5518fe0-9185-41ba-8332-1518cd128c2d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Valor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="460" y="384" width="91" height="1" uuid="d57d15e9-4462-4fa3-af46-0f7d175aceca"/>
+			</line>
+			<staticText>
+				<reportElement x="520" y="385" width="20" height="15" uuid="228abbef-6312-4645-96b0-33d15df5a434">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="422" width="28" height="8" uuid="eda8c4ce-8773-4415-9e0a-b56e8ca819df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moeda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="422" width="30" height="8" uuid="7ffac510-a289-49c2-aaf3-1daab77514be">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Moneda]]></text>
+			</staticText>
+			<line>
+				<reportElement x="460" y="421" width="91" height="1" uuid="9aee8490-f7dc-4f50-8fad-f907f8a89707"/>
+			</line>
+			<line>
+				<reportElement x="0" y="450" width="551" height="1" uuid="26c92f28-da8f-42dd-9408-659426c31a2c"/>
+			</line>
+			<staticText>
+				<reportElement x="279" y="480" width="71" height="8" uuid="56eeca59-1fdc-4860-bfd0-c7c54b7c58f5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[17 - Documentos anexos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="480" width="110" height="8" uuid="253cd5ea-0d7b-4508-bfa3-34770c405ebb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Declaracion del valor de las mercancias]]></text>
+			</staticText>
+			<line>
+				<reportElement x="276" y="480" width="275" height="1" uuid="7a1fe931-6652-4367-8bfb-9b980b23cb41"/>
+			</line>
+			<staticText>
+				<reportElement x="416" y="550" width="120" height="8" uuid="ed77dbc8-7cad-4337-be8f-572f4534e6e5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Instruciones sobre formalidade de aduana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="550" width="141" height="8" uuid="4cc1eec9-a450-4bae-911d-30a21e033ea0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[18 - Instrução sobre formalidades de alfândega]]></text>
+			</staticText>
+			<line>
+				<reportElement x="276" y="550" width="275" height="1" uuid="2efcb51a-f8c6-4602-9753-e0d1cbb4088b"/>
+			</line>
+			<line>
+				<reportElement x="276" y="620" width="275" height="1" uuid="c399a8fe-1cad-43e9-a735-b0f2a6018ea3"/>
+			</line>
+			<staticText>
+				<reportElement x="279" y="620" width="96" height="8" uuid="3030f156-4908-4ced-a227-2d70407595f0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[22 - Declarações e observações]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="620" width="90" height="8" uuid="0042a76d-1ed5-4e0d-86a9-92dbcb39ab1d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Declaraciones y observaciones]]></text>
+			</staticText>
+			<line>
+				<reportElement x="276" y="746" width="275" height="1" uuid="f0b94851-67e1-4576-8a44-cce241671e30"/>
+			</line>
+			<line>
+				<reportElement x="0" y="746" width="275" height="1" uuid="d0abadc0-3786-4117-82b6-a1eb40c8e1ab"/>
+			</line>
+			<line>
+				<reportElement x="0" y="714" width="275" height="1" uuid="9a73625e-7406-49fd-9f48-8a9e75d6f22c"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="450" width="56" height="8" uuid="eb942844-7f11-4f55-b4ea-55800284328d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[15 - Gastos a pagar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="459" width="45" height="8" uuid="dc7c635e-b386-4c06-a285-f530c53ee59e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Gastos a pagar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="458" width="45" height="8" uuid="9e6a6a67-af32-412c-9f5d-16e9d2510cdf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Monto remitente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="450" width="56" height="8" uuid="c10ac673-fd97-440e-b35a-e4ced4f0200e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Remetente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="458" width="30" height="8" uuid="cf0f6f36-e202-4946-9ba3-57e2a52b330d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Moneda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="450" width="28" height="8" uuid="b2b2646e-aa5f-4a95-92ba-693e5cf4b709">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moeda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="458" width="56" height="8" uuid="322e4820-be53-4d9f-9db4-ae5645fe8398">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Monto destinatario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="450" width="56" height="8" uuid="6ff2d2c9-dba5-4009-9f6d-7193729f74ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor destinatário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="451" width="28" height="8" uuid="f238bb22-4d01-4c47-b868-f383d85fe1a7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moeda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="459" width="30" height="8" uuid="e96d6f41-ca21-4c18-95f2-7411229b4ee5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Moneda]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="590" width="275" height="1" uuid="bd1814a6-1a38-4b7b-a538-9e9090144819"/>
+			</line>
+			<line>
+				<reportElement x="0" y="600" width="275" height="1" uuid="72ae66d3-0d04-4c25-a0da-3509efa99e31"/>
+			</line>
+			<staticText>
+				<reportElement x="49" y="592" width="33" height="17" uuid="a4701ae3-4e49-4860-b44f-e3ae0477c746">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="73" y="450" width="1" height="151" uuid="91f5dc4d-e190-4468-b111-b1e0ca01ec2a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="134" y="451" width="1" height="149" uuid="5a786d89-c1aa-497d-8e7d-46b1289a3100"/>
+			</line>
+			<line>
+				<reportElement x="170" y="451" width="1" height="149" uuid="dbe095fd-b814-4ec8-95e9-45e2316aaa02"/>
+			</line>
+			<line>
+				<reportElement x="238" y="451" width="1" height="149" uuid="ce736d3b-ada9-4829-b079-93f901f087f9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="82" y="600" width="110" height="8" uuid="13684fa9-46ae-495d-81e1-f52c670092bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[\ Monto del flete externo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="600" width="78" height="8" uuid="6c5309e4-c8fe-4be0-bdc6-d8c1efad38ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[19 - Valor do frete externo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="622" width="110" height="8" uuid="9a9f29f1-c1da-4746-a7f5-4765f67b7baf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[\ Monto de reembolso contra entrega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="622" width="130" height="8" uuid="e4d70852-a86a-439e-8ff9-86af57bfeabb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[20 - Valor de reembolso contra entrega]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="622" width="275" height="1" uuid="b86141ae-7d15-4b31-875b-5a325fecc634"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="660" width="174" height="8" uuid="463fd6ec-11cf-406c-a20a-e9235a5931d1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[21 - Nome e assinatura do remetente ou seu representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="668" width="136" height="8" uuid="46ecc4e0-55eb-4905-8177-0bf089bfafe7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Nombre y firma de remitente o su representante]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="660" width="275" height="1" uuid="e699caa0-1eba-4895-8642-82a499f19618"/>
+			</line>
+		</band>
+	</title>
+</jasperReport>

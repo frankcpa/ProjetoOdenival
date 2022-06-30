@@ -137,8 +137,8 @@ public class frameFrete extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Cadastro de Encomenda");
-        setToolTipText("Cadastro de Encomenda");
+        setTitle("Cadastro de Frete");
+        setToolTipText("Cadastro de Frete");
         setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -597,7 +597,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
         Object objs[] = new Object[listaDeFuncionarios.size()];
         frameFrete.ComboItem item;
         int itemSelecionado = 0;
-        //objs[0] = new ComboItem("0", "Selecione");
+        
         for (int i = 0; i < listaDeFuncionarios.size(); i++) {
             item = new ComboItem("" + listaDeFuncionarios.get(i).getIdPessoa(), listaDeFuncionarios.get(i).getNome());
             objs[i] = item;
