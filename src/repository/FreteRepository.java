@@ -9,6 +9,7 @@ import util.Conexao;
 import java.util.ArrayList;
 import java.util.List;
 import model.crt.FreteModel;
+import model.crt.FretexEncomendaModel;
 
 
 public class FreteRepository extends Conexao {
@@ -23,6 +24,8 @@ public class FreteRepository extends Conexao {
         FreteModel frete;
         super.inicializa();
         frete = (FreteModel) super.getSess().get(FreteModel.class, id);
+        frete.setListaDeEncomendas(super.getSess().createQuery("from FretexEncomendaModel where idFrete = "+id).list());
+        frete.getListaDeEncomendas().get(0).getEncomenda().setListaDeVolumes(super.getSess().createQuery("from EncomendaxVolumeModel where idEncomenda = "+frete.getListaDeEncomendas().get(0).getEncomenda().getIdEncomenda()).list());
         super.executar();
         return frete;
     }
@@ -31,6 +34,14 @@ public class FreteRepository extends Conexao {
         List<FreteModel> listaDeFretes = new ArrayList<>();
         super.inicializa();
         listaDeFretes = super.getSess().createQuery("from FreteModel where finalizada = false").list();
+        super.executar();
+        return listaDeFretes;
+    }
+    
+    public List<FreteModel> buscarTodosFinalizada() {
+        List<FreteModel> listaDeFretes = new ArrayList<>();
+        super.inicializa();
+        listaDeFretes = super.getSess().createQuery("from FreteModel where finalizada = true").list();
         super.executar();
         return listaDeFretes;
     }

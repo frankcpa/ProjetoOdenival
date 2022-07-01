@@ -46,6 +46,7 @@ public class EncomendaModel implements Serializable {
     private EmpresaModel destinatario;
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Fetch(FetchMode.JOIN)
     private List<EncomendaxVolumeModel> listaDeVolumes;
     
     @Column(columnDefinition = "boolean default false")

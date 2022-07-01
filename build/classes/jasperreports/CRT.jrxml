@@ -43,7 +43,8 @@ Convênio sobre o contrato de Transportes e a Responsabilidade Civil do Transpor
 de Mercadorias, ás quais anulam toda estipulação contrária às mesmas em prejuízo do remetente ou consignatário.
 El transporte realizado bajo esta Carta de Porte Internacional está sujeto a las disposiciones del convenio sobre el contrato
 del Transporte y las Responsabilidad Civil del Portador en el Transporte Terrestre Internacional de Mercancías, las cuales
-anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e del consignatario.]]></text>
+anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e del consignatario.
+]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="40" width="550" height="1" uuid="4bf69ee1-cf38-420e-bade-9a6c97ce41d9"/>
@@ -743,6 +744,25 @@ Internacional por Rodovia]]></text>
 			<line>
 				<reportElement x="0" y="660" width="275" height="1" uuid="e699caa0-1eba-4895-8642-82a499f19618"/>
 			</line>
+			<textField>
+				<reportElement x="48" y="790" width="86" height="12" uuid="f3742379-1a7a-4f51-ab15-dec891874983"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="789" width="86" height="12" uuid="3f79eef1-7059-48b9-b2a5-b33997826e05"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="430" width="90" height="20" uuid="2209e532-1f89-4c04-8dac-4a6f545f1662"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Reais]]></text>
+			</staticText>
 		</band>
 	</title>
 </jasperReport>

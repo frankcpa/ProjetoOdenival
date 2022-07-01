@@ -24,6 +24,7 @@ public class EncomendaRepository extends Conexao {
         EncomendaModel encomenda;
         super.inicializa();
         encomenda = (EncomendaModel) super.getSess().get(EncomendaModel.class, id);
+        encomenda.setListaDeVolumes(super.getSess().createQuery("from EncomendaxVolumeModel where idEncomenda = "+id).list());
         super.executar();
         return encomenda;
     }

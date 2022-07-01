@@ -4,6 +4,21 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.nomeFantasia" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.ruaAvenida" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.numero" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.cep" class="java.lang.Long"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.nomeFantasia" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.ruaAvenida" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.numero" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.cep" class="java.lang.Long"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.estado.pais.paisNome" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.estado.estadoSigla" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.cidadeNome" class="java.lang.String"/>
+	<field name="previsaoSaida" class="java.util.Date"/>
 	<background>
 		<band splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
@@ -43,7 +58,8 @@ Convênio sobre o contrato de Transportes e a Responsabilidade Civil do Transpor
 de Mercadorias, ás quais anulam toda estipulação contrária às mesmas em prejuízo do remetente ou consignatário.
 El transporte realizado bajo esta Carta de Porte Internacional está sujeto a las disposiciones del convenio sobre el contrato
 del Transporte y las Responsabilidad Civil del Portador en el Transporte Terrestre Internacional de Mercancías, las cuales
-anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e del consignatario.]]></text>
+anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e del consignatario.
+]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="40" width="550" height="1" uuid="4bf69ee1-cf38-420e-bade-9a6c97ce41d9"/>
@@ -95,7 +111,9 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[5 - Localidade e Pais de Emissão]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="221" width="551" height="1" uuid="33633995-5ec7-46fc-8460-4c8ec81d0c3f"/>
+				<reportElement x="0" y="227" width="551" height="1" uuid="33633995-5ec7-46fc-8460-4c8ec81d0c3f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 			</line>
 			<staticText>
 				<reportElement x="277" y="185" width="254" height="10" uuid="f27ad236-e78f-44a5-9f26-257b1a66b9cf">
@@ -120,9 +138,8 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<reportElement x="0" y="281" width="551" height="1" uuid="944608d4-1bf8-4864-b542-f7795fce2294"/>
 			</line>
 			<staticText>
-				<reportElement x="3" y="221" width="42" height="8" uuid="882bdfd9-e652-4454-ac73-c7ea1f02b7b9">
+				<reportElement x="3" y="227" width="42" height="8" uuid="882bdfd9-e652-4454-ac73-c7ea1f02b7b9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="6" isBold="true"/>
@@ -130,7 +147,7 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[9 - Notificar a]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="45" y="221" width="33" height="8" uuid="a4422c13-5190-4c53-8fde-6e59cdfeeac4">
+				<reportElement x="45" y="227" width="33" height="8" uuid="a4422c13-5190-4c53-8fde-6e59cdfeeac4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -140,8 +157,9 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[/ Notificar a]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="389" y="221" width="93" height="8" uuid="9cdb1f90-4bff-4861-95b4-1f826463c13d">
+				<reportElement x="389" y="227" width="93" height="8" uuid="9cdb1f90-4bff-4861-95b4-1f826463c13d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="6"/>
@@ -149,8 +167,9 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[/ Lugar, Pais y prazo de entrega]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="277" y="221" width="112" height="8" uuid="e243784a-bc78-48f4-8c6d-c214d6c84a13">
+				<reportElement x="277" y="227" width="112" height="8" uuid="e243784a-bc78-48f4-8c6d-c214d6c84a13">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="6" isBold="true"/>
@@ -158,10 +177,10 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[8 - Localidade, País e prazo de entrega]]></text>
 			</staticText>
 			<line>
-				<reportElement x="274" y="250" width="277" height="1" uuid="a565d707-3cac-4a10-b11f-d111d2fbf923"/>
+				<reportElement x="274" y="260" width="277" height="1" uuid="a565d707-3cac-4a10-b11f-d111d2fbf923"/>
 			</line>
 			<staticText>
-				<reportElement x="277" y="250" width="98" height="8" uuid="b471ba39-b6e0-4686-9069-f7bc69a75cd9">
+				<reportElement x="277" y="260" width="98" height="8" uuid="b471ba39-b6e0-4686-9069-f7bc69a75cd9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -170,8 +189,9 @@ anulan toda estipulación que se aparte de ellas, en perjuicio del remitente e d
 				<text><![CDATA[10 - Transportadores Sucessivos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="372" y="250" width="70" height="8" uuid="faa54c3a-9a80-45cf-a4cd-04b8b724913f">
+				<reportElement x="372" y="260" width="70" height="8" uuid="faa54c3a-9a80-45cf-a4cd-04b8b724913f">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="6"/>
@@ -743,6 +763,98 @@ Internacional por Rodovia]]></text>
 			<line>
 				<reportElement x="0" y="660" width="275" height="1" uuid="e699caa0-1eba-4895-8642-82a499f19618"/>
 			</line>
+			<textField>
+				<reportElement x="48" y="790" width="86" height="12" uuid="f3742379-1a7a-4f51-ab15-dec891874983"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="789" width="86" height="12" uuid="3f79eef1-7059-48b9-b2a5-b33997826e05"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="430" width="90" height="20" uuid="2209e532-1f89-4c04-8dac-4a6f545f1662"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Reais]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="108" width="270" height="48" uuid="fb286a0b-f316-41a3-890d-5ef7b8342d42"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}+"\n"+
+$F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.destinatario.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.destinatario.cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="53" width="267" height="42" uuid="d0403e1d-4abe-44d4-bd6e-1b1a112b11ad"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.nomeFantasia}+"\n"+
+$F{listaDeEncomendas[0].encomenda.remetente.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.remetente.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.remetente.cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="173" width="270" height="48" uuid="a79daf44-7e0a-4276-8e62-e09e4bfdc363"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}+"\n"+
+$F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.destinatario.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.destinatario.cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="241" width="266" height="40" uuid="a7c458eb-c93d-4c49-9fee-11c7a3f8fadc"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}+"\n"+
+$F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.destinatario.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.destinatario.cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="700" width="86" height="12" uuid="c9822f2a-7324-48f3-a537-f24593a970b8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="700" width="28" height="10" uuid="80316b5b-e07e-480e-a6e9-3bf8e060f8e7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[/ Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="700" width="23" height="11" uuid="62a470c9-cbbd-43ed-ad09-e045a3a7858c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="676" width="174" height="24" uuid="064950af-c0bc-423d-b23e-7234c9a36f46"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.nomeFantasia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="763" width="179" height="26" uuid="ea06849e-3260-4523-b6ec-81b3e4655d6c"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="380" y="78" width="118" height="72" uuid="f28b100b-257a-4399-bb96-9d05aacdf47b"/>
+				<imageExpression><![CDATA["resources/jasperreports/logo2.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="280" y="166" width="254" height="18" uuid="47ede472-6d46-449b-a6ba-a2997bfd7d8f"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="195" width="255" height="31" uuid="5c304769-2b7f-4d47-8253-3368ed2f5cdb"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}+"\n"+new SimpleDateFormat("dd/MM/yyyy").format($F{previsaoSaida})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="768" width="100" height="16" uuid="6c00cf2d-5ac3-48f0-b55f-7fe94a72c7ac"/>
+				<text><![CDATA[SAP - Transportes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="235" width="267" height="26" uuid="7d2e91b3-f908-4a2e-93e9-1e390a68ded3"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 </jasperReport>

@@ -6,6 +6,7 @@
 package model.crt;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -49,7 +50,8 @@ public class FreteModel implements Serializable {
     @JoinColumn(name = "idVeiculo", insertable = true, updatable = true)
     private VeiculoModel veiculo;
     
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Fetch(FetchMode.JOIN)
     private List<FretexEncomendaModel> listaDeEncomendas;
     
     @Column(columnDefinition = "boolean default false")
@@ -115,7 +117,6 @@ public class FreteModel implements Serializable {
     public void setPrevisaoSaida(Date previsaoSaida) {
         this.previsaoSaida = previsaoSaida;
     }
-    
     
 }
 

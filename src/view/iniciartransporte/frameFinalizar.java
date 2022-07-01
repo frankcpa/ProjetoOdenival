@@ -6,10 +6,18 @@
 package view.iniciartransporte;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -21,12 +29,21 @@ import model.VeiculoModel;
 import model.crt.EncomendaModel;
 import model.crt.FreteModel;
 import model.crt.FretexEncomendaModel;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
 import repository.EmpresaRepository;
 import repository.EncomendaRepository;
 import repository.FreteRepository;
 import repository.FretexEncomendaRepository;
 import repository.FuncionarioRepository;
 import repository.VeiculoRepository;
+import view.pessoa.frameManterCargo;
 
 /**
  *
@@ -338,7 +355,7 @@ public class frameFinalizar extends javax.swing.JInternalFrame {
         }
         DefaultTableModel model = (DefaultTableModel) jtableFrete.getModel();
         model.setRowCount(0);
-        List<FreteModel> listaDeFretes = this.freteRepository.buscarTodos();
+        List<FreteModel> listaDeFretes = this.freteRepository.buscarTodosFinalizada();
         for (int i = 0; i < listaDeFretes.size(); i++) {
             model.addRow(new Object[]{
                 listaDeFretes.get(i).getIdFrete(),
@@ -352,30 +369,55 @@ public class frameFinalizar extends javax.swing.JInternalFrame {
         
     private void botaoGerarMICDTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarMICDTAActionPerformed
         int linhaSelecionada = jtableFrete.getSelectedRow();
+        List<FreteModel> freteList = new ArrayList<>();
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(null, "Selecione um registro");
         } else {
             long idFrete = (long) jtableFrete.getValueAt(linhaSelecionada, 0);
             DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
             FreteModel freteModel = this.freteRepository.buscarPorId(idFrete);
-            //EncomendaModel encomendaModel = this.encomendaRepository.buscarPorId(freteModel.getid)
+            freteList.add(freteModel);
+            JasperPrint jasperPrint = null;
+            String path = "resources/jasperreports/MIC-DTA.jrxml";
+            try {
+                InputStream employeeReportStream;
+                employeeReportStream = new FileInputStream(new File(path).getPath());
+                JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
+                JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(freteList);
+                jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds);
+            } catch (FileNotFoundException | JRException ex) {
+                Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            JasperViewer view = new JasperViewer(jasperPrint, false);
+            view.setVisible(true);
         }
     }//GEN-LAST:event_botaoGerarMICDTAActionPerformed
 
     private void btnGerarCRTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarCRTActionPerformed
-        int linhaSelecionada = jtableFrete.getSelectedRow();;;
+        int linhaSelecionada = jtableFrete.getSelectedRow();
+        List<FreteModel> freteList = new ArrayList<>();
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(null, "Selecione um registro");
         } else {
             long idFrete = (long) jtableFrete.getValueAt(linhaSelecionada, 0);
-            int retorno = JOptionPane.showConfirmDialog(null, "Gostaria realmente de excluir o registro selecionado?", "Alerta", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-            if (retorno == 0) {
-                DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
-                FreteModel frete = this.freteRepository.buscarPorId(idFrete);
-                this.freteRepository.excluir(frete);
-                dtm.removeRow(jtableFrete.getSelectedRow());
-                jtableFrete.setModel(dtm);
+            DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
+            FreteModel freteModel = this.freteRepository.buscarPorId(idFrete);
+            freteList.add(freteModel);
+            JasperPrint jasperPrint = null;
+            String path = "resources/jasperreports/CRT.jrxml";
+            try {
+                InputStream employeeReportStream;
+                employeeReportStream = new FileInputStream(new File(path).getPath());
+                JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
+                JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(freteList);
+                jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds);
+            } catch (FileNotFoundException | JRException ex) {
+                Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+            JasperViewer view = new JasperViewer(jasperPrint, false);
+            view.setVisible(true);
         }
     }//GEN-LAST:event_btnGerarCRTActionPerformed
 

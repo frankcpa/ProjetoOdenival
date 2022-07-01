@@ -271,6 +271,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel12.setText("Observação");
 
+        comboBoxEncomenda.setMaximumSize(new java.awt.Dimension(28, 20));
         comboBoxEncomenda.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 comboBoxEncomendaFocusGained(evt);
@@ -557,12 +558,12 @@ public class frameFrete extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                    .addComponent(botaoRemoverRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                    .addComponent(botaoEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                    .addComponent(botaoRemoverRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                     .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -579,7 +580,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
                         .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
                         .addComponent(botaoEditarRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botaoRemoverRegistro)
@@ -875,8 +876,19 @@ public class frameFrete extends javax.swing.JInternalFrame {
             }
 
             FretexEncomendaModel fretexEncomendaModel = new FretexEncomendaModel();
-            fretexEncomendaModel.setValorFrete(Float.parseFloat(txtValorFrete.getText()));
-            fretexEncomendaModel.setValorReembolso(Float.parseFloat(txtValorReembolso.getText()));
+            
+            if(txtValorFrete.getText().equals("")){
+                fretexEncomendaModel.setValorFrete(0);
+            }else {
+                fretexEncomendaModel.setValorFrete(Float.parseFloat(txtValorFrete.getText()));
+            }
+            
+            if(txtValorReembolso.getText().equals("")){
+                fretexEncomendaModel.setValorReembolso(0);
+            }else {
+                fretexEncomendaModel.setValorReembolso(Float.parseFloat(txtValorReembolso.getText()));
+            }
+            
             fretexEncomendaModel.setFinalizada(false);
 
             item = (ComboItem) comboBoxEncomenda.getSelectedItem();
@@ -896,6 +908,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
             freteModel = null;
             fretexEncomendaModel = null;
             botaoCancelarEdicao.setVisible(false);
+            btnFinalizarEncomenda.setVisible(true);
             comboBoxVeiculo.setEnabled(false);
             comboBoxMotorista.setEnabled(false);
             txtData.setEnabled(false);
