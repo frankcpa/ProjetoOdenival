@@ -56,6 +56,9 @@ public class FreteModel implements Serializable {
     
     @Column(columnDefinition = "boolean default false")
     private boolean finalizada;
+    
+    @Column(columnDefinition = "boolean default false")
+    private boolean ehExcluido;
 
     private String observacao;
     
@@ -116,6 +119,14 @@ public class FreteModel implements Serializable {
 
     public void setPrevisaoSaida(Date previsaoSaida) {
         this.previsaoSaida = previsaoSaida;
+    }
+    
+    public boolean isEhExcluido() {
+        return finalizada;
+    }
+
+    public void setEhExcluido(boolean ehExcluido) {
+        this.ehExcluido = ehExcluido;
     }
     
 }

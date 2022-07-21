@@ -19,6 +19,16 @@
 	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.estado.estadoSigla" class="java.lang.String"/>
 	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.cidadeNome" class="java.lang.String"/>
 	<field name="previsaoSaida" class="java.util.Date"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[0].descricaoProduto" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[1].descricaoProduto" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[2].descricaoProduto" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[3].descricaoProduto" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[4].descricaoProduto" class="java.lang.String"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[0].pesototal" class="java.lang.Float"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[1].pesototal" class="java.lang.Float"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[2].pesototal" class="java.lang.Float"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[3].pesototal" class="java.lang.Float"/>
+	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[4].pesototal" class="java.lang.Float"/>
 	<background>
 		<band splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
@@ -854,6 +864,56 @@ $F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncome
 			<textField>
 				<reportElement x="279" y="235" width="267" height="26" uuid="7d2e91b3-f908-4a2e-93e9-1e390a68ded3"/>
 				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" / "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="301" width="444" height="11" uuid="42086373-9e73-4fe9-979e-79929823c80d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[0].descricaoProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="312" width="444" height="11" uuid="f1c7b798-199f-46d2-bbce-faa25849ddd2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[1].descricaoProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="323" width="444" height="11" uuid="4086b23c-e4e4-4682-922c-17208909e6fc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[2].descricaoProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="334" width="444" height="11" uuid="4759b876-bce9-4e38-85ce-ca4179898209">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[3].descricaoProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="345" width="444" height="11" uuid="e95f3109-ff06-4c5f-8fc5-f9c21241851c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[4].descricaoProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="310" width="68" height="30" uuid="f3bc8dfa-0d89-4a7a-b965-b623cf2cbc8b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[0].pesototal} + $F{listaDeEncomendas[0].encomenda.listaDeVolumes[1].pesototal} + $F{listaDeEncomendas[0].encomenda.listaDeVolumes[2].pesototal} + $F{listaDeEncomendas[0].encomenda.listaDeVolumes[3].pesototal} + $F{listaDeEncomendas[0].encomenda.listaDeVolumes[4].pesototal} + " Kg"]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

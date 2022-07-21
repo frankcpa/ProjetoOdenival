@@ -1,129 +1,345 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee3e25ed-ed08-4a99-9774-940f05bc7fd9">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MIC-DTA" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0619d429-de46-486f-a539-66d2f450de90">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="produtos" uuid="5188cb96-bd64-48da-a415-2c2b089f951a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+		<parameter name="idFrete" class="java.lang.Long"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT 
+	* 
+FROM projetoodenival.encomendaxVolume 
+	INNER JOIN projetoodenival.fretexEncomenda
+		ON projetoodenival.fretexEncomenda.`idFrete` = $P{idFrete}
+	INNER JOIN projetoodenival.encomenda ON
+		projetoodenival.encomendaxVolume.`idEncomenda` = projetoodenival.fretexEncomenda.`idEncomenda`
+	WHERE projetoodenival.encomendaxVolume.`idEncomenda` = projetoodenival.encomenda.`idEncomenda`]]>
+		</queryString>
+		<field name="descricaoProduto" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descricaoProduto"/>
+			<property name="com.jaspersoft.studio.field.label" value="descricaoProduto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="encomendaxVolume"/>
+		</field>
+		<group name="descricaoProduto">
+			<groupExpression><![CDATA[$F{descricaoProduto}]]></groupExpression>
+		</group>
+	</subDataset>
 	<parameter name="idFrete" class="java.lang.Long"/>
-	<queryString language="SQL">
-		<![CDATA[select * from frete]]>
+	<queryString>
+		<![CDATA[SELECT projetoodenival.frete.`idFrete`,
+projetoodenival.frete.`previsaoSaida`,
+	projetoodenival.frete.observacao,
+	projetoodenival.pessoas.nome,
+	funcionarioPais.`paisSigla` as "funcionario.pais",
+	funcionarioEstado.`estadoNome` as "funcionario.estadoNome",
+	funcionarioEstado.`estadoSigla` as "funcionario.estadoSigla",
+	funcionarioCidade.`cidadeNome` as "funcionario.cidadeNome",
+	projetoodenival.veiculo.`anoFabricacao`,
+	projetoodenival.veiculo.`anoModelo`,
+	projetoodenival.veiculo.marca,
+	projetoodenival.veiculo.modelo,
+	projetoodenival.veiculo.`pesoMax`,
+	projetoodenival.veiculo.`placaCarreta`,
+	projetoodenival.veiculo.`placaCavalo`,
+	projetoodenival.veiculo.tracao,
+	remetente.`nomeFantasia` AS "remetenteNomeFantasia",
+	remetente.`ruaAvenida` AS "remetenteRua",
+	remetente.numero AS "remetenteNumero",
+	remetente.cep AS "remetenteCEP",
+	remetenteCidade.cidadeNome AS "remetenteCidade",
+	remetenteEstado.estadoSigla AS "remetenteEstado",
+	remetentePais.paisNome AS "remetentePais",
+	destinatario.`nomeFantasia` AS "destinatarioNomeFantasia",
+	destinatario.`ruaAvenida` AS "destinatarioRua",
+	destinatario.numero AS "destinatarioNumero",
+	destinatario.cep AS "destinatarioCEP",
+	destinatarioCidade.cidadeNome AS "destinatarioCidade",
+	destinatarioEstado.estadoSigla AS "destinatarioEstado",
+	destinatarioPais.paisNome AS "destinatarioPais",
+	encomendaxVolume.descricaoProduto
+FROM projetoodenival.frete
+	INNER JOIN projetoodenival.funcionario ON 
+	 projetoodenival.frete.`idMotorista` = projetoodenival.funcionario.`idPessoa` 
+	INNER JOIN projetoodenival.pessoas ON 
+	 projetoodenival.funcionario.`idPessoa` = projetoodenival.pessoas.`idPessoa` 
+	INNER JOIN projetoodenival.cidades AS funcionarioCidade ON 
+	 projetoodenival.pessoas.`idCidade` = funcionarioCidade.`idCidade` 
+	INNER JOIN projetoodenival.estados AS funcionarioEstado ON 
+	 funcionarioCidade.`idEstado` = funcionarioEstado.`idEstado` 
+	INNER JOIN projetoodenival.pais AS funcionarioPais ON 
+	 funcionarioEstado.`idPais` = funcionarioPais.`idPais` 
+	INNER JOIN projetoodenival.veiculo ON 
+	 projetoodenival.frete.`idVeiculo` = projetoodenival.veiculo.`idVeiculo`
+	INNER JOIN projetoodenival.fretexEncomenda ON
+	 projetoodenival.frete.`idFrete` = projetoodenival.fretexEncomenda.`idFrete`
+	INNER JOIN projetoodenival.encomenda ON
+	 projetoodenival.fretexEncomenda.`idEncomenda` = projetoodenival.encomenda.`idEncomenda`
+	INNER JOIN projetoodenival.empresa AS remetente ON
+	 projetoodenival.encomenda.`idRemetente` = remetente.`idEmpresa`
+	INNER JOIN projetoodenival.cidades AS remetenteCidade ON 
+	 projetoodenival.pessoas.`idCidade` = remetenteCidade.`idCidade` 
+	INNER JOIN projetoodenival.estados AS remetenteEstado ON 
+	 funcionarioCidade.`idEstado` = remetenteEstado.`idEstado` 
+	INNER JOIN projetoodenival.pais AS remetentePais ON 
+	 funcionarioEstado.`idPais` = remetentePais.`idPais` 
+	INNER JOIN projetoodenival.empresa AS destinatario ON
+	 projetoodenival.encomenda.`idDestinatario` = destinatario.`idEmpresa`
+	INNER JOIN projetoodenival.cidades AS destinatarioCidade ON 
+	 projetoodenival.pessoas.`idCidade` = destinatarioCidade.`idCidade` 
+	INNER JOIN projetoodenival.estados AS destinatarioEstado ON 
+	 funcionarioCidade.`idEstado` = destinatarioEstado.`idEstado` 
+	INNER JOIN projetoodenival.pais AS destinatarioPais ON 
+	 funcionarioEstado.`idPais` = destinatarioPais.`idPais`
+	INNER JOIN projetoodenival.encomendaxVolume
+	 ON projetoodenival.encomendaxVolume.`idEncomenda` = projetoodenival.encomenda.`idEncomenda`
+WHERE projetoodenival.frete.`idFrete` = $P{idFrete}]]>
 	</queryString>
-	<field name="idFrete" class="java.lang.Long"/>
-	<field name="veiculo.marca" class="java.lang.String"/>
-	<field name="veiculo.placaCarreta" class="java.lang.String"/>
-	<field name="veiculo.modelo" class="java.lang.String"/>
-	<field name="veiculo.anoFabricacao" class="java.lang.Integer"/>
-	<field name="veiculo.anoModelo" class="java.lang.Integer"/>
-	<field name="veiculo.pesoMax" class="java.lang.Float"/>
-	<field name="motorista.nome" class="java.lang.String"/>
-	<field name="motorista.cidade.estado.pais.paisNome" class="java.lang.String"/>
-	<field name="motorista.cidade.estado.estadoSigla" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].valorFrete" class="java.lang.Float"/>
-	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes" class="java.util.List"/>
-	<field name="listaDeEncomendas[0].encomenda.listaDeVolumes[0].descricaoProduto" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.nomeFantasia" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.ruaAvenida" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.cep" class="java.lang.Long"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.numero" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.nomeFantasia" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.ruaAvenida" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.numero" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.cep" class="java.lang.Long"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.estado.pais.paisNome" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.estado.estadoSigla" class="java.lang.String"/>
-	<field name="listaDeEncomendas[0].encomenda.destinatario.cidade.cidadeNome" class="java.lang.String"/>
+	<field name="idFrete" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idFrete"/>
+		<property name="com.jaspersoft.studio.field.label" value="idFrete"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="frete"/>
+	</field>
+	<field name="previsaoSaida" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="previsaoSaida"/>
+		<property name="com.jaspersoft.studio.field.label" value="previsaoSaida"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="frete"/>
+	</field>
+	<field name="observacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="observacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="observacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="frete"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoas"/>
+	</field>
+	<field name="funcionario.pais" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paisSigla"/>
+		<property name="com.jaspersoft.studio.field.label" value="funcionario.pais"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="funcionario.estadoNome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estadoNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="funcionario.estadoNome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estados"/>
+	</field>
+	<field name="funcionario.estadoSigla" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estadoSigla"/>
+		<property name="com.jaspersoft.studio.field.label" value="funcionario.estadoSigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estados"/>
+	</field>
+	<field name="funcionario.cidadeNome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidadeNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="funcionario.cidadeNome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cidades"/>
+	</field>
+	<field name="anoFabricacao" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="anoFabricacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="anoFabricacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="anoModelo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="anoModelo"/>
+		<property name="com.jaspersoft.studio.field.label" value="anoModelo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="marca"/>
+		<property name="com.jaspersoft.studio.field.label" value="marca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="modelo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.label" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="pesoMax" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="pesoMax"/>
+		<property name="com.jaspersoft.studio.field.label" value="pesoMax"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="placaCarreta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placaCarreta"/>
+		<property name="com.jaspersoft.studio.field.label" value="placaCarreta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="placaCavalo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placaCavalo"/>
+		<property name="com.jaspersoft.studio.field.label" value="placaCavalo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="tracao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tracao"/>
+		<property name="com.jaspersoft.studio.field.label" value="tracao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="veiculo"/>
+	</field>
+	<field name="remetenteNomeFantasia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteNomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="remetenteRua" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ruaAvenida"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteRua"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="remetenteNumero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteNumero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="remetenteCEP" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cep"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteCEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="remetenteCidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidadeNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteCidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cidades"/>
+	</field>
+	<field name="remetenteEstado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estadoSigla"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetenteEstado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estados"/>
+	</field>
+	<field name="remetentePais" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paisNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="remetentePais"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="destinatarioNomeFantasia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioNomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="destinatarioRua" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ruaAvenida"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioRua"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="destinatarioNumero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioNumero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="destinatarioCEP" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cep"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioCEP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empresa"/>
+	</field>
+	<field name="destinatarioCidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidadeNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioCidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cidades"/>
+	</field>
+	<field name="destinatarioEstado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estadoSigla"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioEstado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estados"/>
+	</field>
+	<field name="destinatarioPais" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paisNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="destinatarioPais"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="descricaoProduto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descricaoProduto"/>
+		<property name="com.jaspersoft.studio.field.label" value="descricaoProduto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="encomendaxVolume"/>
+	</field>
 	<background>
-		<band splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-		</band>
+		<band splitType="Stretch"/>
 	</background>
-	<title>
+	<detail>
 		<band height="802" splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<rectangle>
-				<reportElement x="0" y="-8" width="551" height="810" uuid="8538c193-6e7c-4bf2-83ad-a4bbc3c2e043"/>
+				<reportElement x="-10" y="-10" width="551" height="810" uuid="949d94fe-89bf-47f3-8cff-3227c67038cc"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="137" y="135" width="85" height="16" uuid="2198bc08-e661-4f6a-b31f-de7621b25661"/>
+				<reportElement x="127" y="133" width="85" height="16" uuid="9cc20610-6d96-4ed9-9bba-458e78ac2705"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Rol de Contribuyente]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="135" width="135" height="16" uuid="91a5e9b1-d346-4cd0-9031-42ec8a62d96b"/>
+				<reportElement x="-7" y="133" width="135" height="16" uuid="2148c263-15f1-4703-8b7f-b1823805154e"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[2 - Cadastro Geral do Contribuinte ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="1" width="80" height="27" uuid="b8de04a1-a8cc-4d20-98b7-6a707c3d5cfa"/>
+				<reportElement x="20" y="-1" width="80" height="27" uuid="f6d009d6-43b3-4d24-825d-4f794db4c620"/>
 				<textElement>
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[MIC / DTA]]></text>
 			</staticText>
 			<rectangle radius="11">
-				<reportElement x="10" y="-1" width="120" height="29" uuid="78f57036-b1bb-4e22-955f-715d88e36bbb"/>
+				<reportElement x="0" y="-3" width="120" height="29" uuid="30245af0-c5f6-4c6e-b938-31c2b3bd9772"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="150" y="0" width="390" height="20" uuid="aeeb770d-758f-4a12-8fd2-35f96e1e6f4e"/>
+				<reportElement x="140" y="-2" width="390" height="20" uuid="1f5d049e-1518-4974-9471-6c940b5edefb"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Manifesto Internacional de Carga Rodoviária / Declaração de Trânsito Aduaneiro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="20" width="390" height="20" uuid="18c44db4-cf6e-4c53-89a6-b90640252c02"/>
+				<reportElement x="140" y="18" width="390" height="20" uuid="9b6c9d47-ccac-4d27-bdbc-9d1efe685bae"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Manifiesto Internacional de Carga por Carretera / Declaracion de Trânsito Aduaneiro]]></text>
 			</staticText>
 			<line>
-				<reportElement x="145" y="-8" width="1" height="48" uuid="132e611e-4953-4709-bce5-79532631a6d9"/>
+				<reportElement x="135" y="-10" width="1" height="48" uuid="c8266223-f038-4447-8039-deb9dcc4ca87"/>
 			</line>
 			<line>
-				<reportElement x="0" y="40" width="550" height="1" uuid="4bf69ee1-cf38-420e-bade-9a6c97ce41d9"/>
+				<reportElement x="-10" y="38" width="550" height="1" uuid="77d5fb0a-aa00-4fc0-b8eb-9b136d4c1034"/>
 			</line>
 			<line>
-				<reportElement x="274" y="105" width="276" height="1" uuid="1d799ee5-89da-4575-ac5e-c88fba5db029"/>
+				<reportElement x="264" y="103" width="276" height="1" uuid="ac415a55-0453-40ad-bf7b-d1bbd2177606"/>
 			</line>
 			<staticText>
-				<reportElement x="30" y="1" width="80" height="27" uuid="eb3474cc-e7c1-49a9-ada7-c3da08159cbc"/>
+				<reportElement x="25" y="4" width="80" height="27" uuid="ba3b2482-0e83-4200-b3d8-69d3d7e04fe5"/>
 				<textElement>
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[MIC / DTA]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="175" width="550" height="1" uuid="51797976-6de2-4259-ac4f-849953ae7c9d"/>
+				<reportElement x="-10" y="173" width="550" height="1" uuid="7b32c882-d1a4-4a51-a0cd-75ff4b35c654"/>
 			</line>
 			<line>
-				<reportElement x="274" y="41" width="1" height="549" uuid="d37733e9-617f-4a72-bce3-4f61759c6a1d">
+				<reportElement x="264" y="39" width="1" height="549" uuid="c59371b0-ea92-473a-8543-9a3754943a19">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="277" y="41" width="115" height="20" uuid="eff3e2c6-de7b-442c-9776-a5ef5db37434"/>
+				<reportElement x="267" y="39" width="115" height="20" uuid="238cf831-44f5-4928-89e7-d4cdc8774c77"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[3 - Trânsito Aduaneiro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="279" y="50" width="100" height="11" uuid="106ad85b-34a1-4052-ba35-54f3bc92ffa8"/>
+				<reportElement x="269" y="48" width="100" height="11" uuid="182f9c3c-909f-4847-9cc9-7a3505d75910"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Trânsito aduaneiro]]></text>
 			</staticText>
 			<line>
-				<reportElement x="275" y="77" width="275" height="1" uuid="79674fa5-7522-4daf-9512-68af9ea4d7fa"/>
+				<reportElement x="265" y="75" width="275" height="1" uuid="858fd213-deac-4f6c-9de5-115431f88b2d"/>
 			</line>
 			<staticText>
-				<reportElement x="304" y="62" width="17" height="16" uuid="18aa4576-b7ce-4017-b512-b7a1cf75126b">
+				<reportElement x="294" y="60" width="17" height="16" uuid="8f0b034a-8d25-4ab6-96a2-6a7d627b4d6d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -132,7 +348,7 @@
 				<text><![CDATA[Sim Si]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="354" y="62" width="17" height="16" uuid="5b22a925-ddc6-4778-bad4-3883a3a20e97">
+				<reportElement x="344" y="60" width="17" height="16" uuid="1515c14a-3d57-4084-ab54-ec745fbd250a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -141,17 +357,17 @@
 				<text><![CDATA[Não Nota]]></text>
 			</staticText>
 			<line>
-				<reportElement x="392" y="40" width="1" height="66" uuid="37bfc605-d66b-4d8e-927b-f53698b4f04e"/>
+				<reportElement x="382" y="38" width="1" height="66" uuid="5e3b8bf2-75fe-44b9-9d8e-dcdc638b0968"/>
 			</line>
 			<staticText>
-				<reportElement x="398" y="41" width="28" height="14" uuid="4c28c6ed-d03e-45d9-90c5-f8edb289715f"/>
+				<reportElement x="388" y="39" width="28" height="14" uuid="267c5a3e-d77c-4d8e-852d-5af4504a355e"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[4 - Nº]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="277" y="78" width="94" height="14" uuid="3c03fc31-9c0a-472e-825a-f3be844da4d8">
+				<reportElement x="267" y="76" width="94" height="14" uuid="4dda1722-e08d-4804-afd6-f4753757416c">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -160,7 +376,7 @@
 				<text><![CDATA[5 - Folha / Hoja]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="398" y="78" width="154" height="14" uuid="555a7241-ccca-44e8-bb6e-5536c1cf2beb">
+				<reportElement x="388" y="76" width="154" height="14" uuid="ac76e924-fb2a-4021-8623-c8b7a0d0b14b">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -169,393 +385,393 @@
 				<text><![CDATA[6 - Data de emissão / fecha de emissión]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="278" y="105" width="114" height="14" uuid="70529102-490c-4b2b-8f2d-ce0226ae48c6"/>
+				<reportElement x="268" y="103" width="114" height="14" uuid="b6ce3324-a89d-4131-a62e-5b92bec8a101"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[7 - Alfândega, cidade e pais de partida]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="389" y="105" width="125" height="14" uuid="b2409afa-3613-497d-bd32-488d59449f70"/>
+				<reportElement x="379" y="103" width="125" height="14" uuid="331f1cea-639d-4223-896c-e3778c2b8df8"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Aduana, ciudad y pais de partida]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="135" width="550" height="1" uuid="f28238fd-304f-4e39-8889-f4b70c15fa26">
+				<reportElement x="-10" y="133" width="550" height="1" uuid="8238278f-1031-414a-8e1a-7847c0993f73">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="392" y="135" width="120" height="16" uuid="e14100f2-53f1-4d8d-93d2-f3718142b5a5"/>
+				<reportElement x="382" y="133" width="120" height="16" uuid="16dd9597-88c4-4dae-bc39-3dee65a6acbc"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Cidad y pais de destino final]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="135" width="116" height="16" uuid="2eaa7828-1efc-464e-bde1-cfbaf96eec7f"/>
+				<reportElement x="266" y="133" width="116" height="16" uuid="dd132335-f1ce-4552-8045-fd7bbb49f1d3"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[8 - Cidade e pais destino final]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="5" y="175" width="230" height="16" uuid="8c357ced-dc96-4bbb-9dd7-0daa0252d71a"/>
+				<reportElement x="-5" y="173" width="230" height="16" uuid="535b5da7-ee32-4d9e-b372-9677d61c3cda"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[9 - CAMINHÃO ORIGINAL: Nome e endereço do proprietário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="15" y="185" width="220" height="16" uuid="0c3041c6-2115-4d14-8fe5-febc3cc2374f"/>
+				<reportElement x="5" y="183" width="220" height="16" uuid="692fc56f-fa86-47b5-a95c-d957dc88744c"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[CAMION ORIGINAL: Nombre y domicílio del proprietario]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="236" width="550" height="1" uuid="33633995-5ec7-46fc-8460-4c8ec81d0c3f"/>
+				<reportElement x="-10" y="234" width="550" height="1" uuid="f6ea7397-4ed7-4758-a22e-d8dd60e6aebe"/>
 			</line>
 			<staticText>
-				<reportElement x="277" y="175" width="230" height="16" uuid="f27ad236-e78f-44a5-9f26-257b1a66b9cf"/>
+				<reportElement x="267" y="173" width="230" height="16" uuid="16a73841-b1df-442c-abbf-350f458c50d1"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[16 - CAMINHÃO SUBSTITUTO: Nome e endereço do proprietário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="287" y="185" width="220" height="16" uuid="0803cab4-ed50-4b59-884e-b7a6177c4a9b"/>
+				<reportElement x="277" y="183" width="220" height="16" uuid="eeeb2f00-3ed9-4bdf-bb14-0d7986abaf4a"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[CAMION SUBSTITUTO: Nombre y domicílio del proprietario]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="306" width="550" height="1" uuid="944608d4-1bf8-4864-b542-f7795fce2294"/>
+				<reportElement x="-10" y="304" width="550" height="1" uuid="3653df59-570e-44cf-83f8-65bd2e1c8a9d"/>
 			</line>
 			<staticText>
-				<reportElement x="5" y="240" width="136" height="16" uuid="882bdfd9-e652-4454-ac73-c7ea1f02b7b9"/>
+				<reportElement x="-5" y="238" width="136" height="16" uuid="1e76e97b-6954-4f6b-991c-16e0127fb0f0"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[10 - Cadastro Geral de Contribuinte]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="15" y="250" width="126" height="16" uuid="a4422c13-5190-4c53-8fde-6e59cdfeeac4"/>
+				<reportElement x="5" y="248" width="126" height="16" uuid="1bc95435-053e-4c0d-a094-eb2b2ded9055"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Rol de contribuyentes]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="286" y="250" width="93" height="16" uuid="9cdb1f90-4bff-4861-95b4-1f826463c13d"/>
+				<reportElement x="276" y="248" width="93" height="16" uuid="983cb0b5-f68d-4d8f-ae23-aae420b2d561"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Rol de contribuyentes]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="240" width="103" height="16" uuid="e243784a-bc78-48f4-8c6d-c214d6c84a13"/>
+				<reportElement x="266" y="238" width="103" height="16" uuid="200470c4-6eb3-44d0-8221-122d651959f6"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[17 - Cadastro Geral de Contribuinte]]></text>
 			</staticText>
 			<line>
-				<reportElement x="420" y="236" width="1" height="154" uuid="a565d707-3cac-4a10-b11f-d111d2fbf923"/>
+				<reportElement x="410" y="234" width="1" height="154" uuid="3d355285-c2a0-40d9-8fd3-23d7fd7b8522"/>
 			</line>
 			<staticText>
-				<reportElement x="426" y="240" width="72" height="16" uuid="b471ba39-b6e0-4686-9069-f7bc69a75cd9"/>
+				<reportElement x="416" y="238" width="72" height="16" uuid="c497dc6c-0b44-4a95-9729-17d5f9f6ee59"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[18 - Placa do caminhão]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="436" y="250" width="62" height="16" uuid="faa54c3a-9a80-45cf-a4cd-04b8b724913f"/>
+				<reportElement x="426" y="248" width="62" height="16" uuid="2c0bc78f-a5e2-434c-8038-78810d580ab2"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Placa del camión]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="350" width="550" height="1" uuid="668b9afc-a57e-4c0f-8214-f910c0722e57"/>
+				<reportElement x="-10" y="348" width="550" height="1" uuid="4586b939-c23d-4719-86de-b8a9d53fbffc"/>
 			</line>
 			<line>
-				<reportElement x="0" y="390" width="550" height="1" uuid="71a1af36-9ee8-4ca3-a8fc-0fa32bca0210"/>
+				<reportElement x="-10" y="388" width="550" height="1" uuid="16be5ff9-5e6e-4e50-979a-2337657f4d2b"/>
 			</line>
 			<line>
-				<reportElement x="144" y="236" width="1" height="155" uuid="c9fe11e5-49ed-4a9a-ac9d-abae410413fd"/>
+				<reportElement x="134" y="234" width="1" height="155" uuid="339e1c70-1aeb-4f51-854a-1f8b232146ad"/>
 			</line>
 			<staticText>
-				<reportElement x="150" y="240" width="118" height="16" uuid="1ad268de-98de-47d9-9b34-2c53bd6be3bb"/>
+				<reportElement x="140" y="238" width="118" height="16" uuid="1bc77b91-6425-4363-897d-7bb6e8b08214"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[11 - Placa do caminhão]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="160" y="250" width="88" height="16" uuid="864e2297-ddae-4d7f-8014-e283bd89af82"/>
+				<reportElement x="150" y="248" width="88" height="16" uuid="03879907-1915-4995-94cf-8cfe44ed7036"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Placa del camión]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="82" y="306" width="126" height="16" uuid="d975f765-61d1-4d58-b87a-95892ed8a50b"/>
+				<reportElement x="72" y="304" width="126" height="16" uuid="8e477bb1-b713-421c-bf11-e22de8ebc4bc"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Marca y numero]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="306" width="100" height="16" uuid="0f66b5e6-162d-4b76-9e54-c79c74d90a5c"/>
+				<reportElement x="-8" y="304" width="100" height="16" uuid="d3b54069-04d0-41ae-b584-ece5d650856d"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[12 - Marca e número]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="306" width="118" height="16" uuid="bf9e6c8e-0057-4666-93ca-33dea2f38a08"/>
+				<reportElement x="140" y="304" width="118" height="16" uuid="84777037-52fc-4a1b-9af6-c8076eae395d"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[13 - Capaciade de tração (t)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="160" y="316" width="98" height="16" uuid="4b646a56-9b5b-4b17-b1a5-1ea0e549adfb"/>
+				<reportElement x="150" y="314" width="98" height="16" uuid="2845fd50-8c26-46f4-a214-9d4b563243b1"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Capacidade de arraste (t)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="40" y="350" width="25" height="16" uuid="c669fe12-205c-403b-955c-4ad19e0f19ad"/>
+				<reportElement x="30" y="348" width="25" height="16" uuid="62002235-4fe4-4943-8d89-d15dc05d3bdf"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Año]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="5" y="350" width="35" height="16" uuid="a4748514-615a-4317-b1cf-8faeda24df4e"/>
+				<reportElement x="-5" y="348" width="35" height="16" uuid="bd3af17a-fc0e-4613-8a25-a87d5f4c96be"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[14 - Ano]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="350" width="10" height="16" uuid="2ce1b036-901d-4a24-9a37-0e905edeaaeb"/>
+				<reportElement x="140" y="348" width="10" height="16" uuid="2b86ffcd-fdca-4813-8cc8-3c02fdf399d9"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[15]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="275" y="62" width="15" height="15" uuid="2330894f-6b73-448b-8b0a-b3febd2f357e">
+				<reportElement x="265" y="60" width="15" height="15" uuid="b4bc5de7-5663-4b57-a4ba-bbeb780b1185">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 			</rectangle>
 			<rectangle>
-				<reportElement x="328" y="62" width="15" height="15" uuid="2c754689-f0de-4dcb-be01-b16fc3b35352">
+				<reportElement x="318" y="60" width="15" height="15" uuid="76433e66-b9ca-4358-93b9-ed7fed58ad36">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="426" y="350" width="10" height="16" uuid="596a0a65-5a1b-408c-9ce1-a335326af080"/>
+				<reportElement x="416" y="348" width="10" height="16" uuid="681fc411-71db-406a-938d-3db24899c1e0"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[22]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="312" y="350" width="25" height="16" uuid="edd0401a-b4fb-4e76-bb41-4ec60ed84650"/>
+				<reportElement x="302" y="348" width="25" height="16" uuid="10a70a75-121f-40ed-b23b-649222926837"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Año]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="277" y="350" width="35" height="16" uuid="5d7acdbe-07c3-4d4a-b758-1b5ffa2adbba"/>
+				<reportElement x="267" y="348" width="35" height="16" uuid="70e8fc42-efbb-439b-85e8-162ebbbea282"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[21 - Ano]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="306" width="100" height="16" uuid="5039cb56-43de-4f0f-b439-77cfba7d9a35"/>
+				<reportElement x="266" y="304" width="100" height="16" uuid="b80762af-5f54-4409-b247-7607a36bcc9c"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[19 - Marca e número]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="356" y="306" width="64" height="16" uuid="69433fd5-a647-4f35-a345-1336be515113"/>
+				<reportElement x="346" y="304" width="64" height="16" uuid="5a683721-41cc-43a7-9209-d14800cfe17d"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Marca y numero]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="436" y="316" width="98" height="16" uuid="95b6ebb1-d542-4c76-9c04-8a9b6e3ba18a"/>
+				<reportElement x="426" y="314" width="98" height="16" uuid="3fb47987-f0cd-4656-8ccf-d802557adee0"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Capacidade de arraste (t)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="426" y="306" width="118" height="16" uuid="1fa0c7dd-820b-4ff1-bdcb-daa21645e2bf"/>
+				<reportElement x="416" y="304" width="118" height="16" uuid="5e26f236-bc7a-4e7a-adf8-3afea96ec871"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[20 - Capaciade de tração (t)]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="160" y="351" width="15" height="15" uuid="79ac6693-6d44-4636-9c30-c469add77f53">
+				<reportElement x="150" y="349" width="15" height="15" uuid="c5f74c4d-53a3-4ec4-94a6-24a3844c26c9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="179" y="350" width="43" height="10" uuid="aea301c1-962a-41fd-aec0-7bd1e6d7a2ad"/>
+				<reportElement x="169" y="348" width="43" height="10" uuid="d2a563be-da96-427c-aef0-534724b2e8f1"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Semi-reboque]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="179" y="359" width="40" height="11" uuid="fd8bd33c-dd88-4863-8289-c8b924c2ef73"/>
+				<reportElement x="169" y="357" width="40" height="11" uuid="4e5efbd5-1b19-403c-8f79-1f1b84b98abb"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Semiremolque]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="226" y="351" width="15" height="15" uuid="490a937f-eb49-4bb9-a2cd-1c06da3515b0">
+				<reportElement x="216" y="349" width="15" height="15" uuid="76448dbf-af05-40c1-9f88-831309738999">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="243" y="350" width="31" height="10" uuid="3efd9fbf-17a5-4674-be3f-fde475594bc3"/>
+				<reportElement x="233" y="348" width="31" height="10" uuid="9bc2ad96-28d1-4fab-ad6e-0a3a9b4e3055"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Reboque]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="243" y="359" width="31" height="11" uuid="767598b6-8c8c-4843-bf2f-9c55a943ff6d"/>
+				<reportElement x="233" y="357" width="31" height="11" uuid="15f9e5e6-0ef7-47a5-bde6-34ab251dbb71"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Remolque]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="436" y="351" width="15" height="15" uuid="cf0d64bb-8dc1-44a8-9a08-f73215a4445c">
+				<reportElement x="426" y="349" width="15" height="15" uuid="4a60a463-8937-4512-b8ab-16b7ab2987d8">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="455" y="359" width="40" height="11" uuid="9498ff18-2b9b-4f9f-b702-7f54c00d157e"/>
+				<reportElement x="445" y="357" width="40" height="11" uuid="9235bb68-d596-495a-83b4-a511a3b45ac1"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Semiremolque]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="455" y="350" width="43" height="10" uuid="81323c0a-9125-44cc-ac93-58dc45977796"/>
+				<reportElement x="445" y="348" width="43" height="10" uuid="14f245c7-78c8-474d-90e6-69a130258f89"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Semi-reboque]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="519" y="350" width="31" height="10" uuid="a2b37106-a724-485e-b0c2-70cdc59256e4"/>
+				<reportElement x="509" y="348" width="31" height="10" uuid="3acd9e2d-ec6c-45a0-9584-52cc9bd1ee8c"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Reboque]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="519" y="359" width="31" height="11" uuid="ae45c72a-4b38-48e0-a6ae-f20629802066"/>
+				<reportElement x="509" y="357" width="31" height="11" uuid="e9f3484d-f8cf-4904-89ce-9b3c8b2b7b16"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Remolque]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="502" y="351" width="15" height="15" uuid="c1ae28cf-82b7-40a1-a366-e819c707c99f">
+				<reportElement x="492" y="349" width="15" height="15" uuid="3f4ccdd4-fd85-4a6b-a150-a23383102866">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="277" y="390" width="60" height="16" uuid="992860ce-e168-411b-afb9-1a53fa81e649"/>
+				<reportElement x="267" y="388" width="60" height="16" uuid="4f2095ee-2453-4866-b075-ebb2075bbdd1"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[33 - Remetente]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="337" y="390" width="98" height="16" uuid="d47abc04-3551-4521-8cd9-2f0db33a2c17"/>
+				<reportElement x="327" y="388" width="98" height="16" uuid="2974064f-5fdc-4afe-b621-ecf5725162a8"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Remetente]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="423" width="550" height="1" uuid="a6501075-d72e-48b3-a96f-85d593223a21"/>
+				<reportElement x="-10" y="428" width="550" height="1" uuid="ea5a46f5-ae54-4904-8ba3-8268f0310674"/>
 			</line>
 			<line>
-				<reportElement x="0" y="473" width="551" height="1" uuid="2e80d7ff-06a8-445c-a62f-c16dc04bc50a"/>
+				<reportElement x="-10" y="471" width="551" height="1" uuid="f76722ba-4ef3-4fab-a58d-053f0d1520d1"/>
 			</line>
 			<staticText>
-				<reportElement x="278" y="423" width="72" height="16" uuid="ab79bfa2-13d6-47f5-a8a9-e725eed8878f"/>
+				<reportElement x="267" y="428" width="72" height="16" uuid="737e9198-3071-463e-bc25-1464e1132def"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[34 - Destinatário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="344" y="423" width="98" height="16" uuid="4ee4af5d-e977-46ae-adfd-57d953615da8"/>
+				<reportElement x="333" y="428" width="98" height="16" uuid="db0427c6-4c6e-45a6-8991-56b71433affa"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Destinatario]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="517" width="551" height="1" uuid="58180cfe-de8f-4195-90f7-702f9becc703">
+				<reportElement x="-10" y="515" width="551" height="1" uuid="ded67187-8c02-41d0-a3f7-b804fb7972a5">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="278" y="473" width="77" height="16" uuid="aa4c4164-0cd8-4d88-ab5e-345b89d38cb7"/>
+				<reportElement x="268" y="471" width="77" height="16" uuid="08b6524a-1a6c-4cd5-8aee-1eca6875559e"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[35 - Consignatário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="350" y="473" width="98" height="16" uuid="44beb6ea-1a27-4849-bc73-30ff635c8dd7"/>
+				<reportElement x="340" y="471" width="98" height="16" uuid="86ebb515-72a7-41cd-aaad-c505c7e3ccd6"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Consignatário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="391" width="80" height="13" uuid="249368ad-7c0d-48e9-b723-e6251b9fef3f"/>
+				<reportElement x="-8" y="389" width="80" height="13" uuid="f8d4f20d-4f84-41f7-98f1-41313e717458"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[23 - Nº do conhecimento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="399" width="55" height="10" uuid="4168d30b-3dc0-46bd-97af-9609d9ba1c48">
+				<reportElement x="0" y="397" width="55" height="10" uuid="953963fc-9659-4f51-bd67-dd9e7fd5af53">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -564,26 +780,26 @@
 				<text><![CDATA[Nº Carta de Porte]]></text>
 			</staticText>
 			<line>
-				<reportElement x="101" y="390" width="1" height="153" uuid="f9011288-3d39-452b-8251-1160c059d3e3">
+				<reportElement x="91" y="388" width="1" height="153" uuid="9ac751da-93d5-42b9-86ab-20623e1bdd73">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="31" y="424" width="55" height="10" uuid="9cfd2f65-dafa-44e3-a5a4-bbd6df8f6387"/>
+				<reportElement x="20" y="429" width="55" height="10" uuid="3a22a4fe-348f-4ed3-aedb-238bfe77d100"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[   / Moneda]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="424" width="38" height="11" uuid="08a7d9ab-8b5e-496a-a758-c9f52ffc4531"/>
+				<reportElement x="-8" y="429" width="38" height="11" uuid="a2cc5733-8381-4e7d-92ed-a21088ea389a"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[25 - Moeda]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="44" y="474" width="55" height="10" uuid="80688ca7-28d6-4c95-94be-adf5ae3397a1">
+				<reportElement x="34" y="472" width="55" height="10" uuid="7bd23b1b-9dba-4d95-bd41-ddd88829bb10">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -592,14 +808,14 @@
 				<text><![CDATA[/ Valor FOT]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="474" width="48" height="9" uuid="2354be65-8da7-4c2c-a2b4-9ede6d7b4d8e"/>
+				<reportElement x="-7" y="472" width="48" height="9" uuid="6aaf7fdc-ce4d-41d9-9d47-9a1f814e3eef"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[27 - Valor FOT]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="104" y="392" width="77" height="11" uuid="4a14485e-9529-444c-b1b3-883f81bce8bb">
+				<reportElement x="94" y="390" width="77" height="11" uuid="fa875135-de96-493f-87ea-3cbca067c017">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement>
@@ -608,7 +824,7 @@
 				<text><![CDATA[24 - Alfândega de Destino]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="179" y="392" width="55" height="10" uuid="dcb91bb8-9f7a-4117-a95d-b042ca308bcc">
+				<reportElement x="169" y="390" width="55" height="10" uuid="f94be589-37dc-4232-a48a-fd0731dbf2f0">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
@@ -618,14 +834,14 @@
 				<text><![CDATA[/ Aduana Destino]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="105" y="424" width="83" height="11" uuid="da984264-901f-4610-bf78-4c20300262e7"/>
+				<reportElement x="94" y="429" width="83" height="11" uuid="6ae27b4d-6d53-4c59-9082-e052254b6978"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[26 - Origem das mercadoria]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="185" y="424" width="77" height="10" uuid="35d110fc-e5d2-4851-bee0-722ea61f7896">
+				<reportElement x="174" y="429" width="77" height="10" uuid="bc74b31d-1f75-4bb1-909a-ad1ec2f0759b">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -635,7 +851,7 @@
 				<text><![CDATA[/ Origen de las mercancias]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="104" y="474" width="58" height="11" uuid="96d2abc9-8383-4bc9-be6d-2c18eb240171">
+				<reportElement x="94" y="472" width="58" height="11" uuid="3bc78e3c-c4b6-4950-b6b6-95cd140cc941">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement>
@@ -644,38 +860,38 @@
 				<text><![CDATA[28 - Frete em Reais]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="483" width="47" height="10" uuid="b3e49114-4fc4-40b9-95fa-8e525a319e1c"/>
+				<reportElement x="104" y="481" width="47" height="10" uuid="83052eb7-2d10-4a79-bdb9-ba8f93e02522"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Frete em Reais]]></text>
 			</staticText>
 			<line>
-				<reportElement x="185" y="473" width="1" height="70" uuid="e676ed7c-f9ba-4308-8346-ea11df31d341"/>
+				<reportElement x="175" y="471" width="1" height="70" uuid="88333255-1de9-4f71-b00f-56b219add3a5"/>
 			</line>
 			<staticText>
-				<reportElement x="200" y="485" width="47" height="10" uuid="386f54eb-2d31-4d93-b279-6d47852c539f"/>
+				<reportElement x="190" y="483" width="47" height="10" uuid="091e2312-7376-401b-8065-29012d22584e"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Seguro em Reais]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="189" y="476" width="69" height="11" uuid="80a97013-7c7f-4d41-9b49-91e88ae3c7a7"/>
+				<reportElement x="179" y="474" width="69" height="11" uuid="92ebe3e6-9341-435a-a2ab-cd09f3152f9b"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[29 - Seguro em Reais]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="13" y="523" width="47" height="10" uuid="7089da36-7b6f-4c2f-ab88-2b68a7328e62"/>
+				<reportElement x="3" y="521" width="47" height="10" uuid="2166e156-da90-4498-bdfe-8dd95635bf6b"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Tipos de Bultos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="517" width="80" height="11" uuid="43c7ba67-79fb-413a-9711-776ced56a40b">
+				<reportElement x="-8" y="515" width="80" height="11" uuid="ff34baa0-c922-407f-a2ee-53c2190247ea">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -684,7 +900,7 @@
 				<text><![CDATA[30 - Tipos de Volumes]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="113" y="523" width="62" height="10" uuid="be87ba39-2c7a-409d-849b-124e73e6b454">
+				<reportElement x="103" y="521" width="62" height="10" uuid="6e14e1e5-d2cb-4e22-8a6d-350e61331028">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -693,7 +909,7 @@
 				<text><![CDATA[Cantidad de Bultos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="103" y="517" width="86" height="11" uuid="95c6e510-3c24-4bec-b78d-f2b0d9e51d5e">
+				<reportElement x="93" y="515" width="86" height="11" uuid="8b161764-55a3-462b-aad3-33ff6e204052">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement>
@@ -702,24 +918,24 @@
 				<text><![CDATA[31 - Quantidade de Volumes]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="199" y="523" width="47" height="10" uuid="4056b517-a06c-4233-9a50-f1695fda2073"/>
+				<reportElement x="189" y="521" width="47" height="10" uuid="f8c55d7d-5e2b-4fff-9d07-f5e13b942a77"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Peso bruto (Kg)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="188" y="517" width="58" height="11" uuid="a3eb75cc-8406-419f-bd58-9085747d12fe"/>
+				<reportElement x="178" y="515" width="58" height="11" uuid="42e985e9-4197-4c9a-a4c8-4eab2f7f680e"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[32 - Peso bruto (kg)]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="543" width="274" height="1" uuid="af074cd5-df2b-40bb-975c-034cb17b428e"/>
+				<reportElement x="-10" y="541" width="274" height="1" uuid="39c88de9-c5f2-44de-8d47-d2552aa322a8"/>
 			</line>
 			<staticText>
-				<reportElement x="276" y="518" width="77" height="16" uuid="641d54b3-24ce-47b3-9b11-a4a8da55dc73">
+				<reportElement x="266" y="516" width="77" height="16" uuid="c19834c1-7404-4acd-ae79-fc690027ae91">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -728,7 +944,7 @@
 				<text><![CDATA[36 - Documentos anexos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="348" y="518" width="98" height="16" uuid="88f0cedc-129a-4f35-945f-e40e83d35ad0">
+				<reportElement x="338" y="516" width="98" height="16" uuid="e67379b5-0d59-4636-8136-98c9fb916ab6">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -737,41 +953,41 @@
 				<text><![CDATA[/ Documentos anexos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="544" width="77" height="16" uuid="f56d9230-8dbf-4f23-a692-23398a738ee0"/>
+				<reportElement x="-6" y="542" width="77" height="16" uuid="ea04ea9f-aecd-453c-8979-7b88fa261b2b"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[37 - Número dos lacres]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="72" y="544" width="98" height="16" uuid="dbb3c4fa-6bce-4cb0-bf36-6f8ecd664acc"/>
+				<reportElement x="62" y="542" width="98" height="16" uuid="9fdf2160-445c-4f72-b5f7-0a5b89b4a017"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Numero de los precintos]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="590" width="550" height="1" uuid="bd1efeef-5e0f-4b2c-ba27-a6540cec641d"/>
+				<reportElement x="-10" y="588" width="550" height="1" uuid="e95f6702-f6a9-43b5-a6d4-fb8d6dcb6b8e"/>
 			</line>
 			<staticText>
-				<reportElement x="3" y="591" width="187" height="16" uuid="ae9d66e5-4de1-459e-b058-e47153bb1f4e"/>
+				<reportElement x="-7" y="589" width="187" height="16" uuid="b8fcd8f9-a5f8-4d8c-8893-65273144bfb5"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[38 - Marcas e números dos volumes, descrição das mercadorias]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="591" width="182" height="16" uuid="75a0789b-2fd2-4881-a1f4-e584e63d04a3"/>
+				<reportElement x="180" y="589" width="182" height="16" uuid="97c49b6a-e149-4fb6-a6ec-d5aa83e39d6c"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[/ Marcas y números de los bultos, descripcion de las mercaderias]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="659" width="550" height="1" uuid="fc54fa83-083d-4e1b-b6ae-3396754cdae3"/>
+				<reportElement x="-10" y="657" width="550" height="1" uuid="1315665e-a8f9-43ab-8fc3-442b50488e94"/>
 			</line>
 			<staticText>
-				<reportElement x="4" y="664" width="269" height="40" uuid="e552193a-05ef-4512-afb1-100ec29dd897"/>
+				<reportElement x="-6" y="662" width="269" height="40" uuid="e53712b2-cf68-49bf-8b69-233b6e1a5df0"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
@@ -783,7 +999,7 @@ Paises Cone Sul
 .]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="704" width="269" height="40" uuid="589b4891-6d3d-4e87-95c1-f73775ea1f71"/>
+				<reportElement x="-7" y="702" width="269" height="40" uuid="29bc8dc2-5454-43be-8a88-46c7d15afe25"/>
 				<textElement>
 					<font size="6" isBold="false"/>
 				</textElement>
@@ -795,27 +1011,27 @@ Cono Sur.
 ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="275" y="659" width="1" height="143" uuid="60444b2d-1bd5-4872-95f8-b3660f7ad59c"/>
+				<reportElement x="265" y="657" width="1" height="143" uuid="f36ca4e3-95ed-47d6-a42b-1d575eb53fbb"/>
 			</line>
 			<staticText>
-				<reportElement x="278" y="665" width="111" height="11" uuid="15c7fc9c-bed6-4463-bb20-7685d1133330"/>
+				<reportElement x="268" y="663" width="111" height="11" uuid="17b12615-6ea5-4987-a49c-3ab7d5a0472f"/>
 				<textElement>
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[40 - Nº DTA, rota e prazo de transporte]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="289" y="674" width="100" height="10" uuid="caf64f66-8870-4067-b3bf-9647f778b76c"/>
+				<reportElement x="279" y="672" width="100" height="10" uuid="e6f2b34b-23f7-4be5-8493-11a3f05a1666"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[Nº DTA, ruta y plazo de transporte]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="744" width="551" height="1" uuid="2115cd8c-96d8-4195-8950-f53b984a437c"/>
+				<reportElement x="-10" y="742" width="551" height="1" uuid="46e81ebd-5b87-4b2e-add0-8f608b8f233d"/>
 			</line>
 			<staticText>
-				<reportElement x="4" y="747" width="126" height="11" uuid="068e56ee-8e30-4cb6-b2fc-b4754ab93199">
+				<reportElement x="-6" y="745" width="126" height="11" uuid="b2b8b7b1-78fa-413c-888e-513c5022ab8a">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -824,7 +1040,7 @@ Cono Sur.
 				<text><![CDATA[39 - Assinatura e carimbo do transportador]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="129" y="747" width="100" height="10" uuid="d86e953e-45b4-4345-affe-e5e743859b1d">
+				<reportElement x="119" y="745" width="100" height="10" uuid="25cb7494-3146-4014-9f46-d0d9847eaa03">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -833,7 +1049,7 @@ Cono Sur.
 				<text><![CDATA[/ Firma y sello del porteador]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="278" y="747" width="148" height="11" uuid="1b755dee-ffca-4711-9c00-6e255ff3249d">
+				<reportElement x="268" y="745" width="148" height="11" uuid="f8318bad-d21d-428f-a7ac-7e3b4e375552">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -842,7 +1058,7 @@ Cono Sur.
 				<text><![CDATA[41 - Assinatura e carimbo da Alfândega de partida]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="425" y="747" width="125" height="10" uuid="27c18ccb-89fc-477b-82bf-86e8c5ac8878">
+				<reportElement x="415" y="745" width="125" height="10" uuid="91b95c1b-9339-4e88-81e0-9594bfbf4eed">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -851,7 +1067,7 @@ Cono Sur.
 				<text><![CDATA[/ Firma y sello de la Aduana de Partida]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="790" width="23" height="11" uuid="31284348-eaa5-4d81-af82-1a53e19fc19e">
+				<reportElement x="-6" y="788" width="23" height="11" uuid="7909918e-15c4-4d17-a242-25c22fca1ee2">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -860,7 +1076,7 @@ Cono Sur.
 				<text><![CDATA[Data]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="20" y="790" width="28" height="10" uuid="7116ca01-cbd4-49c1-8fef-4eb6d3e6bafa">
+				<reportElement x="10" y="788" width="28" height="10" uuid="b0511dfa-55ca-4b7e-91b7-f0e467c55fd9">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -869,7 +1085,7 @@ Cono Sur.
 				<text><![CDATA[/ Fecha]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="295" y="790" width="28" height="10" uuid="8088c794-a43e-4585-841d-604d6630bcfd">
+				<reportElement x="285" y="788" width="28" height="10" uuid="ee12a1fa-bc1c-499b-916c-dab7b7aa195e">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -878,7 +1094,7 @@ Cono Sur.
 				<text><![CDATA[/ Fecha]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="279" y="790" width="23" height="11" uuid="4e1f016d-1c4c-4f7d-aca7-8c7847e78c94">
+				<reportElement x="269" y="788" width="23" height="11" uuid="941095dd-25d7-4b90-9411-759fd2b2eefa">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
@@ -887,106 +1103,131 @@ Cono Sur.
 				<text><![CDATA[Data]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="13" y="316" width="100" height="20" uuid="0cb5ad26-58bd-434a-9d7e-767db8f9a1a0"/>
-				<textFieldExpression><![CDATA[$F{veiculo.marca}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="154" y="270" width="100" height="30" uuid="dd4c6b74-7f35-49ba-806f-2e4364a2597f"/>
-				<textFieldExpression><![CDATA[$F{veiculo.placaCarreta}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="13" y="330" width="100" height="20" uuid="5b5d3aa0-0bcc-4d42-9175-7e03b713861d"/>
-				<textFieldExpression><![CDATA[$F{veiculo.modelo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="14" y="366" width="129" height="30" uuid="0e17d136-8898-4b1b-8dc9-14f71e8f703b"/>
-				<textFieldExpression><![CDATA[$F{veiculo.anoFabricacao}+ "/" +$F{veiculo.anoModelo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="13" y="201" width="222" height="35" uuid="a3847173-4636-4954-a337-8e646f2e7970"/>
-				<textFieldExpression><![CDATA[$F{motorista.nome}+"\n"+
-$F{motorista.cidade.estado.estadoSigla} + " - " +$F{motorista.cidade.estado.pais.paisNome}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="274" y="90" width="119" height="14" uuid="5d275c3a-c137-496e-969e-64a438de25ee"/>
+				<reportElement x="264" y="88" width="119" height="14" uuid="7ae9d124-406b-4a9c-8267-ee146710fad8"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"/"+$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="460" y="90" width="88" height="14" uuid="13726229-f3e4-4e6f-8e65-0132261e1153"/>
+				<reportElement x="450" y="88" width="88" height="14" uuid="50c58f11-b168-4daa-a0cc-1609a1bb13c4"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="48" y="786" width="88" height="14" uuid="36cd41d8-310e-4a63-bbba-3caac85ab64e"/>
+				<reportElement x="38" y="784" width="88" height="14" uuid="76d54381-c2de-4b5f-9663-4cbf7d384546"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="328" y="786" width="88" height="14" uuid="d12e7bac-3ac0-453b-959e-5e7a08dca8bc"/>
+				<reportElement x="318" y="784" width="88" height="14" uuid="f2acfd2f-249c-496e-9400-f5bad759cfa3"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="110" y="489" width="100" height="30" uuid="9f92feab-b96f-406c-a712-4f889bbdf5d9"/>
-				<textFieldExpression><![CDATA["R$"+$F{listaDeEncomendas[0].valorFrete}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="154" y="330" width="100" height="21" uuid="889c5c11-9341-42e8-916d-a0170d7f5a1f"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{veiculo.marca}+"TN"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="102" y="528" width="83" height="16" uuid="5788513f-9482-4c95-9984-1ef92247dc58"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes}.size()]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="277" y="396" width="273" height="27" uuid="62910437-06d9-4f22-bbed-bb77705339d6"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.nomeFantasia}+"\n"+
-$F{listaDeEncomendas[0].encomenda.remetente.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.remetente.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.remetente.cep}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="279" y="434" width="269" height="39" uuid="7a2fd1cb-524c-494e-b211-81453d9c086f"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}+"\n"+
-$F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.destinatario.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.destinatario.cep}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="30" y="443" width="30" height="17" uuid="7f8362ad-3531-40c8-a5c8-916537d5b047"/>
+				<reportElement x="17" y="447" width="30" height="17" uuid="33f3812c-2628-44cc-9fe8-4dccd228a7c6"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Reais]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="0" y="148" width="139" height="19" uuid="85e79087-08ad-4852-a9c3-2a7f415291fc"/>
+				<text><![CDATA[CNPJ: 15.368.874/0001-73]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="105" y="434" width="100" height="30" uuid="20c96a9a-3e3f-493d-9e12-84eeb0fcc079"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" - "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" - "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}]]></textFieldExpression>
+				<reportElement x="-6" y="358" width="109" height="20" uuid="303b0d03-4181-4b08-a028-6efd1ad5d65a"/>
+				<textFieldExpression><![CDATA[$F{anoFabricacao}+"/"+$F{anoModelo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="4" y="600" width="530" height="58" uuid="1edaaffb-52f5-4961-9177-45862b3b7dce"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.listaDeVolumes[0].descricaoProduto}]]></textFieldExpression>
+				<reportElement x="140" y="328" width="100" height="20" uuid="1596a7b4-d0d6-4629-a404-0d8c6b02dd19"/>
+				<textFieldExpression><![CDATA[$F{pesoMax} + " TN"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="278" y="110" width="273" height="25" uuid="ace45af3-2ae9-4b41-8315-7255c5b598e3"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.remetente.cidade.cidadeNome}+" - "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.estadoSigla}+" - "+$F{listaDeEncomendas[0].encomenda.remetente.cidade.estado.pais.paisNome}]]></textFieldExpression>
+				<reportElement x="140" y="264" width="100" height="14" uuid="9e29507c-1a7b-4fc1-8a64-9174a68b0c14"/>
+				<textFieldExpression><![CDATA[$F{placaCarreta}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="105" y="399" width="100" height="30" uuid="5e7c24bf-fba6-4cdd-b351-385ef7761753"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.cidade.cidadeNome}+" - "+$F{listaDeEncomendas[0].encomenda.destinatario.cidade.estado.estadoSigla}+" - "+$F{listaDeEncomendas[0].encomenda.destinatario.cidade.estado.pais.paisNome}]]></textFieldExpression>
+				<reportElement x="-8" y="315" width="136" height="32" uuid="080a2587-ad7f-49e1-9da6-8e3a1a2855cd"/>
+				<textFieldExpression><![CDATA[$F{marca}+"\n"+
+$F{modelo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="278" y="140" width="270" height="30" uuid="68f10e94-b03b-428d-8834-010c5f2eee18"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.cidade.cidadeNome}+" - "+$F{listaDeEncomendas[0].encomenda.destinatario.cidade.estado.estadoSigla}+" - "+$F{listaDeEncomendas[0].encomenda.destinatario.cidade.estado.pais.paisNome}]]></textFieldExpression>
+				<reportElement x="149" y="372" width="100" height="16" uuid="5f8a8513-7cda-4ab5-a3e1-ba9ffa01a6c8"/>
+				<textFieldExpression><![CDATA[$F{placaCavalo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="279" y="483" width="268" height="34" uuid="2828ccfb-f5c0-4953-a3db-e21041d73f42"/>
-				<textFieldExpression><![CDATA[$F{listaDeEncomendas[0].encomenda.destinatario.nomeFantasia}+"\n"+
-$F{listaDeEncomendas[0].encomenda.destinatario.ruaAvenida}+", "+$F{listaDeEncomendas[0].encomenda.destinatario.numero}+" - CEP "+$F{listaDeEncomendas[0].encomenda.destinatario.cep}]]></textFieldExpression>
+				<reportElement x="267" y="397" width="266" height="30" uuid="c5fd296a-50cb-4b11-8b74-bb702a196cd6"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remetenteNomeFantasia}+"\n"+
+$F{remetenteRua}+", "+$F{remetenteNumero}+" - CEP - "+$F{remetenteCEP}+"\n"+
+$F{remetenteCidade}+" - "+$F{remetenteEstado}+" - "+$F{remetentePais}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="83" y="41" width="101" height="93" uuid="8fe65d90-b396-4f64-96d6-08f06f2aaebe"/>
-				<imageExpression><![CDATA["resources/jasperreports/logo2.png"]]></imageExpression>
-			</image>
+			<textField>
+				<reportElement x="267" y="440" width="266" height="30" uuid="0e1502ed-ce29-4e5e-a09c-5c01adfcc664"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{destinatarioNomeFantasia}+"\n"+
+$F{destinatarioRua}+", "+$F{destinatarioNumero}+" - CEP - "+$F{destinatarioCEP}+"\n"+
+$F{destinatarioCidade}+" - "+$F{destinatarioEstado}+" - "+$F{destinatarioPais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="400" width="164" height="26" uuid="53eb04e3-b28a-46cc-a3f2-873aa3eede07"/>
+				<textFieldExpression><![CDATA[$F{remetenteCidade}+" - "+$F{remetenteEstado}+" - "+$F{remetentePais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="440" width="166" height="28" uuid="ab4cdef6-1322-4a7e-9c19-54512a931a2c"/>
+				<textFieldExpression><![CDATA[$F{destinatarioCidade}+" - "+$F{destinatarioEstado}+" - "+$F{destinatarioPais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="482" width="266" height="30" uuid="fee450a6-8bbf-4a6d-bc2e-1b0ce123ab92"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{destinatarioNomeFantasia}+"\n"+
+$F{destinatarioRua}+", "+$F{destinatarioNumero}+" - CEP - "+$F{destinatarioCEP}+"\n"+
+$F{destinatarioCidade}+" - "+$F{destinatarioEstado}+" - "+$F{destinatarioPais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="144" width="272" height="26" uuid="c5447f5d-9e4c-45c9-a337-d080d6aa624f"/>
+				<textFieldExpression><![CDATA[$F{remetenteCidade}+" - "+$F{remetenteEstado}+" - "+$F{remetentePais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="113" width="268" height="20" uuid="283f1b9d-cf8f-4fbb-af94-02a75c3c58ed"/>
+				<textFieldExpression><![CDATA[$F{destinatarioCidade}+" - "+$F{destinatarioEstado}+" - "+$F{destinatarioPais}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="528" width="38" height="17" uuid="44e8dd4b-7ae8-466b-9cfa-42551844f261"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Outros]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="-7" y="600" width="543" height="10" uuid="bd3e295d-627f-4500-be2c-a3a3c0c7764f"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="produtos" uuid="6bfa56d1-d3fc-46b9-9646-ad338d7909a1">
+						<datasetParameter name="idFrete">
+							<datasetParameterExpression><![CDATA[$F{idFrete}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="10" width="543">
+						<textField>
+							<reportElement x="0" y="0" width="543" height="10" uuid="3f637a9f-4cd3-4c34-aaa1-2b99f3bcf581"/>
+							<textElement>
+								<font size="6"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{descricaoProduto}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField>
+				<reportElement x="266" y="532" width="214" height="124" uuid="dd167991-aab8-404e-af22-2e5d16df0d22"/>
+				<textFieldExpression><![CDATA[$F{descricaoProduto}]]></textFieldExpression>
+			</textField>
 		</band>
-	</title>
+	</detail>
 </jasperReport>

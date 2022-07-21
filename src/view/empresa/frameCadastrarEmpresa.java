@@ -166,7 +166,11 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel2.setText("E-Mail");
 
-        txtNomeFantasia.setText("teste Nome");
+        txtNomeFantasia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeFantasiaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel3.setText("Nome Fantasia");
@@ -183,24 +187,15 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel8.setText("CNPJ");
 
-        txtEmail.setText("mail@mail");
-
-        txtTelefone.setText("6789561212");
-
         jLabel10.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel10.setText("Razão Social");
-
-        txtCI.setText("LoginTeste");
 
         jLabel11.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel11.setText("CEI");
 
-        txtCEI.setText("1351365465");
-
         jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel5.setText("CEP");
 
-        txtCEP.setText("79304020");
         txtCEP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtCEPFocusLost(evt);
@@ -210,19 +205,17 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel13.setText("Rua / Avenida / Logradouro");
 
-        txtEndereco.setText("Avenida rio branco");
-
         jLabel12.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel12.setText("Número");
-
-        txtNumero.setText("123321");
 
         jLabel16.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel16.setText("Complemento");
 
-        txtComplemento.setText("lote 3");
-
-        txtBairro.setText("concórdia");
+        txtComplemento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtComplementoActionPerformed(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel14.setText("Bairro");
@@ -269,12 +262,6 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
                 botaoCadastrarEmpresaActionPerformed(evt);
             }
         });
-
-        txtCNPJ.setText("33014556000196");
-
-        txtRazaoSocial.setText("6789561212");
-
-        txtNIT.setText("LoginTeste");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -631,6 +618,14 @@ public class frameCadastrarEmpresa extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_txtCEPFocusLost
+
+    private void txtNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeFantasiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeFantasiaActionPerformed
+
+    private void txtComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComplementoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtComplementoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrarEmpresa;

@@ -101,6 +101,5 @@ public class EncomendaxVolumeModel implements Serializable {
         this.finalizada = finalizada;
     }
     
-    
 }
 

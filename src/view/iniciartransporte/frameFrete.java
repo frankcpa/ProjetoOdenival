@@ -130,6 +130,7 @@ public class frameFrete extends javax.swing.JInternalFrame {
         botaoRemoverRegistro = new javax.swing.JButton();
         botaoCancelarEdicao = new javax.swing.JButton();
         btnFinalizarEncomenda = new javax.swing.JButton();
+        botaoRemoverRegistroEncomenda = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -552,6 +553,26 @@ public class frameFrete extends javax.swing.JInternalFrame {
             }
         });
 
+        botaoRemoverRegistroEncomenda.setBackground(new java.awt.Color(0, 51, 51));
+        botaoRemoverRegistroEncomenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoRemoverRegistroEncomenda.setForeground(new java.awt.Color(255, 255, 255));
+        botaoRemoverRegistroEncomenda.setText("Remover Registro");
+        botaoRemoverRegistroEncomenda.setBorderPainted(false);
+        botaoRemoverRegistroEncomenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoRemoverRegistroEncomenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoRemoverRegistroEncomendaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoRemoverRegistroEncomendaMouseExited(evt);
+            }
+        });
+        botaoRemoverRegistroEncomenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoRemoverRegistroEncomendaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -565,7 +586,8 @@ public class frameFrete extends javax.swing.JInternalFrame {
                     .addComponent(botaoEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                     .addComponent(botaoRemoverRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                     .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoRemoverRegistroEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -580,7 +602,9 @@ public class frameFrete extends javax.swing.JInternalFrame {
                         .addComponent(btnFinalizarEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                        .addGap(121, 121, 121)
+                        .addComponent(botaoRemoverRegistroEncomenda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoEditarRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botaoRemoverRegistro)
@@ -717,6 +741,10 @@ public class frameFrete extends javax.swing.JInternalFrame {
             comboBoxVeiculo.setEnabled(false);
             txtData.setEnabled(false);
             txtObservacao.setEnabled(false);
+            comboBoxEncomenda.setEnabled(false);
+            txtValorFrete.setEnabled(false);
+            txtValorReembolso.setEnabled(false);
+            btnRelacionar.setEnabled(false);
             
             comboBoxEncomenda.setSelectedIndex(0);
             txtValorFrete.setText("");
@@ -737,7 +765,8 @@ public class frameFrete extends javax.swing.JInternalFrame {
             if (retorno == 0) {
                 DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
                 FreteModel frete = this.freteRepository.buscarPorId(idFrete);
-                this.freteRepository.excluir(frete);
+                frete.setEhExcluido(true);
+                freteRepository.atualizar(frete);
                 dtm.removeRow(jtableFrete.getSelectedRow());
                 jtableFrete.setModel(dtm);
             }
@@ -776,7 +805,15 @@ public class frameFrete extends javax.swing.JInternalFrame {
         model.setRowCount(0);
         jtableEncomendasRelacionadas.setModel(model);
         
+        btnFinalizarEncomenda.setVisible(false);
         comboBoxMotorista.setEnabled(true);
+        comboBoxVeiculo.setEnabled(true);
+        txtData.setEnabled(true);
+        txtObservacao.setEnabled(true);
+        comboBoxEncomenda.setEnabled(true);
+        txtValorFrete.setEnabled(true);
+        txtValorReembolso.setEnabled(true);
+        btnRelacionar.setEnabled(true);
         comboBoxMotorista.setSelectedIndex(0);
         
         comboBoxVeiculo.setEnabled(true);
@@ -978,12 +1015,27 @@ public class frameFrete extends javax.swing.JInternalFrame {
         populaComboBoxEncomendas();
     }//GEN-LAST:event_comboBoxEncomendaFocusGained
 
+    private void botaoRemoverRegistroEncomendaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRemoverRegistroEncomendaMouseEntered
+        botaoRemoverRegistroEncomenda.setBackground(new Color(204, 204, 0));
+        botaoRemoverRegistroEncomenda.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_botaoRemoverRegistroEncomendaMouseEntered
+
+    private void botaoRemoverRegistroEncomendaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRemoverRegistroEncomendaMouseExited
+        botaoRemoverRegistroEncomenda.setBackground(new Color(0, 51, 51));
+        botaoRemoverRegistroEncomenda.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_botaoRemoverRegistroEncomendaMouseExited
+
+    private void botaoRemoverRegistroEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverRegistroEncomendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoRemoverRegistroEncomendaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoBuscarCargos;
     private javax.swing.JButton botaoCancelarEdicao;
     private javax.swing.JButton botaoEditarRegistro;
     private javax.swing.JButton botaoRemoverRegistro;
+    private javax.swing.JButton botaoRemoverRegistroEncomenda;
     private javax.swing.JButton btnFinalizarEncomenda;
     private javax.swing.JButton btnRelacionar;
     private javax.swing.JComboBox<String> comboBoxEncomenda;

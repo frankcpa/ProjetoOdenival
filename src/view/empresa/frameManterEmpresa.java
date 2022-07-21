@@ -184,18 +184,14 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel8.setText("CNPJ");
 
-        txtEndereco.setText("Avenida rio branco");
-
-        txtNIT.setText("LoginTeste");
-
         jLabel9.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel9.setText("Nome Fantasia");
 
-        txtNumero.setText("123321");
-
-        txtRazaoSocial.setText("6789561212");
-
-        txtEmail.setText("mail@mail");
+        txtRazaoSocial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRazaoSocialActionPerformed(evt);
+            }
+        });
 
         botaoRemoverRegistro.setBackground(new java.awt.Color(0, 51, 51));
         botaoRemoverRegistro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -229,8 +225,6 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel2.setText("E-Mail");
 
-        txtCNPJ.setText("33014556000196");
-
         botaoEditarRegistro.setBackground(new java.awt.Color(0, 51, 51));
         botaoEditarRegistro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         botaoEditarRegistro.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,7 +247,11 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
 
         txtComplemento.setText("lote 3");
 
-        txtCI.setText("LoginTeste");
+        txtCI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCIActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setBackground(new java.awt.Color(0, 204, 153));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -295,8 +293,6 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
 
         jLabel13.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel13.setText("Rua / Avenida / Logradouro");
-
-        txtCEI.setText("1351365465");
 
         labelTitulo2.setBackground(new java.awt.Color(56, 65, 84));
         labelTitulo2.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
@@ -376,12 +372,9 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
         jLabel17.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel17.setText("País");
 
-        txtBairro.setText("concórdia");
-
         jLabel14.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel14.setText("Bairro");
 
-        txtCEP.setText("79304020");
         txtCEP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtCEPFocusLost(evt);
@@ -390,10 +383,6 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel5.setText("CEP");
-
-        txtTelefone.setText("6789561212");
-
-        txtNomeFantasia.setText("teste Nome");
 
         jLabel4.setFont(new java.awt.Font("Microsoft Himalaya", 0, 24)); // NOI18N
         jLabel4.setText("Telefone");
@@ -885,6 +874,7 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
                 jtableEmpresas.setModel(dtm);
             }
         }
+        this.populaTabelaEmpresas("");
     }//GEN-LAST:event_botaoRemoverRegistroActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -919,6 +909,14 @@ public class frameManterEmpresa extends javax.swing.JInternalFrame {
     private void botaoCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarEdicaoActionPerformed
         limpaJtextFields();
     }//GEN-LAST:event_botaoCancelarEdicaoActionPerformed
+
+    private void txtRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaoSocialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRazaoSocialActionPerformed
+
+    private void txtCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCIActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCIActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAlterarEmpresa;

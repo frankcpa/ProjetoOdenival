@@ -321,9 +321,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNomeFantasia">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="teste Nome"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeFantasiaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -366,14 +366,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="mail@mail"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelefone">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="6789561212"/>
-          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa;   javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;(##)####-####&quot;);&#xd;&#xa;   txtTelefone = new javax.swing.JFormattedTextField(data);&#xd;&#xa;}&#xd;&#xa;   catch (Exception e){&#xd;&#xa;}"/>
           </AuxValues>
@@ -387,9 +381,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCI">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="LoginTeste"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
@@ -400,9 +391,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCEI">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="1351365465"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -413,9 +401,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCEP">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="79304020"/>
-          </Properties>
           <Events>
             <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCEPFocusLost"/>
           </Events>
@@ -432,9 +417,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtEndereco">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Avenida rio branco"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
@@ -445,9 +427,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNumero">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="123321"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
@@ -458,14 +437,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtComplemento">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="lote 3"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtComplementoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBairro">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="conc&#xf3;rdia"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
@@ -556,7 +532,7 @@
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Padr&#xe3;o"/>
             </Property>
           </Properties>
           <Events>
@@ -566,25 +542,16 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCNPJ">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="33014556000196"/>
-          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa;   javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;##.###.###/####-##&quot;);&#xd;&#xa;   txtCNPJ = new javax.swing.JFormattedTextField(data);&#xd;&#xa;}&#xd;&#xa;   catch (Exception e){&#xd;&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txtRazaoSocial">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="6789561212"/>
-          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa;   javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;(##)####-####&quot;);&#xd;&#xa;   txtTelefone = new javax.swing.JFormattedTextField(data);&#xd;&#xa;}&#xd;&#xa;   catch (Exception e){&#xd;&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNIT">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="LoginTeste"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

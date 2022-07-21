@@ -58,6 +58,7 @@
                   <Component id="botaoRemoverRegistro" pref="350" max="32767" attributes="0"/>
                   <Component id="botaoCancelarEdicao" max="32767" attributes="0"/>
                   <Component id="btnFinalizarEncomenda" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botaoRemoverRegistroEncomenda" alignment="0" pref="350" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -76,7 +77,9 @@
                       <Component id="btnFinalizarEncomenda" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botaoCancelarEdicao" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace pref="286" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                      <Component id="botaoRemoverRegistroEncomenda" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="botaoEditarRegistro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="botaoRemoverRegistro" min="-2" max="-2" attributes="0"/>
@@ -717,6 +720,29 @@
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnFinalizarEncomendaMouseEntered"/>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnFinalizarEncomendaMouseExited"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinalizarEncomendaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoRemoverRegistroEncomenda">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Remover Registro"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor Padr&#xe3;o"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botaoRemoverRegistroEncomendaMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botaoRemoverRegistroEncomendaMouseExited"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoRemoverRegistroEncomendaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

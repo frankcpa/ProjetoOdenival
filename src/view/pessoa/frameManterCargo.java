@@ -46,7 +46,7 @@ public class frameManterCargo extends javax.swing.JInternalFrame {
         //((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         botaoCancelarEdicao.setVisible(false);
         txtIdCargo.setVisible(false);
-        botaoGerarRelatorio.setVisible(true);
+        botaoGerarRelatorio.setVisible(false);
         populaTabelaCargos(null);
     }
 

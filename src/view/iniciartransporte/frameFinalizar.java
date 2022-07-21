@@ -5,11 +5,14 @@
  */
 package view.iniciartransporte;
 
+import com.mysql.cj.xdevapi.SessionImpl;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,11 +27,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.FuncionarioModel;
-import model.VeiculoModel;
-import model.crt.EncomendaModel;
+import model.crt.EncomendaxVolumeModel;
 import model.crt.FreteModel;
-import model.crt.FretexEncomendaModel;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -43,6 +43,8 @@ import repository.FreteRepository;
 import repository.FretexEncomendaRepository;
 import repository.FuncionarioRepository;
 import repository.VeiculoRepository;
+import util.Conexao;
+import util.ConexaoDB;
 import view.pessoa.frameManterCargo;
 
 /**
@@ -370,21 +372,32 @@ public class frameFinalizar extends javax.swing.JInternalFrame {
     private void botaoGerarMICDTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarMICDTAActionPerformed
         int linhaSelecionada = jtableFrete.getSelectedRow();
         List<FreteModel> freteList = new ArrayList<>();
+        HashMap<String, Object> map = new HashMap<String, Object>();
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(null, "Selecione um registro");
         } else {
+            Connection connection = null;
+            Conexao conn = null;
+            
             long idFrete = (long) jtableFrete.getValueAt(linhaSelecionada, 0);
             DefaultTableModel dtm = (DefaultTableModel) jtableFrete.getModel();
             FreteModel freteModel = this.freteRepository.buscarPorId(idFrete);
             freteList.add(freteModel);
+            map.put("idFrete", idFrete);
+            
             JasperPrint jasperPrint = null;
             String path = "resources/jasperreports/MIC-DTA.jrxml";
             try {
+                connection = new ConexaoDB().ConectaDB();
                 InputStream employeeReportStream;
                 employeeReportStream = new FileInputStream(new File(path).getPath());
+                
                 JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
                 JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(freteList);
-                jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds);
+                List<EncomendaxVolumeModel> listaProdutos = freteModel.getListaDeEncomendas().get(0).getEncomenda().getListaDeVolumes();
+                System.out.println(listaProdutos);
+
+                jasperPrint = JasperFillManager.fillReport(jasperReport, map, connection);
             } catch (FileNotFoundException | JRException ex) {
                 Logger.getLogger(frameManterCargo.class.getName()).log(Level.SEVERE, null, ex);
             }

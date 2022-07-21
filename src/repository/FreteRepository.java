@@ -33,7 +33,7 @@ public class FreteRepository extends Conexao {
     public List<FreteModel> buscarTodos() {
         List<FreteModel> listaDeFretes = new ArrayList<>();
         super.inicializa();
-        listaDeFretes = super.getSess().createQuery("from FreteModel where finalizada = false").list();
+        listaDeFretes = super.getSess().createQuery("from FreteModel where finalizada = false AND ehExcluido = false").list();
         super.executar();
         return listaDeFretes;
     }

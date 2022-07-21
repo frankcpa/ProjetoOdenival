@@ -41,6 +41,8 @@ public class Conexao {
         this.tra.commit();
         this.sess.close();
     }
+    
+    
 
     public Session getSess() {
         return sess;
