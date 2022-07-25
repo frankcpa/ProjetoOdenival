@@ -27,7 +27,6 @@ FROM projetoodenival.encomendaxVolume
 		</group>
 	</subDataset>
 	<parameter name="idFrete" class="java.lang.Long"/>
-	<parameter name="listaProdutos" class="java.util.List"/>
 	<queryString>
 		<![CDATA[SELECT projetoodenival.frete.`idFrete`,
 projetoodenival.frete.`previsaoSaida`,
@@ -58,7 +57,8 @@ projetoodenival.frete.`previsaoSaida`,
 	destinatario.cep AS "destinatarioCEP",
 	destinatarioCidade.cidadeNome AS "destinatarioCidade",
 	destinatarioEstado.estadoSigla AS "destinatarioEstado",
-	destinatarioPais.paisNome AS "destinatarioPais"
+	destinatarioPais.paisNome AS "destinatarioPais",
+	encomendaxVolume.descricaoProduto
 FROM projetoodenival.frete
 	INNER JOIN projetoodenival.funcionario ON 
 	 projetoodenival.frete.`idMotorista` = projetoodenival.funcionario.`idPessoa` 
@@ -92,6 +92,8 @@ FROM projetoodenival.frete
 	 funcionarioCidade.`idEstado` = destinatarioEstado.`idEstado` 
 	INNER JOIN projetoodenival.pais AS destinatarioPais ON 
 	 funcionarioEstado.`idPais` = destinatarioPais.`idPais`
+	INNER JOIN projetoodenival.encomendaxVolume
+	 ON projetoodenival.encomendaxVolume.`idEncomenda` = projetoodenival.encomenda.`idEncomenda`
 WHERE projetoodenival.frete.`idFrete` = $P{idFrete}]]>
 	</queryString>
 	<field name="idFrete" class="java.lang.Long">
@@ -243,6 +245,11 @@ WHERE projetoodenival.frete.`idFrete` = $P{idFrete}]]>
 		<property name="com.jaspersoft.studio.field.name" value="paisNome"/>
 		<property name="com.jaspersoft.studio.field.label" value="destinatarioPais"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="descricaoProduto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descricaoProduto"/>
+		<property name="com.jaspersoft.studio.field.label" value="descricaoProduto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="encomendaxVolume"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -1218,8 +1225,8 @@ $F{destinatarioCidade}+" - "+$F{destinatarioEstado}+" - "+$F{destinatarioPais}]]
 				</jr:list>
 			</componentElement>
 			<textField>
-				<reportElement x="275" y="535" width="100" height="30" uuid="8466ad86-f636-48a8-b4e9-bb154dab40cd"/>
-				<textFieldExpression><![CDATA[$P{listaProdutos}]]></textFieldExpression>
+				<reportElement x="266" y="532" width="214" height="124" uuid="dd167991-aab8-404e-af22-2e5d16df0d22"/>
+				<textFieldExpression><![CDATA[$F{descricaoProduto}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
